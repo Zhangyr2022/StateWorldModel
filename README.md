@@ -33,8 +33,11 @@
 **WorldState-Bench** tests this with 50 counterfactual twin pairs that share a first frame and an action but differ in one hidden value.
 With the same frozen MiniMax-H3 weights, PairFollow rises from 32% (Rule-only prompt) to **92%**, and PairStrict from 4% to **90%**.
 
-<!-- project film: replace the link below with the GitHub user-attachments URL to get an inline player -->
-<p align="center"><b><a href="assets/StateWorldModels_demo_v7_github_10MB.mp4">▶ Watch the project film (2:59, with sound)</a></b></p>
+<p align="center">
+  <a href="assets/StateWorldModels_demo_v7_github_10MB.mp4"><img src="assets/project_film_preview.webp" width="100%" alt="State World Models project film: open-world exploration, a rule-settled duel, a dating narrative and the closing title"></a>
+  <br>
+  <sub>Autoplaying preview of the project film. Click it for the full 2:59 film with sound.</sub>
+</p>
 
 ## Contents
 
