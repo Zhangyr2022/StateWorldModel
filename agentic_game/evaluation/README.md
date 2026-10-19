@@ -2,8 +2,10 @@
 
 This package produces the **STATEFULHARNESS row of Table 1** in the paper:
 the WorldState-Bench cases (B01–B50, A/B twins = 100 clips) are played
-through the full harness — **render** (the settled instruction wrapped in an
-H3 I2VA envelope → the resident H3 service, i2v 5 s) → **judge** (a resident
+through the full harness — **render** (the settled instruction → the resident
+H3 service; Table 1 uses `--ref2va`, i.e. the first frame as an image
+reference to H3 Ref2VA, see §Quick start 6; without it the instruction is
+wrapped in an I2VA envelope for the i2v service) → **judge** (a resident
 Qwen VL watches the sampled frames and answers the dataset's pre-written
 questions verbatim) → **report** (metrics). It also judges **external
 submissions** (`run_external.py`), which is how the unwrapped baselines of
@@ -34,7 +36,11 @@ the branch ending that matches that side's hidden state. Case construction
 ## Quick start
 
 ```bash
-# 1) Full harness run: headless checks (zero GPU) → render → judge → report
+# 1) Table 1 (paper setting): headless checks (zero GPU) → render → judge → report.
+#    Needs all 8 GPUs free; starts the ref2va service if it is not running (see 6).
+python3 -m evaluation.run_cases --stage all --ref2va
+
+# 1b) The same run with the I2VA envelope on the default i2v service (lighter, not Table 1)
 python3 -m evaluation.run_cases --stage all
 
 # 2) The render stage needs the resident H3 service (the "H3 loads first, LLM starts

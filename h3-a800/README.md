@@ -59,18 +59,16 @@ process via `torchrun`; the engine rejects world sizes other than 4 and 8
 (smaller world sizes do not fit in 80 GB).
 
 ```bash
-git clone <REPOSITORY_URL>
-cd h3-a800
+git clone https://github.com/Zhangyr2022/StateWorldModel.git
+cd StateWorldModel/h3-a800
 
 conda create -n h3-a800 python=3.12
 conda activate h3-a800
 
-# PyTorch from the CUDA 13 index
-pip install torch==2.10.0+cu130 --index-url https://download.pytorch.org/whl/cu130
-
+# One command: torch 2.10.0+cu130 / torchvision 0.25.0+cu130 come from the CUDA 13 index
 pip install -r requirements.txt
 
-# Download weights (~219 GB with both tasks; gated model — commands below)
+# Download weights (~219 GB with both tasks; needs ~230 GB free)
 python download_checkpoints.py --output-dir ./checkpoints --task both
 
 # Only for --attention-backend sol: fetch the Sol-Attn kernel package (not redistributed)
@@ -113,19 +111,19 @@ h3-a800/
 
 There is no training dataset: this is an inference-only release. The only
 "data" step is provisioning model weights (table below; download and
-verification commands in the root [README → Checkpoints](../README.md#checkpoints-and-models)).
+verification commands in the root [README → Models and data](../README.md#models-and-data)).
 
 ## Pretrained models and checkpoints
 
 | Checkpoint | Required for | Size |
 |---|---|---:|
-| `MiniMaxAI/MiniMax-H3` (gated) | everything | ~210 GB |
+| `MiniMaxAI/MiniMax-H3` (MiniMax H3 Community License) | everything | ~210 GB |
 | `FastVideo-FastH3-4-step-Preview-v1-LoRA` `dense-datafree` | t2v / i2v (dense, sol) | 1.4 GB |
 | `FastVideo-FastH3-4-step-Preview-v1-LoRA` `vsa-datafree` | `--attention-backend vsa` | 5.0 GB |
 | `lightx2v/Minimax-h3-Turbo` ref2v turbo LoRA | `--task ref2va` | 1.3 GB |
 
-Full instructions, including gated-model access and hash verification:
-the root [README → Checkpoints](../README.md#checkpoints-and-models).
+Full instructions, including hash verification:
+the root [README → Models and data](../README.md#models-and-data).
 
 ## Quick start / inference
 
@@ -218,11 +216,11 @@ torchrun --standalone --nproc_per_node=2 tests/test_text_shard_relay.py
 ## Training
 
 This repository is inference-only; no training code is included. The 4-step
-distillation adapters are downloaded as trained artifacts (see the root [README → Checkpoints](../README.md#checkpoints-and-models)).
+distillation adapters are downloaded as trained artifacts (see the root [README → Models and data](../README.md#models-and-data)).
 
 ## Reproducing the measured results
 
-1. Provision weights per the root [README → Checkpoints](../README.md#checkpoints-and-models) and verify hashes.
+1. Provision weights per the root [README → Models and data](../README.md#models-and-data) and verify hashes.
 2. Lock GPU clocks for stable numbers: `nvidia-smi -lgc 1410,1410 -i <0..7>`.
 3. Run the `bench/` script for the configuration of interest — every script
    warms up before measuring; single-shot runs without warmup are invalid on
@@ -248,16 +246,15 @@ comparison against the upstream tree); license notes in the root
 
 ## Citation
 
-This runtime accompanies the paper "State World Models: Execute the Rules,
-Generate the Pixels" (under double-blind review; author list and camera-ready
-entry to be added on acceptance). TODO: fill in the released repository URL:
+This runtime accompanies the paper "State World Models: Execute the Rules, Generate the Pixels"; please cite:
 
 ```bibtex
-@misc{h3a800,
-  title  = {h3-a800: MiniMax-H3 inference on 8{\times}A800 80GB},
-  author = {The h3-a800 authors},
-  year   = {2026},
-  url    = {<REPOSITORY_URL>}
+@misc{stateworldmodels2026,
+  title        = {State World Models: Execute the Rules, Generate the Pixels},
+  author       = {{Chan Yan Ki} and Yanran Zhang and Wenzhao Zheng and Xiaofeng Wang and
+                  Zheng Zhu and Lei Chen and Jie Zhou and Jiwen Lu},
+  year         = {2026},
+  howpublished = {\url{https://ivg-yanranzhang.github.io/StateWorldModel/}}
 }
 ```
 

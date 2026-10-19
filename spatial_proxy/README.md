@@ -106,8 +106,8 @@ first-person cases.
 | Model | Purpose | Required for | Expected path | Download |
 |---|---|---|---|---|
 | WildDet3D `wilddet3d_alldata_all_prompt_v1.0.pt` (~4.7 GB) | open-vocab 3D detection | ③rd-person stage ① only | `WildDet3D/ckpt/` | `huggingface-cli download allenai/WildDet3D wilddet3d_alldata_all_prompt_v1.0.pt --local-dir WildDet3D/ckpt/` |
-| MiniMax-H3 base (~210 GB, gated) | video+audio DiT | stage ⑤ | `../h3-a800/checkpoints/MiniMax-H3/` | see `../README.md#checkpoints-and-models` |
-| Minimax-h3-Turbo ref2v LoRA (1.3 GB) | ref2va 4-step adapter | stage ⑤ | `../h3-a800/checkpoints/Minimax-h3-Turbo/` | see `../README.md#checkpoints-and-models` |
+| MiniMax-H3 base (~210 GB) | video+audio DiT | stage ⑤ | `../h3-a800/checkpoints/MiniMax-H3/` | see [`../README.md#models-and-data`](../README.md#models-and-data) |
+| Minimax-h3-Turbo ref2v LoRA (1.3 GB) | ref2va 4-step adapter | stage ⑤ | `../h3-a800/checkpoints/Minimax-h3-Turbo/` | see [`../README.md#models-and-data`](../README.md#models-and-data) |
 
 First-person mode (① skip: no detection) needs no WildDet3D checkpoint; stages
 ①–④ need no H3 weights. Nothing downloads at runtime — all loads run with
@@ -277,14 +277,15 @@ preparing your own detections.
 
 ## Citation
 
-Placeholder — paper metadata to be added by the authors.
+box2clay is part of the State World Models release; please cite the paper:
 
 ```bibtex
-@misc{box2clay2026,
-  title  = {TODO: Paper title},
-  author = {TODO},
-  year   = {2026},
-  note   = {TODO: URL/arXiv id}
+@misc{stateworldmodels2026,
+  title        = {State World Models: Execute the Rules, Generate the Pixels},
+  author       = {{Chan Yan Ki} and Yanran Zhang and Wenzhao Zheng and Xiaofeng Wang and
+                  Zheng Zhu and Lei Chen and Jie Zhou and Jiwen Lu},
+  year         = {2026},
+  howpublished = {\url{https://ivg-yanranzhang.github.io/StateWorldModel/}}
 }
 ```
 

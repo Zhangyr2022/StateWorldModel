@@ -20,7 +20,7 @@ The repository contains everything around that benchmark:
 3. **`baseline/`** — how the paper's two probe prompts are constructed and
    run on video backends (Rule-only, Track A · Rule+end, Track B).
 
-> **Paper:** TODO (link added on publication) · **Project page:** TODO
+> [Project page](https://ivg-yanranzhang.github.io/StateWorldModel/) · [Paper (PDF)](https://ivg-yanranzhang.github.io/StateWorldModel/static/pdfs/state-world-models.pdf) · [Code](https://github.com/Zhangyr2022/StateWorldModel) · [Dataset](https://huggingface.co/datasets/Louis0411/StateWorldModel)
 
 **Everything about installing, generating the dataset, and running the
 evaluation is in [USAGE.md](USAGE.md).**
@@ -161,12 +161,12 @@ Full pipeline (needs GPUs + FLUX.2/Qwen weights): see **[USAGE.md](USAGE.md)**.
 ## Citation
 
 ```bibtex
-@inproceedings{worldstatebench2027,
-  title     = {State World Models: Execute the Rules, Generate the Pixels},
-  author    = {Anonymous},
-  booktitle = {Under review at ICLR 2027},
-  year      = {2027},
-  note      = {TODO: update with the final author list and venue on acceptance}
+@misc{stateworldmodels2026,
+  title        = {State World Models: Execute the Rules, Generate the Pixels},
+  author       = {{Chan Yan Ki} and Yanran Zhang and Wenzhao Zheng and Xiaofeng Wang and
+                  Zheng Zhu and Lei Chen and Jie Zhou and Jiwen Lu},
+  year         = {2026},
+  howpublished = {\url{https://ivg-yanranzhang.github.io/StateWorldModel/}}
 }
 ```
 

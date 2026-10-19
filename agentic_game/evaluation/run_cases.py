@@ -177,6 +177,13 @@ def cmd_render(args: argparse.Namespace, run_id: str, cases: list[Case]) -> bool
                 f"{socket_path}.log")
     renderer = build_renderer(run_dir, backend=args.renderer, mode=args.mode,
                               socket_path=socket_path, config_path=args.config)
+    if args.renderer == "h3" and not args.ref2va and hasattr(renderer, "ping"):
+        # 上一轮 judge 阶段会拆掉 H3(换成判定机群):渲染前探活一次,不在就直接给出修复命令,
+        # 而不是 100 条逐个失败
+        if renderer.ping(timeout_s=180.0) is None:
+            raise SystemExit(
+                f"H3 service not reachable ({getattr(renderer, 'socket_path', '?')}); "
+                "start it with `bash evaluation/ensure_services.sh` and rerun")
     twins = iter_twins(cases)
     failures: list[str] = []
     rendered = skipped = 0

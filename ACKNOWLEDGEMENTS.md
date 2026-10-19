@@ -29,7 +29,7 @@ license notices.
 
 | Model | Source | License | Used by |
 |---|---|---|---|
-| MiniMax-H3 | [MiniMaxAI/MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) (gated) | MiniMax H3 Community License | the frozen video renderer everywhere |
+| MiniMax-H3 | [MiniMaxAI/MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) | MiniMax H3 Community License | the frozen video renderer everywhere |
 | FastVideo-FastH3-4-step-Preview-v1-LoRA | [FastVideo](https://huggingface.co/FastVideo/FastVideo-FastH3-4-step-Preview-v1-LoRA) | Apache-2.0 | fast t2v/i2v sampling |
 | Minimax-h3-Turbo | [lightx2v](https://huggingface.co/lightx2v/Minimax-h3-Turbo) | inherits MiniMax H3 Community License | ref2va rendering |
 | Qwen3.8-27B | [Qwen/Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) | Apache-2.0 | LLM player/kernel, visual observer, benchmark judge & auditor |

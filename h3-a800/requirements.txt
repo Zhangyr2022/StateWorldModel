@@ -1,5 +1,9 @@
-# torch must come from the PyTorch CUDA-13 index:
-#   pip install --index-url https://download.pytorch.org/whl/cu130 torch==2.10.0+cu130
+# One command installs the tested stack: pip install -r requirements.txt
+# torch / torchvision come from the PyTorch CUDA-13 index and are pinned as a pair (the Qwen3-VL
+# processor in the text encoder needs torchvision; without the torch pin, pip upgrades torch).
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.10.0+cu130
+torchvision==0.25.0+cu130
 accelerate>=1.9
 av>=14
 diffusers @ git+https://github.com/huggingface/diffusers.git@abc5e9bf71fd38f53cd471bc3acaa84bc5ecbfdc

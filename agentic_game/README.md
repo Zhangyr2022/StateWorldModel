@@ -3,7 +3,7 @@
 Code for **"State World Models: Execute the Rules, Generate the Pixels"**
 (framework name in the paper: *Stateful Harness*).
 
-> Paper: TODO (under review) · Project page: TODO · Authors: TODO
+> [Project page](https://ivg-yanranzhang.github.io/StateWorldModel/) · [Paper (PDF)](https://ivg-yanranzhang.github.io/StateWorldModel/static/pdfs/state-world-models.pdf) · [Code](https://github.com/Zhangyr2022/StateWorldModel) · [Dataset](https://huggingface.co/datasets/Louis0411/StateWorldModel)
 
 A player makes a decision → the engine **resolves the turn deterministically
 against an explicit world state** → the resolved event is compiled into a
@@ -35,7 +35,7 @@ reads the repo id from `--repo` / `$SWM_ASSETS_REPO`. Optional: **ffmpeg** on
 `PATH` (replay assembly). Real rendering additionally
 needs the companion `h3-a800` deployment + a Qwen VL checkpoint — see
 [Real rendering](#real-rendering-h3-video--llm-dialogue) and the root
-[Checkpoints](../README.md#checkpoints-and-models) section of the root README.
+[Models and data](../README.md#models-and-data) section of the root README.
 
 ## How to play
 
@@ -210,7 +210,7 @@ Configuration precedence: **built-in defaults ← `config.toml` (template:
 `config.example.toml`) ← environment variables** (`AGENTIC_GAME_RENDERER`,
 `AGENTIC_GAME_H3_REPO`, `AGENTIC_GAME_TORCHRUN`, `AGENTIC_GAME_NPROC`,
 `AGENTIC_GAME_SEED`, `AGENTIC_GAME_MAX_TURNS`). Which weights you need: root
-[Checkpoints](../README.md#checkpoints-and-models) section of the root README.
+[Models and data](../README.md#models-and-data) section of the root README.
 
 ```bash
 python3 run_demo.py --game duel_oracle_machine_epic --renderer h3 --mode remote --agent random
@@ -249,10 +249,11 @@ arXiv:2605.25874), which is **not** included in this release.
 
 ```bibtex
 @misc{stateworldmodels2026,
-  title  = {State World Models: Execute the Rules, Generate the Pixels},
-  author = {TODO: authors},
-  year   = {2026},
-  note   = {Under review. TODO: venue, paper URL, project page}
+  title        = {State World Models: Execute the Rules, Generate the Pixels},
+  author       = {{Chan Yan Ki} and Yanran Zhang and Wenzhao Zheng and Xiaofeng Wang and
+                  Zheng Zhu and Lei Chen and Jie Zhou and Jiwen Lu},
+  year         = {2026},
+  howpublished = {\url{https://ivg-yanranzhang.github.io/StateWorldModel/}}
 }
 ```
 

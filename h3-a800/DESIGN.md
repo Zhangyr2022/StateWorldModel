@@ -101,7 +101,7 @@ count" from exploding as an `index_copy` misalignment deep inside the DiT.
 |---|---|
 | Python / PyTorch | 3.12, torch 2.10.0+cu130, triton 3.6.0, transformers 5.8.1, av, safetensors (`requirements.txt`) |
 | diffusers | pinned at `@abc5e9bf` in `requirements.txt` (the MiniMax-H3 modular pipeline) |
-| checkpoints | `checkpoints/MiniMax-H3` (~210 GB) + `checkpoints/FastH3-4-step-Preview-v1-LoRA/{dense-datafree, vsa-datafree}` + `checkpoints/Minimax-h3-Turbo`; see the root [README → Checkpoints](../README.md#checkpoints-and-models) |
+| checkpoints | `checkpoints/MiniMax-H3` (~210 GB) + `checkpoints/FastH3-4-step-Preview-v1-LoRA/{dense-datafree, vsa-datafree}` + `checkpoints/Minimax-h3-Turbo`; see the root [README → Models and data](../README.md#models-and-data) |
 | driver | 595.45.04 (CUDA 13); lock clocks before benchmarking: `nvidia-smi -lgc 1410,1410 -i <0..7>` |
 
 ### Required environment variables (`run.sh` bakes them in)

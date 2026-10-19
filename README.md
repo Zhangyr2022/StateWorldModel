@@ -38,6 +38,9 @@ With the same frozen MiniMax-H3 weights, PairFollow rises from 32% (Rule-only pr
   <br>
   <sub>Autoplaying preview of the project film. Click it for the full 2:59 film with sound.</sub>
 </p>
+<!-- GitHub video player: edit this file on github.com and drag assets/StateWorldModels_demo_v7_github_10MB.mp4
+     onto the next line; GitHub uploads it and inserts a https://github.com/user-attachments/assets/… link,
+     which renders as an inline player (repository files, raw URLs and <video> tags are not rendered). -->
 
 ## Contents
 
@@ -78,8 +81,7 @@ pip install -r agentic_game/requirements.txt -r worldstate_bench/requirements.tx
 
 # GPU environment for MiniMax-H3 and the resident renderer / Qwen services
 conda create -n h3-a800 python=3.12 -y && conda activate h3-a800
-pip install torch==2.10.0+cu130 --index-url https://download.pytorch.org/whl/cu130
-pip install -r h3-a800/requirements.txt
+pip install -r h3-a800/requirements.txt      # pins torch 2.10.0+cu130 / torchvision 0.25.0+cu130 (CUDA 13 index)
 ```
 
 | Environment | Used for |
@@ -89,7 +91,7 @@ pip install -r h3-a800/requirements.txt
 | `flux2`, `kairos` | regenerating the benchmark and its standalone judge: `bash worldstate_bench/generation/ops/envs/rebuild_envs.sh <conda-prefix>` |
 | `bpy311`, `wilddet3d` | spatial preview only ([setup](spatial_proxy/README.md#installation)) |
 
-The services start their workers from `$CONDA_ENVS_ROOT/h3-a800/bin/python` (default `~/miniconda3/envs`). Cross-project paths are derived from the side-by-side layout; override them with `WORKSPACE_ROOT`.
+The resident services find the GPU environment by name: workers run `$CONDA_ENVS_ROOT/h3-a800/bin/python` (default `CONDA_ENVS_ROOT=~/miniconda3/envs`) and the first `torchrun` on `PATH`. If you name the environment differently, or another PyTorch install is on `PATH`, set `AGENTIC_GAME_TORCHRUN=<env>/bin/torchrun` and `AGENTIC_GAME_QWEN_PYTHON=<env>/bin/python` (or `CONDA_ENVS_ROOT`) explicitly. Cross-project paths are derived from the side-by-side layout; override them with `WORKSPACE_ROOT`.
 Behind a slow network, use `pip -i https://pypi.tuna.tsinghua.edu.cn/simple` and `HF_ENDPOINT=https://hf-mirror.com`.
 
 ## Models and data
@@ -100,7 +102,7 @@ No third-party libraries, weights or data are stored in git. Download what you n
 |---|---|---|
 | Game first frames (~94 MB) | games and `agentic_game` tests | `cd agentic_game && python download_assets.py` |
 | WorldState-Bench (~63 MB) | benchmark evaluation | `cd worldstate_bench && python download_data.py` → `data/cases/` |
-| [MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) (~210 GB, gated) | all rendering | accept the license, `hf auth login`, then `cd h3-a800 && python download_checkpoints.py --output-dir ./checkpoints --task both` (~230 GB free) |
+| [MiniMax-H3](https://huggingface.co/MiniMaxAI/MiniMax-H3) (~210 GB, MiniMax H3 Community License) | all rendering | `cd h3-a800 && python download_checkpoints.py --output-dir ./checkpoints --task both` (needs ~230 GB free; the script checks first) |
 | [FastH3 4-step LoRA](https://huggingface.co/FastVideo/FastVideo-FastH3-4-step-Preview-v1-LoRA) (1.4 / 5.0 GB) | fast T2V / I2V (default) | included in `download_checkpoints.py` |
 | [Minimax-h3-Turbo ref2v LoRA](https://huggingface.co/lightx2v/Minimax-h3-Turbo) (1.3 GB) | `--task ref2va` | included in `download_checkpoints.py` |
 | Sol-Attn kernel ([NVlabs/Sana](https://github.com/NVlabs/Sana), `sol-engine`) | `--attention-backend sol` only | `cd h3-a800 && bash fetch_sol_attn.sh` (pinned commit + one patch) |
@@ -203,15 +205,17 @@ Field schema: [`worldstate_bench/README.md`](worldstate_bench/README.md#dataset-
 
 </details>
 
-**Evaluate Stateful Harness** (Table 1, our row). Results (`metrics.json`, `report.md`, verdicts, clips) land in `agentic_game/evaluation/output/casebench/runs/<run_id>/`. The judge stage stops H3 and runs an 8-worker Qwen fleet; run stages separately with `--stage render|judge|report` and pick cases with `--case B01`.
+**Evaluate Stateful Harness** (Table 1, our row). Table 1 uses the `--ref2va` setting: the shared first frame is passed to MiniMax-H3 Ref2VA as an image reference, with the Minimax-h3-Turbo ref2v LoRA, on all 8 GPUs. Free the GPUs, then run all stages; the command starts the Ref2VA service when it is not running, renders the 100 clips and judges them with an 8-worker Qwen fleet.
 
 ```bash
 (cd worldstate_bench && python download_data.py)        # the 50 cases, once
 cd agentic_game
-bash evaluation/ensure_services.sh                      # resident H3 + Qwen services
-python3 -m evaluation.run_cases --stage all             # checks → render → judge → report
+python3 -m engine.renderer.service stop; python3 -m engine.llm.service stop    # free all 8 GPUs
+python3 -m evaluation.run_cases --stage all --ref2va    # Table 1 setting: checks → render → judge → report
 python3 -m evaluation.run_cases --stage all --renderer fake --judge heuristic   # CPU wiring test only
 ```
+
+Results (`metrics.json`, `report.md`, verdicts, clips) land in `agentic_game/evaluation/output/casebench/runs/<run_id>/`. An independent rerun of this command on 8×A800 reproduced all seven Table 1 numbers exactly. Run stages separately with `--stage render|judge|report` and pick cases with `--case B01`. Without `--ref2va` the harness renders with the I2V envelope on the 4-GPU resident service (`bash evaluation/ensure_services.sh` first; the judge stage shuts that service down, so run the script again before the next render). This lighter setting is not the one reported in Table 1.
 
 **Evaluate your own model.** Render 100 clips per probe from the prompts compiled by `worldstate_bench/baseline/prompts_common.py` (wrappers for Wan2.2, LongCat-Video and HunyuanVideo-1.5 are in [`baseline/`](worldstate_bench/baseline)). Save them as `worldstate_bench/runs/<model>/raw/<CASE>-<SIDE>.mp4` and `.../raw_state/<CASE>-<SIDE>.mp4` (B01–B50 × A/B, e.g. `B01-A.mp4`), then judge:
 
@@ -261,14 +265,14 @@ The detection, rendering and QC steps are in its [pipeline guide](spatial_proxy/
 
 | Result | How |
 |---|---|
-| Table 1, Stateful Harness | `agentic_game`: `python3 -m evaluation.run_cases --stage all` |
+| Table 1, Stateful Harness | `agentic_game`: `python3 -m evaluation.run_cases --stage all --ref2va` |
 | Table 1, baselines | clips for both probes + `worldstate_bench`: `python3 -m evaluation.run_eval` |
 | Benchmark construction | `worldstate_bench/generation/run.py` |
-| Harness prompt variants | `run_cases.py --prompt-mode` (`envelope`, `remain`, `framework`, `raw`), `--ref2va` |
+| Harness prompt variants | `run_cases.py --prompt-mode` (`envelope`, `remain`, `framework`, `raw`), with or without `--ref2va` |
 | Tables 2 and 8 (WBench) | `agentic_game/game/wbench/` + `spatial_proxy/box2clay/` with the third-party WBench release |
 | Renderer latency | `h3-a800/bench/` ([DESIGN.md](h3-a800/DESIGN.md)) |
 
-Rule settlement is exactly reproducible: the same state, actions and seed give the same trajectory, with randomness only from the injected `Rng(seed)`. Rendering and VLM judging are generative and vary between runs.
+Rule settlement is exactly reproducible: the same state, actions and seed give the same trajectory, with randomness only from the injected `Rng(seed)`. Rendering uses fixed seeds (`--seed 0`) and the judge decodes greedily, so the Table 1 run repeats exactly on the same hardware and software stack; other GPUs or library versions can change individual clips.
 
 **Tests**
 

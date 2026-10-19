@@ -28,6 +28,11 @@ pip install -r requirements.txt                                 # build env (pyy
 bash generation/ops/envs/rebuild_envs.sh <conda-prefix>         # render + review envs
 ```
 
+The script never touches existing environments: if `flux2` or `kairos` already exists it stops
+without changes. Pick other names with `FLUX2_ENV=… KAIROS_ENV=…`, or pass `--force` to delete and
+rebuild them. flash-attn comes from a local wheel in `generation/ops/envs/wheels/` when present,
+otherwise from the upstream prebuilt wheel (falling back to a source build).
+
 | Env | Python | Key pins (verified) | GPU memory |
 |---|---|---|---|
 | `flux2` (render) | 3.11 | torch 2.14.0 · diffusers 0.40.0 · torchvision 0.29.0 | 2×24 GB+ per render shard |
@@ -35,7 +40,7 @@ bash generation/ops/envs/rebuild_envs.sh <conda-prefix>         # render + revie
 
 Evaluation additionally needs system **ffmpeg**.
 
-**Weights** (download commands: root [README → Checkpoints](../README.md#checkpoints-and-models)):
+**Weights** (download commands: root [README → Models and data](../README.md#models-and-data)):
 
 | Model | Purpose | Size |
 |---|---|---|
@@ -145,7 +150,8 @@ with `<CLIP>` = `<CASE>-<SIDE>` (e.g. `B01-A`), 100 clips per mode.
 # Full chain: data self-check → materialize → per-GPU shard judging → report
 python3 -m evaluation.run_eval --models wan22 --gpus 0,1,2,3
 
-# Zero-GPU dry run (heuristic fills expected answers — NOT a real result)
+# Zero-GPU dry run (heuristic fills expected answers — NOT a real result; needs the clips in place,
+# and exits with an error when no clips are found)
 python3 -m evaluation.run_eval --models wan22 --limit 1 --judge heuristic
 
 # Stages (all resumable; verdicts dedupe by existence)

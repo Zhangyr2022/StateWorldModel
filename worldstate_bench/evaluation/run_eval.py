@@ -279,6 +279,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if ok else 1
 
     models = [name.strip() for name in args.models.split(",") if name.strip()]
+    evaluated = 0
     for model in models:
         for mode in ("raw", "raw_state"):
             if not (runs_root / model / mode).is_dir():
@@ -286,6 +287,7 @@ def main(argv: list[str] | None = None) -> int:
                 logger.warning("[materialize] skip %s/%s: runs/%s/%s missing",
                                model, mode, model, mode)
                 continue
+            evaluated += 1
             run_id, run_dir = materialize(model, mode, cases,
                                           runs_root=runs_root, force=args.force)
             if args.stage == "materialize":
@@ -305,6 +307,20 @@ def main(argv: list[str] | None = None) -> int:
                 cmd_report(ns_args, run_dir, cases)
             if not ok:
                 return 1
+    if not evaluated:
+        if args.stage == "headless":
+            # 没有提交的 clip 时,headless 退化为数据集自洽检查(与 USAGE.md §3 代码段等价)
+            from evaluation.headless import run_headless
+
+            passed, checked = run_headless(cases)
+            print(f"[headless] no clips under {runs_root}; dataset self-check: "
+                  f"{passed}/{len(checked)} clips self-consistent", flush=True)
+            return 0 if passed == len(checked) else 1
+        # 静默成功会掩盖"先放 clip"的前提:没有任何 (model, mode) 被评测就按失败退出
+        print(f"[run_eval] nothing evaluated: no clips under "
+              f"{runs_root}/<model>/{{raw,raw_state}}/ for --models {args.models}. "
+              "Generate or copy the clips first (USAGE.md § 3).", file=sys.stderr, flush=True)
+        return 1
     return 0
 
 
