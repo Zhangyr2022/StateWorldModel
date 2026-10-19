@@ -1,0 +1,5 @@
+# worldstate_bench 核心包(run.py build / package 链)的最小依赖。
+# render / review 的重依赖环境(torch、diffusers、vLLM 等)不入本文件——
+# 用 ops/envs/{flux2,kairos}.pip-freeze.txt 重建,或按 ops/envs/rebuild_envs.sh 走。
+pyyaml>=5.4
+huggingface_hub>=0.30        # one-time dataset download (download_data.py)

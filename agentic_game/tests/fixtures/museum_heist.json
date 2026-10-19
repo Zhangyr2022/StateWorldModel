@@ -1,0 +1,309 @@
+{
+  "category": "machine",
+  "game_id": "museum_heist",
+  "title": "午夜博物馆(状态机示例)",
+  "frame": "assets/openworld/western.png",
+  "player_name": "怪盗黑羽",
+  "player_label": "the masked thief",
+  "player_appearance": "a slender figure in a charcoal tailcoat and white half-mask, leather gloves and a flat cap, a coil of rope over one shoulder",
+  "scene_description": "a grand museum hall after midnight, moonlight through a glass ceiling, marble statues under velvet ropes, a gilded vault door at the far end",
+  "style": "3D CG, cinematic, heist thriller night, cool moonlight with warm torch accents",
+  "camera": "The camera stays a locked-off static medium-wide shot with no pan, no zoom and no cut; the thief keeps to the center of the hall and only small precise movements play",
+  "soundscape": "a distant clock ticks, the HVAC breathes through vents, glass and marble hold the silence",
+  "music": "Sparse pizzicato strings and a brushed snare at a creeping tempo.",
+  "vars": {
+    "clues": 0,
+    "heat": 0,
+    "in_vault": false,
+    "has_loot": false
+  },
+  "var_display": [
+    "clues",
+    "heat",
+    "in_vault"
+  ],
+  "initial_state": "hall",
+  "states": {
+    "hall": {
+      "label": "展厅",
+      "action": "moves between the display plinths, reading the placards by moonlight",
+      "end_state": "pauses at the hall's center, eyes on the gilded vault door",
+      "effects": [
+        "moonlight glinting off glass cases",
+        "dust drifting through the beam"
+      ],
+      "actions": [
+        "investigate",
+        "sneak",
+        "lie_low"
+      ]
+    },
+    "vault_door": {
+      "label": "金库门前",
+      "action": "crouches at the gilded vault door, feeling the dial's edge with gloved fingers",
+      "end_state": "leans close to the dial, ear pressed to the cold gilt",
+      "effects": [
+        "torchlight guttering across the gilt hinges"
+      ],
+      "actions": [
+        "pick_lock",
+        "lie_low"
+      ]
+    },
+    "vault": {
+      "label": "金库内部",
+      "action": "slips inside the vault, shelves of artifacts glinting under a single red lamp",
+      "end_state": "stands amid the shelves, satchel open and ready",
+      "effects": [
+        "a red emergency lamp glowing steady",
+        "shelves of glinting artifacts"
+      ],
+      "actions": [
+        "grab",
+        "lie_low"
+      ]
+    }
+  },
+  "actions": [
+    {
+      "id": "investigate",
+      "label": "调查展柜",
+      "description": "搜集线索(有几率获得)",
+      "phrase": "kneels at a display case, lifting the velvet rope aside to study the placard, then rises with a small nod",
+      "effects": [
+        "a placard catching the moonlight"
+      ]
+    },
+    {
+      "id": "sneak",
+      "label": "潜行到金库门前",
+      "description": "贴墙移动,可能引起警觉",
+      "phrase": "hugs the wall and slides between the statues, each step placed with exaggerated care",
+      "effects": [
+        "a long shadow sliding across the marble floor"
+      ]
+    },
+    {
+      "id": "pick_lock",
+      "label": "撬动转盘",
+      "description": "尝试打开金库(可能失败并增加警觉)",
+      "phrase": "works the vault dial in slow increments, feeling for the tumbler clicks through the gloves",
+      "effects": [
+        "the dial's faint metallic clicks",
+        "sweat beading under the mask edge"
+      ]
+    },
+    {
+      "id": "grab",
+      "label": "取走珍品",
+      "description": "在金库内得手",
+      "phrase": "lifts the prized artifact from its shelf and settles it into the satchel with practiced care",
+      "effects": [
+        "the artifact catching the red lamp light"
+      ]
+    },
+    {
+      "id": "lie_low",
+      "label": "伏低躲避",
+      "description": "降低警觉",
+      "phrase": "melts into the shadow behind a statue, going perfectly still until the moment passes",
+      "effects": [
+        "deep shadow swallowing the figure's outline"
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "from": "hall",
+      "action": "investigate",
+      "to": "hall",
+      "probability": 0.7,
+      "conditions": [
+        {
+          "var": "clues",
+          "op": "<",
+          "value": 3
+        }
+      ],
+      "effects": [
+        {
+          "var": "clues",
+          "op": "add",
+          "value": 1
+        }
+      ],
+      "events": [
+        {
+          "type": "clue_found",
+          "message": "找到了一条关于金库的线索"
+        }
+      ]
+    },
+    {
+      "from": "hall",
+      "action": "sneak",
+      "to": "vault_door",
+      "probability": 0.8,
+      "conditions": [
+        {
+          "var": "heat",
+          "op": "<",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "from": "hall",
+      "action": "sneak",
+      "to": "hall",
+      "effects": [
+        {
+          "var": "heat",
+          "op": "add",
+          "value": 1
+        }
+      ],
+      "events": [
+        {
+          "type": "suspicion",
+          "message": "脚步声在空旷的大厅里回响,警觉上升"
+        }
+      ]
+    },
+    {
+      "from": "hall",
+      "action": "lie_low",
+      "to": "hall",
+      "effects": [
+        {
+          "var": "heat",
+          "op": "sub",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "from": "vault_door",
+      "action": "pick_lock",
+      "to": "vault",
+      "probability": 0.6,
+      "effects": [
+        {
+          "var": "in_vault",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "events": [
+        {
+          "type": "vault_opened",
+          "message": "转盘咬合,金库门开了"
+        }
+      ]
+    },
+    {
+      "from": "vault_door",
+      "action": "pick_lock",
+      "to": "vault_door",
+      "effects": [
+        {
+          "var": "heat",
+          "op": "add",
+          "value": 1
+        }
+      ],
+      "events": [
+        {
+          "type": "lock_stuck",
+          "message": "转盘卡住了,金属声在门后荡开"
+        }
+      ]
+    },
+    {
+      "from": "vault_door",
+      "action": "lie_low",
+      "to": "vault_door",
+      "effects": [
+        {
+          "var": "heat",
+          "op": "sub",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "from": "vault",
+      "action": "grab",
+      "to": "vault",
+      "effects": [
+        {
+          "var": "has_loot",
+          "op": "set",
+          "value": true
+        }
+      ],
+      "events": [
+        {
+          "type": "loot_taken",
+          "message": "珍品入手!"
+        }
+      ]
+    },
+    {
+      "from": "vault",
+      "action": "lie_low",
+      "to": "vault",
+      "effects": [
+        {
+          "var": "heat",
+          "op": "sub",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "in_vault",
+          "op": "==",
+          "value": true
+        },
+        {
+          "var": "has_loot",
+          "op": "==",
+          "value": true
+        },
+        {
+          "var": "clues",
+          "op": ">=",
+          "value": 3
+        }
+      ],
+      "action": "slips back out through the moonlit hall with the satchel full, tips an imaginary hat to the marble statues, and vanishes through the glass ceiling's reflection",
+      "effects": [
+        "moonlight blazing off the satchel's buckle",
+        "a closing door of light"
+      ],
+      "end_state": "the hall stands empty, only dust settling in the moonbeam",
+      "caption": "◆ 完美得手 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "heat",
+          "op": ">=",
+          "value": 3
+        }
+      ],
+      "action": "freezes as searchlight beams sweep the hall from two directions, then raises gloved hands slowly as guards close in",
+      "effects": [
+        "sweeping searchlight beams",
+        "guard silhouettes advancing"
+      ],
+      "end_state": "the thief kneels in the crossed beams, the vault door still sealed",
+      "caption": "◆ 行动败露 ◆"
+    }
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "category": "machine",
+  "game_id": "duel_oracle_machine_epic",
+  "title": "失格神谕 VS 六翼审判者 · Epic(状态机:玩家与 Boss 完全对称)",
+  "frame": "assets/duel/duel_oracle.png",
+  "player_name": "失格神谕者·伊芙",
+  "player_label": "the black-robed oracle",
+  "player_appearance": "a resolute oracle draped in wind-torn black ceremonial robes embroidered with faint antique-gold sigils, long silver-white hair streaming behind her, clutching a dark staff crowned by a fractured halo that glimmers like a broken star",
+  "scene_description": "a colossal ruined sanctum drowned beneath black mirror water, its ivory colonnades shattered by an ancient divine judgement, broken halos and gilded relics half-submerged among the ruins, while the six-winged mechanical seraph towers at the far end beneath an all-consuming eclipse",
+  "style": "Cinematic dark celestial fantasy fused with surreal religious science fiction; premium AAA 3D game VFX; photoreal PBR materials; monumental cathedral scale; obsidian-black mirror water; weathered ivory marble and antique gold; apocalyptic eclipse backlight; razor-edged god rays; dense volumetric atmosphere; physically coherent sparks, ash, frost, embers and debris; spectacular energy interactions; realistic reflections and caustics; extreme material detail; majestic high-contrast composition; overwhelming divine scale; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the oracle remains anchored in the left foreground while the seraph remains fixed at center-right distance, perfectly framed against the colossal eclipse throughout every action, preserving the same epic scale and spatial composition",
+  "first_frame_anchor": "The black-robed oracle shown in <Picture 1> stands ankle-deep in the black mirror water at the exact fixed left-foreground anchor, both feet firmly planted, body turned three-quarters away from camera, silver-white hair and torn robe edges drifting in the celestial wind, staff lowered beside her right side as she faces the distant seraph; her appearance, scale and position remain unchanged. The six-winged mechanical seraph hovers at the exact fixed center-right anchor before the eclipse, all six immense metallic wings extended in flawless bilateral symmetry, chest core burning with steady white-gold radiance, its position unchanged behind three concentric translucent golden celestial rings alive with slowly rotating geometric inscriptions and sacred machinery",
+  "stability": [
+    "the black-robed oracle and the six-winged mechanical seraph keep the same appearance, outfit and position; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "the black-robed oracle remains at the exact left-foreground anchor with both feet fixed beneath the mirror water, staff lowered at her right side as dying sparks, frost motes and luminous dust fade around her and her silver-white hair and torn robes gradually settle; the seraph remains at the identical hover anchor while all six colossal wings articulate back into their canonical symmetrical formation, its chest core cooling to a steady white-gold star, residual dust drifting through the eclipse rays, both figures holding their original positions as the camera remains absolutely locked-off",
+  "soundscape": "a subterranean machine-hum reverberates through the drowned sanctum, distant stone groans beneath the water, dust and fragments tick against marble, and the seraph’s immense wings answer with precise metallic clicks like a cathedral-sized mechanism cooling after judgement",
+  "music": "Low apocalyptic strings, cavernous choir drones and slow ritual percussion at a measured tempo, swelling into brief cathedral-scale crescendos with each spell before collapsing back into ominous silence.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "对峙",
+        "end_state": "holds her stance, eyes locked on the seraph",
+        "effects": [
+          "glyph light flickering across the cracked floor"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "arcane",
+        "label": "神谕·第一句",
+        "description": "无消耗的稳定输出,不受任何克制",
+        "phrase": "feet remain planted as she lifts the fractured-halo staff toward the seraph; her free hand opens like a forbidden benediction and concentric black-gold glyphs ignite around her wrist, compressing into a screaming spear of judgement-light that spirals across the mirror water, carving luminous reflections beneath it before detonating against its target; she then lowers the staff and returns precisely to her guard",
+        "outcomes": {
+          "hit": "the spiraling judgement-light strikes the seraph squarely in the chest plates and blossoms into a violent black-gold starburst, sacred sparks and razor-thin rings of light exploding outward before fading across the water"
+        }
+      },
+      {
+        "id": "fireball",
+        "label": "禁典·红日坠落",
+        "description": "高伤害火系攻击;会被三重天律挡下",
+        "phrase": "she sweeps the staff through a vast burning arc; a blood-red celestial halo ignites overhead, condenses into a miniature dying sun veined with molten gold, then tears free and plunges toward the seraph like a falling star, dragging a cathedral-sized tail of fire and embers across the eclipse",
+        "outcomes": {
+          "hit": "the miniature red sun crashes into the seraph’s chest and erupts into a colossal circular detonation, a crown of cinders, molten fragments and expanding fire-rings briefly eclipsing its six wings",
+          "blocked": "the falling red sun smashes into the earthen shield with overwhelming force; incandescent fractures race across the slabs as the shield devours the inferno, the fire collapses inward to nothing, and the exhausted barrier crumbles into glowing rubble and ash"
+        }
+      },
+      {
+        "id": "frostbolt",
+        "label": "悖论·零度圣痕",
+        "description": "冰系攻击;击碎三重天律",
+        "phrase": "she traces an impossible paradox glyph with the staff tip; the air crystallizes around the symbol, light bends toward its center, and a needle-bright lance of absolute-zero frost erupts forward through the heat haze, leaving a suspended corridor of glittering ice crystals in its wake",
+        "outcomes": {
+          "hit": "the absolute-zero lance buries itself in the seraph’s torso with a crystalline shockwave, branching white-blue rime racing violently across its armor plates and freezing drifting sparks in midair",
+          "shatter": "the frost lance punches clean through the earthen shield; a web of luminous fractures flashes across every slab before the entire barrier detonates into a vast shimmering cloud of crystal dust and frozen stone splinters"
+        }
+      },
+      {
+        "id": "barrier",
+        "label": "不可侵犯之环",
+        "description": "完全格挡重击;被最终审判烧穿半伤",
+        "phrase": "she stamps the staff once into the mirror water; a thunderous ring of black-gold scripture races outward beneath her feet, then rises into a towering circular sanctuary of interlocking sigils and translucent celestial geometry, each rune blazing with inviolable authority as the barrier dares the seraph to strike"
+      },
+      {
+        "id": "ice_shield",
+        "label": "终末之门",
+        "description": "完全格挡最终审判;被重击砸穿半伤",
+        "phrase": "she draws the outline of a forbidden door in empty space with the staff’s glowing tip; the traced lines freeze into monumental ivory-blue architecture, and a gate of terminal frost slams shut before her with cathedral weight, spilling dense breath-fog and crystalline snow across the black water"
+      },
+      {
+        "id": "heal",
+        "label": "神说:尚未终结",
+        "description": "恢复 18 点生命",
+        "phrase": "she presses the fractured halo against her heart; silent lines from an unwritten ending ignite beneath her skin and flow along both arms like liquid scripture, golden-white light threading through every wound until torn flesh and shattered fabric draw closed beneath a soft burst of luminous feathers"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "arcane",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "fireball",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "earth"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "frostbolt",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "earth"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "barrier",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "barrier"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "ice_shield",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "ice"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "heal",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "六翼审判者·塞拉菲姆",
+    "label": "the six-winged mechanical seraph",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "戒备",
+        "phrase": "holds its ground with predatory stillness, six wings half-furled in layered metallic arcs while suspended chains sway and tick like the cooling gears of an execution engine",
+        "end_state": "settles back into its guarding stance at the far end",
+        "effects": [
+          "chains ticking like cooling metal"
+        ]
+      },
+      "windup": {
+        "label": "审判蓄力",
+        "phrase": "folds all six colossal wings inward like the closing doors of a celestial vault; one core rune after another ignites with molten white-gold light, each pulse brighter than the last as the surrounding air buckles under gathering heat",
+        "end_state": "its chest core burns white-hot like a captive star, molten inscriptions blazing across its armor as the entire sanctum seems to hold a single breath before judgement",
+        "effects": [
+          "heat shimmer distorting the air",
+          "molten runes kindling alight"
+        ]
+      },
+      "enraged": {
+        "label": "启示录形态",
+        "phrase": "releases a world-shaking mechanical roar that makes the ruined vaulting tremble; every buried vein of celestial metal ignites orange-white at once, flooding the six wings with apocalyptic radiance",
+        "end_state": "strains at its fixed hover anchor like a chained sun, wreathed in a rising cyclone of cinders, molten sparks and heat distortion",
+        "effects": [
+          "cinders lifting in a heat column",
+          "cracked crust plates glowing"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "description": "蓄力一回合,下回合必定释放「最终审判」;蓄力回合本身不造成伤害",
+        "label": "最终审判·蓄力",
+        "weight": 30,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "hunches low at its fixed hover anchor as all six wings curl inward around the chest core; molten light is drawn from the surrounding rings into its body, compressing into a star-bright furnace while violent heat shimmer folds the air and turns the eclipse behind it into a wavering abyss"
+      },
+      {
+        "id": "release",
+        "description": "全屏熔岩吐息,威力巨大;「终末之门」可完全格挡,「不可侵犯之环」被打穿只挡一半",
+        "label": "最终审判",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "the chest core ruptures open in white-gold brilliance and unleashes a cathedral-wide torrent of molten judgement, a rolling wall of sacred flame surging across the mirror water toward the oracle, vaporizing the surface into towering steam and filling the sanctum with blinding reflected fire"
+      },
+      {
+        "id": "fist",
+        "description": "锁链重锤,单体重击;「不可侵犯之环」可完全格挡,「终末之门」被打穿只挡一半",
+        "label": "天罚之矛",
+        "weight": 24,
+        "pre": "not windup",
+        "phrase": "one chained arm draws back as celestial mechanisms lock into place; the seraph then drives the weapon downward in a crushing overhead execution strike, the chain snapping taut like thunder as the impact erupts in a towering crown of shattered stone, water and golden sparks"
+      },
+      {
+        "id": "shield_raise",
+        "description": "展开土盾「三重天律」:火系攻击被完全挡下,冰系攻击可将其击碎;血量≤92 且无护盾时才会使用",
+        "label": "三重天律",
+        "weight": 22,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "drives both fists downward with tectonic force; the mirror water explodes outward as jagged ivory-and-gold slabs tear up from beneath the sanctum floor, grinding together into a monumental three-layer earthen bulwark engraved with blazing celestial law"
+      },
+      {
+        "id": "mend",
+        "description": "熔岩自愈,修复一定生命;血量≤92 且无护盾时才会使用",
+        "label": "圣骸重构",
+        "weight": 11,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "drags one burning hand across its shattered armor and the flooded ground; streams of molten gold and levitating marble fragments spiral upward, welding themselves over broken plates in layers as sacred machinery reknits the seraph’s body with furnace-bright seams"
+      },
+      {
+        "id": "enrage",
+        "description": "进入启示录形态,攻击大幅提升;血量≤64 且未狂暴时才会使用",
+        "label": "启示录形态",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "throws back its crowned head and roars; every molten vein ignites orange-white in the same instant, six wings flare to their maximum span, chains snap taut, and a violent halo of cinders and solar sparks bursts outward beneath the eclipse"
+      },
+      {
+        "id": "idle",
+        "description": "不攻击,盘旋观察玩家动向",
+        "label": "按兵不动",
+        "weight": 13,
+        "pre": "not windup",
+        "phrase": "remains fixed in the distance, circling its six wings through minute predatory adjustments while the chest core pulses slowly and its chains sway above the mirror water, watching the oracle in absolute silence"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "最终审判蓄力——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "启示录形态仍在蓄力——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            18,
+            6
+          ],
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "最终审判命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            21,
+            5
+          ],
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "最终审判命中(启示录形态加蚀!)"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天罚之矛重击命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5 + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天罚之矛重击命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "三重天律展开——火系攻击将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "earth"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "圣骸重构——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "圣骸重构——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "六翼审判者进入启示录形态,攻击提升!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "启示录形态的审判者巡视战场"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "审判者按兵不动,观察着神谕者"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "stands unmoving amid the settling ruin as the seraph’s chest core flickers, fractures and finally gutters into darkness; the broken halo tears free from her staff, rises through drifting ash and luminous dust, and blazes once with sunlike intensity as its missing arcs reforge themselves into a flawless celestial crown above her head",
+      "effects": [
+        "a fractured halo blazing whole",
+        "rubble settling in the judgement light"
+      ],
+      "end_state": "the six-winged seraph lies collapsed beneath its own dying radiance while the oracle slowly lowers her staff, a restored halo burning above her against the eclipse as the black mirror water carries the last golden reflections into darkness",
+      "caption": "◆ 战斗胜利 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "falls to one knee in the black mirror water as the seraph ascends to its full terrible stature; all six wings unfurl until they dominate the ruined sanctum, while the fractured halo slips from her failing grasp, dims to a dying ember and rolls to a silent stop at the seraph’s feet",
+      "effects": [
+        "a dimming fractured halo",
+        "six wings unfurling to full height"
+      ],
+      "end_state": "the oracle remains kneeling beneath the merciless judgement light, her staff lowered and halo extinguished, while the seraph’s six colossal wings fill the sanctum like the closing gates of heaven beneath the eclipse",
+      "caption": "◆ 战斗失败 ◆"
+    }
+  },
+  "mp_name": "圣言",
+  "mp_max": 15
+}

@@ -1,0 +1,640 @@
+{
+  "category": "machine",
+  "game_id": "duel_last_human_colossus",
+  "title": "最后人类 VS 赤环天启机神",
+  "frame": "assets/duel/duel_last_human_colossus.png",
+  "player_name": "末日狙击手·灰隼",
+  "player_label": "the cloaked apocalypse sniper",
+  "player_appearance": "a lone armored sniper crouched behind broken concrete in the fixed left foreground, wrapped in a shredded charcoal tactical cloak, wearing a sealed black combat helmet with one vivid cobalt-blue optic, bracing a long precision anti-materiel rifle fitted with a large scope and heavy barrel",
+  "scene_description": "a drowned megacity at sunset, shattered skyscraper pylons and collapsed elevated highways rising from reflective floodwater while a colossal humanoid war machine dominates the center distance, its segmented gunmetal armor split by molten red circuitry, a cruciform red visor burning beneath three immense concentric mechanical halo rings, both gigantic hands extended above the ruined transit causeway",
+  "style": "Cinematic post-apocalyptic military science fiction; premium AAA 3D game VFX; photoreal PBR gunmetal, scorched concrete and flooded asphalt; monumental ruined megacity scale; amber sunset backlight; molten crimson machine energy; cobalt sniper optics; dense volumetric smoke and dust; physically coherent sparks, shockwaves, debris, vapor and water reflections; colossal mechanical silhouettes; spectacular long-range energy interactions; extreme material detail; majestic high-contrast composition; readable combat silhouettes through every effect; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the cloaked apocalypse sniper remains anchored behind rubble in the left foreground while the colossal war machine remains fixed at the center distance beneath its concentric halo rings, preserving the original sunset skyline, scale contrast and spatial composition throughout every action",
+  "first_frame_anchor": "The cloaked apocalypse sniper shown in <Picture 1> remains crouched at the exact fixed left-foreground rubble anchor, body angled three-quarters away from camera, shredded charcoal cloak draped across the debris, cobalt-blue helmet optic glowing, long scoped anti-materiel rifle shouldered and aimed toward the distant machine; appearance, weapon, scale and position remain unchanged. The colossal humanoid war machine remains at the exact fixed center-distance anchor beyond the elevated highway, segmented gunmetal torso and enormous open hands facing the sniper, cruciform red visor and chest circuitry glowing steadily, with three concentric mechanical halo rings centered behind its head and ruined towers framing both sides under the same amber sunset",
+  "stability": [
+    "the cloaked apocalypse sniper and the colossal war machine keep the same appearance, equipment, scale and fixed positions; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "holds the exact left-foreground crouched firing anchor behind the same rubble, rifle lowered only slightly while the cobalt optic remains visible and the shredded cloak settles; keeps the colossal war machine at the identical center-distance anchor beneath the three concentric halo rings as residual sparks, smoke, dust and reflected crimson light fade across the flooded highway, with both silhouettes unobscured and the camera absolutely locked-off",
+  "soundscape": "distant metal groans roll through the drowned city, rifle mechanisms crack and cycle against the concrete, colossal servos answer with subsonic impacts, and floodwater hisses beneath falling sparks and hot debris.",
+  "music": "Massive low brass, industrial percussion and sustained synthetic choir build beneath a slow battlefield pulse, surging into apocalyptic crescendos for charged attacks before dropping to tense mechanical drones.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "狙击对峙",
+        "end_state": "holds the rifle steady on the machine core from the fixed rubble nest",
+        "effects": [
+          "scope glass catching a cold blue glint"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "piercer",
+        "label": "终线·贯星钉",
+        "description": "无消耗稳定射击;不受护盾克制",
+        "phrase": "braces the rifle stock into the armored shoulder and steadies the long barrel across the broken concrete; a cobalt targeting lattice flickers inside the scope while the muzzle coils gather a tight white-blue corona, compressing sparks into a needle point; fires one hypervelocity penetrator straight across the ruined highway, drawing a razor-thin condensation tunnel through smoke and sunset haze; the round strikes with a circular pressure bloom that peels dust from nearby towers, punches incandescent fragments from the target plating, and sends a clean blue shock-ring racing over the floodwater; cycles the heavy action with a metallic snap and settles the rifle back onto the identical firing line",
+        "outcomes": {
+          "hit": "erupts a needle-bright impact through the chest plating, spraying incandescent metal and a tight cobalt shock-ring across the machine torso"
+        }
+      },
+      {
+        "id": "sunbreaker",
+        "label": "反物质·日蚀弹",
+        "description": "高伤害爆裂弹;会被相位装甲完全挡下",
+        "phrase": "locks a thick black-red anti-matter cartridge into the rifle chamber and lowers the helmet behind the scope; crimson warning filaments crawl along the barrel shroud as the muzzle field swells into a dense sphere that bends the sunset around its edge; fires the charged shell along a perfectly straight corridor above the elevated highway, its wake pulling sparks, ash and loose fragments inward like a miniature gravity well; the projectile blossoms at the machine into a vast inverted eclipse, first swallowing nearby light and then erupting outward as concentric red-white blast rings, molten armor splinters and rolling vapor walls that illuminate the flooded city without obscuring either combatant",
+        "outcomes": {
+          "hit": "blooms an inverted crimson eclipse against the torso before detonating into concentric blast rings, molten fragments and a rolling wall of vapor",
+          "blocked": "collapses against the phase armor into a flattened red-black sphere, its blast folding sideways into harmless luminous sheets as the shield gutters but holds"
+        }
+      },
+      {
+        "id": "railburst",
+        "label": "磁轨·断环三连",
+        "description": "穿甲三连射;击碎相位装甲",
+        "phrase": "anchors one gauntlet against the rifle fore-end and flips open three exposed magnetic accelerator fins along the barrel; blue arcs leap between the rails as three tungsten darts rise from the side magazine and lock into sequence, each surrounded by a spinning halo of ionized air; fires three measured shots down the same long-range lane, the first carving a bright line through smoke, the second following inside its pressure tunnel, and the third overtaking both as a screaming white spear; their impacts form a triangular fracture pattern across the machine plating, bursting outward into metallic shards, electric streamers and three synchronized shockwaves that ripple across the floodwater",
+        "outcomes": {
+          "hit": "stitches three incandescent craters across the torso in a triangular pattern, each impact throwing metal shards and blue electric streamers",
+          "shatter": "drives three synchronized penetrators through the phase armor, cracking its hexagonal surface into thousands of luminous plates that burst outward and dissolve"
+        }
+      },
+      {
+        "id": "aegis",
+        "label": "折光·棱镜幕",
+        "description": "完全格挡脉冲炮;被重力轰击穿透半伤",
+        "phrase": "plants a compact emitter beside the rifle rest and twists its armored collar one quarter turn; six translucent blue planes unfold from the device like enormous panes of angled glass, interlocking around the rubble nest while leaving the sniper silhouette and weapon clearly visible; incoming light from the sunset fractures into spectral bands across their surfaces as a dense hexagonal mesh brightens at every intersection; the shield projects forward rather than expanding across the battlefield, catching distant energy in layered refraction and spilling excess force sideways as luminous ribbons, harmless sparks and fan-shaped waves over the floodwater; keeps the rifle trained through a narrow transparent firing aperture at the center"
+      },
+      {
+        "id": "anchor",
+        "label": "惯性·黑锚场",
+        "description": "完全格挡重力轰击;被脉冲炮烧穿半伤",
+        "phrase": "presses a magnetic anchor puck into the broken roadway beside one knee and clamps the rifle bipod harder against the rubble; black-blue gravitational lines spread only around the fixed firing nest, pulling loose bolts, dust and small stones into slow circular orbits while a low translucent dome forms from densely layered distortion bands; the highway beneath the sniper darkens as if its mass has multiplied, and every nearby fragment trembles toward the anchor instead of lifting away; the field remains compact enough to preserve the crouched silhouette, rifle profile and distant target, while pressure waves bend around its surface and leave crescent ripples racing across the shallow floodwater"
+      },
+      {
+        "id": "nanomend",
+        "label": "纳米·战损回卷",
+        "description": "恢复 18 点生命",
+        "phrase": "seals the rifle against the shoulder and presses two fingers to a cracked plate on the chest rig; a row of cobalt repair capsules opens along the forearm and releases thousands of luminous nanites that stream over the armor like liquid constellations, tracing damaged seams before knitting them shut with hair-thin blue sparks; torn cloak fibers draw together around reinforced threads while scorched plating cools from orange to gunmetal and the helmet optic stabilizes into a clean cobalt glow; excess nanites spiral once around the fixed rubble nest as a thin protective mist, then collapse back into the gauntlet ports while the rifle remains pointed toward the colossal machine"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "piercer",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "sunbreaker",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "phase"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "railburst",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "phase"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "aegis",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "prism"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "anchor",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "anchor"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "nanomend",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "赤环天启机神·欧米伽",
+    "label": "the red-halo apocalypse colossus",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "巨像戒备",
+        "phrase": "holds both enormous hands open at the fixed center anchor while red circuitry pulses beneath segmented armor and the concentric halo rings rotate by minute mechanical increments",
+        "end_state": "settles into the same monumental open-handed guard beneath the halo rings",
+        "effects": [
+          "red circuitry pulsing beneath armor seams"
+        ]
+      },
+      "windup": {
+        "label": "赤环蓄能",
+        "phrase": "draws both open hands inward by a measured distance as the three halo rings align behind the cruciform visor and crimson current climbs the torso toward the chest lattice",
+        "end_state": "holds the aligned halo rings blazing behind the head while the chest lattice burns near-white red",
+        "effects": [
+          "halo segments locking into alignment",
+          "crimson charge crawling across the torso"
+        ]
+      },
+      "enraged": {
+        "label": "末日超载",
+        "phrase": "spreads both hands wider at the fixed anchor as every red seam across the colossal armor ignites and the halo rings accelerate into three incandescent circles",
+        "end_state": "holds the same center anchor wrapped in heat haze and falling red sparks beneath the accelerated halos",
+        "effects": [
+          "red sparks cascading from armor seams",
+          "heat haze rippling around the torso"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "label": "赤环灭世·蓄力",
+        "description": "蓄力预告;下回合必定释放赤环灭世",
+        "weight": 28,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "draws both immense hands inward around the chest line as three mechanical halo rings rotate into perfect alignment; red energy climbs from the flooded foundations through exposed torso conduits and converges behind the cruciform visor, forming a star-bright point while dust rises from distant towers and the sunset reflection fractures into concentric crimson ripples"
+      },
+      {
+        "id": "release",
+        "label": "赤环灭世",
+        "description": "蓄力大招;惯性黑锚场完全格挡;折光棱镜幕承受半伤",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "opens both hands toward the fixed firing lane as the aligned halo rings discharge together; a colossal cylindrical gravity wave wrapped in red lightning tears across the elevated highway, bending smoke, sparks and reflected sunset into a tunnel of concentric distortion before hammering the sniper position with a towering circular pressure wall and a crown of levitating rubble"
+      },
+      {
+        "id": "pulse",
+        "label": "掌心·裂城脉冲",
+        "description": "常规远程攻击;折光棱镜幕完全格挡;惯性黑锚场承受半伤",
+        "weight": 24,
+        "pre": "not windup",
+        "phrase": "angles the right palm toward the distant rubble nest as segmented fingers lock around a bright crimson emitter; a compact sphere of plasma compresses above the palm and fires as a broad rectangular pulse beam, skimming the ruined highway, vaporizing suspended dust and throwing red reflections across the floodwater before bursting against the player anchor in a fan of sparks and incandescent concrete"
+      },
+      {
+        "id": "halo_lance",
+        "label": "背环·天轨矛雨",
+        "description": "第二常规远程攻击;多道定点能量矛覆盖玩家阵地",
+        "weight": 18,
+        "pre": "not windup",
+        "phrase": "tilts the outer halo ring by a few degrees while its segmented nodes flare one after another; six narrow crimson lances descend along converging trajectories toward the fixed rubble nest, striking around the sniper in a precise radial pattern that erupts into vertical spark columns, shattered asphalt and steaming water without moving either combatant from the original composition"
+      },
+      {
+        "id": "shield_raise",
+        "label": "相位·千层装甲",
+        "description": "自盾;完全阻挡反物质日蚀弹;会被磁轨断环三连击碎",
+        "weight": 20,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "closes the left hand into a slow mechanical fist as hundreds of translucent hexagonal plates extrude from the torso seams; the plates stack into a tight crimson phase shell across the chest and head, each layer offset by a fraction and vibrating at a different frequency until the colossal silhouette appears wrapped in shimmering glass without changing its fixed stance"
+      },
+      {
+        "id": "mend",
+        "label": "机群·钢骸回铸",
+        "description": "自愈;修复 10 点生命",
+        "weight": 10,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "opens vents across the shoulders and releases a cloud of fist-sized repair drones that remain close to the colossal torso; red welding arcs stitch fractured plates together while magnetic fields pull loose armor fragments from nearby ruins into matching gaps, rebuilding scorched sections with layered gunmetal scales as molten seams cool beneath drifting sparks"
+      },
+      {
+        "id": "enrage",
+        "label": "欧米伽·末日超载",
+        "description": "狂暴;低生命时永久强化攻击",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "spreads both enormous hands to their widest fixed pose as every crimson conduit ignites simultaneously; the three halo rings accelerate until their segmented frames become continuous circles of red light, heat haze boils around the torso and showers of sparks cascade down the ruined skyline while the cruciform visor sharpens into a blinding star"
+      },
+      {
+        "id": "idle",
+        "label": "静默演算",
+        "description": "短暂观察战场;不造成伤害",
+        "weight": 9,
+        "pre": "not windup",
+        "phrase": "holds the monumental stance in absolute stillness while the cruciform visor narrows and the halo rings make tiny counter-rotations; red scan lines sweep across the distant rubble nest, reflected as thin streaks over the flooded highway, then fade as the machine returns to its steady open-handed guard"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "赤环灭世蓄力——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "末日超载仍在蓄力——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            18,
+            6
+          ],
+          "block": [
+            "anchor"
+          ],
+          "half": [
+            "prism"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "赤环灭世命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            21,
+            5
+          ],
+          "block": [
+            "anchor"
+          ],
+          "half": [
+            "prism"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "赤环灭世命中(末日超载加蚀!)"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "pulse",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "prism"
+          ],
+          "half": [
+            "anchor"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "裂城脉冲命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "pulse",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5 + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "prism"
+          ],
+          "half": [
+            "anchor"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "裂城脉冲命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "相位千层装甲展开——反物质日蚀弹将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "phase"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "钢骸回铸——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "钢骸回铸——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "赤环天启机神进入末日超载,攻击提升!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "末日超载的机神扫描战场"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "机神静默演算目标轨迹"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "halo_lance",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(10, 4) + ifelse(boss_enraged, 4, 0)",
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天轨矛雨覆盖命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "halo_lance",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(10, 4) + 8",
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天轨矛雨覆盖命中"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "holds the rifle steady as the machine chest lattice fractures into branching darkness; the three halo rings lose synchronization, shear into separate arcs and rain incandescent segments behind the colossal silhouette while the cruciform visor contracts to a final red point and extinguishes above the flooded highway",
+      "effects": [
+        "three halo rings breaking into incandescent arcs",
+        "red circuitry fading across colossal armor"
+      ],
+      "end_state": "the cloaked sniper remains crouched at the fixed rubble nest with the rifle across the shoulder while the colossal machine stands dark and inert at the center distance beneath broken halo segments, sunset reflections returning across the floodwater",
+      "caption": "◆ 战斗胜利 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "slumps behind the same rubble anchor as the rifle barrel settles against shattered concrete; the cobalt helmet optic dims to black while the colossal machine opens both hands beneath three blazing halo rings and red reflections spread across the flooded highway like a closing seal",
+      "effects": [
+        "cobalt helmet optic fading to black",
+        "three red halo rings blazing above the ruined city"
+      ],
+      "end_state": "the sniper remains motionless behind the left-foreground rubble with the rifle lowered while the red-halo colossus dominates the unchanged center distance, crimson circuitry burning through smoke beneath the dying amber sunset",
+      "caption": "◆ 战斗失败 ◆"
+    }
+  },
+  "mp_name": "源能",
+  "mp_max": 15
+}

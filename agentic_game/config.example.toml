@@ -1,0 +1,28 @@
+# Copy to config.toml to use; every key has a built-in default — a missing
+# key simply falls back to the default.
+# Environment variables take precedence: AGENTIC_GAME_RENDERER /
+# AGENTIC_GAME_H3_REPO / AGENTIC_GAME_TORCHRUN / AGENTIC_GAME_NPROC /
+# AGENTIC_GAME_SEED / AGENTIC_GAME_MAX_TURNS
+
+[loop]
+base_seed = 7
+max_turns = 25
+render_retries = 1            # extra retries after a render failure
+render_failure_policy = "skip" # skip = continue from the previous frame / abort = stop the run
+output_dir = "generated"
+
+[renderer]
+backend = "fake"               # fake | h3
+mode = "remote"                # remote (connect to the resident service) | session (ephemeral) | subprocess (run.sh per request)
+# The next two lines fall back to built-in defaults when commented out
+# (derived from the side-by-side workspace layout; the WORKSPACE_ROOT /
+# CONDA_ENVS_ROOT environment variables adjust them):
+# h3_repo = "<workspace>/h3-a800"
+# torchrun = "<conda_envs>/h3-a800/bin/torchrun"
+nproc = 4                      # 1+4 default deployment: H3 pinned to 4 GPUs (0 = auto-detect all visible GPUs)
+resolution = "480p"            # 480p | 768p
+attention_backend = "dense"    # dense | vsa
+startup_timeout_s = 3600       # engine load timeout (service start / session mode)
+render_timeout_s = 1800        # per-turn generation timeout
+request_timeout_s = 3600       # per-request timeout in subprocess mode
+socket_path = "/tmp/agentic-game-h3-4gpu-480p.sock"  # fixed socket: server and client always agree; empty = derived from GPU count

@@ -1,0 +1,617 @@
+{
+  "category": "machine",
+  "game_id": "blood_tide_leviathan_machine",
+  "title": "赤潮断界者 VS 渊海吞星兽 · Blood Tide Leviathan",
+  "frame": "assets/duel/duel_leviathan.png",
+  "player_name": "赤潮断界者·烬璃",
+  "player_label": "the red-cloaked tidebreaker",
+  "player_appearance": "a lone black-haired swordswoman in layered black battle robes and a long torn crimson cloak, both feet planted in shallow mirror water, gripping a long black greatsword whose fractured edge leaks thin streams of crimson light",
+  "scene_description": "an endless shallow mirror sea surrounding the ruins of a drowned ancient kingdom, broken black towers and suspended stone islands rising beneath a gigantic blood-red celestial body, white waterfalls pouring from impossible heights while a colossal abyssal leviathan towers at the fixed center-right distance and the red-cloaked tidebreaker stands at the fixed left foreground",
+  "style": "Cinematic abyssal dark fantasy; premium AAA 3D game VFX; photoreal PBR wet stone, black scales, torn cloth and reflective water; colossal creature scale; blood-red celestial backlight; cold white waterfalls; dense storm clouds and volumetric mist; physically coherent spray, sparks, black brine, crimson energy and shattered stone; extreme material detail; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the red-cloaked tidebreaker remains anchored in the left foreground while the abyssal leviathan remains fixed at center-right distance beneath the blood-red celestial body throughout every action",
+  "first_frame_anchor": "The red-cloaked tidebreaker shown in <Picture 1> stands shin-deep in mirror water at the exact fixed left-foreground anchor, body turned three-quarters toward the leviathan, long black hair and torn crimson cloak streaming leftward, both feet firmly planted, long black greatsword lowered diagonally beside her right side with thin crimson light leaking from its fractured edge; her appearance, scale and position remain unchanged. The colossal abyssal leviathan rises at the exact fixed center-right anchor, its immense black body emerging through white spray, long tendrils curling around its silhouette, cavernous jaws glowing crimson from within, while the gigantic blood-red celestial body remains centered behind its head",
+  "stability": [
+    "the red-cloaked tidebreaker and the abyssal leviathan keep the same appearance, equipment, scale and fixed positions; no on-screen text or subtitle appears",
+    "the fractured black greatsword, torn crimson cloak, leviathan tendrils, glowing crimson maw and blood-red celestial body never change design"
+  ],
+  "closing_state": "the red-cloaked tidebreaker remains at the exact left-foreground anchor with both feet fixed beneath the mirror water, lowering the fractured black greatsword diagonally at her right side as crimson sparks and spray fade; the abyssal leviathan remains at the identical center-right anchor with its tendrils settling into broad curves and its crimson maw dimming to a deep internal glow, while waterfalls and mist continue behind both figures and the camera remains absolutely locked-off",
+  "soundscape": "deep oceanic groans roll beneath the flooded ruins as waterfalls thunder from the suspended cliffs. Heavy water surges around broken stone while the leviathan answers with subsonic calls and wet tendon-like creaks. Sword impacts ring sharply across the open water.",
+  "music": "Low war drums, bowed metal and distant throat-like choir drones build a slow predatory rhythm. Heavy brass and distorted strings surge during leviathan attacks before falling back into sparse percussion.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 96,
+    "player_mp": 10,
+    "boss_hp": 168,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "undertow": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "踏潮对峙",
+        "end_state": "settles into a low two-handed guard with the fractured black greatsword angled across the mirror water",
+        "effects": [
+          "crimson reflections trembling beneath her boots",
+          "cloak ribbons snapping in the salt wind"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "tide_cut",
+        "label": "断潮·横海",
+        "description": "0 消耗稳定攻击；不受甲壳克制，并回复 3 点潮息",
+        "phrase": "keeps both feet planted and draws the fractured black greatsword horizontally across the mirror water, forcing a razor-thin crescent of compressed black water to rise from the blade edge; the crescent broadens into a waist-high tidal arc streaked with crimson sparks, races straight across the flooded ruins and leaves a sharply divided wake behind it before she arrests the sword beside her hip and returns to a low guard",
+        "outcomes": {
+          "hit": "the compressed tidal crescent cuts across the leviathan's forward hide, throwing a long fan of black brine, pale spray and crimson-lit scale fragments into the air before the divided water closes beneath it"
+        },
+        "effects": [
+          "a razor wake dividing the mirror water",
+          "crimson sparks skating along the wave edge"
+        ]
+      },
+      {
+        "id": "blood_moon",
+        "label": "血月·坠刃",
+        "description": "5 潮息高伤害斩击；会被深渊骨甲完全挡下",
+        "phrase": "raises the fractured black greatsword vertically without leaving her anchor as crimson liquid light climbs from the hilt to the broken tip; a vast curved blade-image forms high above the water like a fragment torn from the blood-red celestial body, thickens with layered red-black radiance, then crashes downward toward the leviathan in one monumental vertical execution arc while she finishes with the sword held motionless before her",
+        "outcomes": {
+          "hit": "the colossal crimson blade-image cleaves down across the leviathan's upper body, bursting into branching red fissures, sheets of white spray and glowing fragments that scatter across its wet black hide",
+          "blocked": "the colossal crimson blade-image crashes against overlapping ivory-black bone plates; the red radiance flattens into a violent circular shock front, fractures crawl across the plates, yet the descending blade dissolves before reaching the flesh"
+        },
+        "effects": [
+          "a towering crimson blade silhouette",
+          "red reflections flooding the water"
+        ]
+      },
+      {
+        "id": "white_surge",
+        "label": "白瀑·逆鳞",
+        "description": "4 潮息穿甲攻击；击碎 Boss 的深渊骨甲",
+        "phrase": "turns the fractured black greatsword edge-down and presses its tip into the shallow water while remaining fixed in place; cold white current spirals tightly around the blade, compressing into a narrow spear of foaming water that erupts forward at chest height, its core hardening into a translucent pressure-lance surrounded by corkscrewing spray before she lifts the sword free and steadies it beside her shoulder",
+        "outcomes": {
+          "hit": "the white pressure-lance punches into the leviathan's wet black hide and bursts outward as a dense crown of foam, scale chips and needle-fine streams of water",
+          "shatter": "the white pressure-lance strikes the overlapping bone plates at their seams; pressurized water floods the joints and the entire shell bursts apart into spinning ivory-black fragments and explosive white spray"
+        },
+        "effects": [
+          "white pressure rings rippling through mist",
+          "needle spray glittering against crimson light"
+        ]
+      },
+      {
+        "id": "iron_current",
+        "label": "铁潮·镇海",
+        "description": "3 潮息防御；完全格挡尾槌，吞潮大啸只能减半",
+        "phrase": "rotates the fractured black greatsword point-down and drives its tip into the mirror water directly before her boots; concentric bands of dark metallic water rise around her without shifting her stance, compacting into a thick circular rampart of black liquid iron whose surface turns slowly like a millstone, red reflections crawling across its ridges as she braces both hands on the sword hilt behind the completed barrier",
+        "effects": [
+          "black metallic water forming a circular rampart",
+          "heavy ripples radiating from the planted sword"
+        ]
+      },
+      {
+        "id": "foam_veil",
+        "label": "白沫·息渊",
+        "description": "3 潮息防御；完全格挡吞潮大啸，尾槌只能减半",
+        "phrase": "holds the fractured black greatsword horizontally before her chest and draws a slow circle with its broken edge; dense white sea foam climbs from the mirror water in layered spirals, filling the circle into a thick translucent wall of aerated water and silver bubbles, its surface flexing without breaking as she locks the sword across its center and remains planted behind the completed veil",
+        "effects": [
+          "dense silver bubbles filling the barrier",
+          "white foam spiraling around the sword edge"
+        ]
+      },
+      {
+        "id": "red_return",
+        "label": "返潮·赤生",
+        "description": "5 潮息恢复 20 点生命，最多恢复至 96",
+        "phrase": "reverses the fractured black greatsword and presses the flat of its crimson-lit blade against the center of her chest; thin red streams rise from the surrounding water and coil around her arms and torso like weightless ribbons, condensing into warm ember-like droplets that sink through torn cloth as the red glow along the blade steadies, after which she lowers the weapon and resumes her grounded guard",
+        "effects": [
+          "red droplets rising against gravity",
+          "torn cloak seams glowing briefly"
+        ]
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "tide_cut",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            5
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "blood_moon",
+        "pre": "player_mp >= 5",
+        "outcome_expr": "ifelse(boss_shield == 'bone', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            17,
+            6
+          ],
+          "block": [
+            "bone"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "white_surge",
+        "pre": "player_mp >= 4",
+        "outcome_expr": "ifelse(boss_shield == 'bone', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            13,
+            4
+          ],
+          "shatter": [
+            "bone"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "iron_current",
+        "pre": "player_mp >= 3",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "iron"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "foam_veil",
+        "pre": "player_mp >= 3",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "foam"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "red_return",
+        "pre": "player_mp >= 5",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 76, 20, 96 - player_hp)"
+          }
+        ]
+      }
+    ]
+  },
+  "boss": {
+    "name": "渊海吞星兽·摩伽",
+    "label": "the abyssal leviathan",
+    "initial_state": "hunting",
+    "states": {
+      "hunting": {
+        "label": "巡潮",
+        "phrase": "holds its colossal head above the flooded ruins while long tendrils drag slow arcs through mist and spray, the crimson glow inside its cavernous jaws pulsing beneath wet black scales",
+        "end_state": "settles its immense head above the ruined skyline as the tendrils spread into broad hunting curves",
+        "effects": [
+          "black brine dripping from its jaw",
+          "slow tendrils combing through mist"
+        ]
+      },
+      "undertow": {
+        "label": "吞潮蓄势",
+        "phrase": "draws its long tendrils inward around the cavernous mouth as surrounding water begins sliding toward it in widening circular streams, the crimson glow behind its teeth intensifying through dense spray",
+        "end_state": "holds its jaws open around a compact crimson-black vortex while the surrounding water continues pulling inward",
+        "effects": [
+          "water streaming backward toward its jaws",
+          "mist twisting into a tightening vortex"
+        ]
+      },
+      "frenzy": {
+        "label": "赤潮暴走",
+        "phrase": "arches its colossal body beneath the blood-red celestial light as crimson fissures ignite between wet black scales and every tendril stiffens into a violent hooked curve above the water",
+        "end_state": "remains arched above the ruins with crimson fissures burning between its scales and black spray boiling around its base",
+        "effects": [
+          "crimson fissures burning through black scales",
+          "black spray boiling around its body"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "undertow_charge",
+        "label": "吞潮大啸·蓄潮",
+        "weight": 30,
+        "pre": "not undertow and boss_state != 'undertow' and not boss_enraged",
+        "description": "蓄力一回合；下一回合必定释放吞潮大啸",
+        "phrase": "opens its cavernous jaws wider while remaining fixed above the ruins; the surrounding mirror water reverses direction and streams toward the mouth in widening bands, torn mist and loose stone fragments joining the inward pull as a dense crimson-black sphere of compressed brine forms behind its teeth and stabilizes there"
+      },
+      {
+        "id": "undertow_roar",
+        "label": "吞潮大啸",
+        "weight": 1,
+        "pre": "undertow",
+        "description": "蓄潮后的必放大招；白沫·息渊完全格挡，铁潮·镇海只能减半",
+        "phrase": "releases the compressed crimson-black brine from its open jaws as a single colossal pressure front; a wall of dark water and white vapor surges across the mirror sea without moving the leviathan from its anchor, flattening spray into horizontal sheets while crimson veins pulse through the advancing torrent before the jaws slowly close around the fading glow"
+      },
+      {
+        "id": "tail_hammer",
+        "label": "渊尾·沉城",
+        "weight": 27,
+        "pre": "not undertow",
+        "description": "常规重击；铁潮·镇海完全格挡，白沫·息渊只能减半",
+        "phrase": "raises one immense tail ridge behind its fixed body until the wet black mass hangs above the ruined skyline, then hammers it straight down into the water at range; the impact launches a broad ground-hugging shockwave of broken masonry, black water and white spray toward the tidebreaker while the tail settles back behind the leviathan"
+      },
+      {
+        "id": "bone_armor",
+        "label": "万骸覆甲",
+        "weight": 20,
+        "pre": "not undertow and not boss_shield and boss_hp <= 100",
+        "description": "生命较低时展开深渊骨甲；完全抵挡血月·坠刃，但会被白瀑·逆鳞击碎",
+        "phrase": "contracts the muscles beneath its wet black hide as pale structures push outward between the scales; overlapping ivory-black bone plates unfold across the front of its colossal body like the ribs of a drowned fortress, lock together with heavy organic clicks and settle into a continuous armored shell while black brine drains through the seams"
+      },
+      {
+        "id": "devour_ruin",
+        "label": "噬城回生",
+        "weight": 10,
+        "pre": "not undertow and not boss_shield and boss_hp <= 92",
+        "description": "低生命时吞噬遗迹恢复 12 点生命",
+        "phrase": "opens several smaller vent-like mouths along its lower body and draws loose fragments from the drowned ruins upward in slow spirals; black stone, rusted metal and pale mineral shards dissolve into dark luminous slurry before entering the vents, after which the damaged scale seams draw tighter and the remaining fragments fall back into the water"
+      },
+      {
+        "id": "blood_frenzy",
+        "label": "赤潮暴走",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 66",
+        "description": "生命低于阈值后进入狂暴形态，强化攻击",
+        "phrase": "throws its colossal head upward without changing its anchor as the blood-red celestial light catches every wet scale; crimson fissures ignite in branching lines beneath the hide, long tendrils snap into hooked arcs and a ring of black water erupts around its body before collapsing into a boiling field of red-lit spray"
+      },
+      {
+        "id": "circle",
+        "label": "潜潮窥伺",
+        "weight": 12,
+        "pre": "not undertow",
+        "description": "空闲行为，维持节奏",
+        "phrase": "holds its enormous body nearly motionless while the long tendrils trace slow circles through the waterfall mist, crimson light breathing faintly inside the half-open jaws as ripples spread outward from its submerged mass and loose debris turns in the disturbed current"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "hunting",
+        "action": "undertow_charge",
+        "to": "undertow",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "吞潮大啸正在蓄势——下一回合将释放！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "undertow",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "frenzy",
+        "action": "undertow_charge",
+        "to": "undertow",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "暴走的吞星兽开始吞潮——下一回合将释放！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "undertow",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "undertow",
+        "action": "undertow_roar",
+        "to": "hunting",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            19,
+            6
+          ],
+          "block": [
+            "foam"
+          ],
+          "half": [
+            "iron"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "undertow_hit",
+            "message": "吞潮大啸席卷战场"
+          }
+        ],
+        "effects": [
+          {
+            "var": "undertow",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "hunting",
+        "action": "tail_hammer",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            13,
+            6
+          ],
+          "block": [
+            "iron"
+          ],
+          "half": [
+            "foam"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "tail_hit",
+            "message": "渊尾·沉城冲击命中"
+          }
+        ]
+      },
+      {
+        "from": "frenzy",
+        "action": "tail_hammer",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(15, 6) + ifelse(boss_enraged, 4, 0)",
+          "block": [
+            "iron"
+          ],
+          "half": [
+            "foam"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "tail_hit",
+            "message": "暴走渊尾重击命中"
+          }
+        ]
+      },
+      {
+        "from": "hunting",
+        "action": "bone_armor",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "万骸覆甲展开——血月斩击将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "bone"
+          }
+        ]
+      },
+      {
+        "from": "frenzy",
+        "action": "bone_armor",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "暴走形态展开万骸覆甲"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "bone"
+          }
+        ]
+      },
+      {
+        "from": "hunting",
+        "action": "devour_ruin",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "吞星兽吞噬遗迹，恢复 12 点生命"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "from": "frenzy",
+        "action": "devour_ruin",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "吞星兽吞噬遗迹，恢复 12 点生命"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 12
+          }
+        ]
+      },
+      {
+        "from": "hunting",
+        "action": "blood_frenzy",
+        "to": "frenzy",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 66"
+          }
+        ],
+        "events": [
+          {
+            "type": "enrage",
+            "message": "渊海吞星兽进入赤潮暴走形态！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "hunting",
+        "action": "circle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "吞星兽潜潮窥伺"
+          }
+        ]
+      },
+      {
+        "from": "frenzy",
+        "action": "circle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "暴走吞星兽在赤潮中窥伺"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "keeps both feet planted as the fractured black greatsword dims in her hands; across the flooded ruins, the leviathan's crimson fissures flare once and then extinguish in sequence, its immense head lowering through curtains of white spray while the blood-red celestial reflection breaks into long dark ripples around the tidebreaker",
+      "effects": [
+        "crimson fissures extinguishing across black scales",
+        "dark ripples crossing the mirror sea"
+      ],
+      "end_state": "the abyssal leviathan lies motionless among the drowned towers with its tendrils slack across the water while the red-cloaked tidebreaker remains standing at the left foreground anchor, greatsword lowered beneath the fading red sky",
+      "caption": "◆ 赤潮已断 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "drops to one knee at the fixed left-foreground anchor as the fractured black greatsword sinks point-first into the mirror water beside her; the leviathan opens its immense crimson-lit jaws above the drowned skyline and spreads its tendrils across the storm mist while black waves roll outward beneath the blood-red celestial body",
+      "effects": [
+        "the fractured greatsword dimming in black water",
+        "leviathan tendrils filling the storm mist"
+      ],
+      "end_state": "the tidebreaker remains kneeling beside the darkened greatsword while the abyssal leviathan towers over the drowned kingdom, its crimson maw reflected across the entire mirror sea",
+      "caption": "◆ 沉入渊海 ◆"
+    }
+  },
+  "mp_name": "潮息",
+  "mp_max": 15
+}

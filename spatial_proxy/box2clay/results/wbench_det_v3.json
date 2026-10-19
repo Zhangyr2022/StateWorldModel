@@ -1,0 +1,266 @@
+[
+ {
+  "case_id": "11",
+  "nav_cate": "loop",
+  "det_dir": "case_11_elephant",
+  "subject_class": "elephant",
+  "subject_height": 3.2,
+  "actions": [
+   "W",
+   "S",
+   "A",
+   "D",
+   "left",
+   "right",
+   "up",
+   "down",
+   "W+A",
+   "W+D",
+   "S+A",
+   "S+D",
+   "W+left",
+   "W+right",
+   "W+up",
+   "W+down"
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_11.jpg"
+ },
+ {
+  "case_id": "18",
+  "nav_cate": "progressive",
+  "det_dir": "case_18_horse",
+  "subject_class": "horse",
+  "subject_height": 2.2,
+  "actions": [
+   "W",
+   "S",
+   "A",
+   "D",
+   "left",
+   "right",
+   "up",
+   "down",
+   "W+A",
+   "W+D",
+   "S+A",
+   "S+D",
+   "W+left",
+   "W+right",
+   "W+up",
+   "W+down"
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_18.jpg"
+ },
+ {
+  "case_id": "25",
+  "nav_cate": "roundtrip",
+  "det_dir": "case_25_skateboarder",
+  "subject_class": "person",
+  "subject_height": 1.75,
+  "actions": [
+   "W",
+   "S",
+   "A",
+   "D",
+   "left",
+   "right",
+   "up",
+   "down",
+   "W+A",
+   "W+D",
+   "S+A",
+   "S+D",
+   "W+left",
+   "W+right",
+   "W+up",
+   "W+down"
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_25.jpg"
+ },
+ {
+  "case_id": "107",
+  "nav_cate": "roundtrip",
+  "det_dir": "case_107_cat",
+  "subject_class": "cat",
+  "subject_height": 0.3,
+  "actions": [
+   "W",
+   "S",
+   "A",
+   "D",
+   "left",
+   "right",
+   "up",
+   "down",
+   "W+A",
+   "W+D",
+   "S+A",
+   "S+D",
+   "W+left",
+   "W+right",
+   "W+up",
+   "W+down"
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_107.jpg"
+ },
+ {
+  "case_id": "124",
+  "nav_cate": "progressive",
+  "actions": [
+   "W"
+  ],
+  "det_dir": "case_124_person",
+  "subject_class": "person",
+  "subject_height": 1.7,
+  "det_score": 1.0754598379135132,
+  "score_2d": 0.7651207447052002,
+  "score_3d": 0.6206781268119812,
+  "z_cam": 7.34,
+  "dims_cam": [
+   1.39,
+   1.86,
+   3.16
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_124.jpg"
+ },
+ {
+  "case_id": "120",
+  "nav_cate": "progressive",
+  "actions": [
+   "W"
+  ],
+  "det_dir": "case_120_dog",
+  "subject_class": "dog",
+  "subject_height": 0.6,
+  "det_score": 1.1925380229949951,
+  "score_2d": 0.9263197183609009,
+  "score_3d": 0.5324365496635437,
+  "z_cam": 21.05,
+  "dims_cam": [
+   1.72,
+   2.89,
+   3.28
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_120.jpg"
+ },
+ {
+  "case_id": "14",
+  "nav_cate": "l_shape",
+  "actions": [
+   "W"
+  ],
+  "det_dir": "case_14_person",
+  "subject_class": "person",
+  "subject_height": 1.7,
+  "det_score": 1.2767815589904785,
+  "score_2d": 0.9121807217597961,
+  "score_3d": 0.7292016744613647,
+  "z_cam": 6.45,
+  "dims_cam": [
+   0.72,
+   0.93,
+   2.0
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_14.jpg"
+ },
+ {
+  "case_id": "26",
+  "nav_cate": "roundtrip",
+  "actions": [
+   "A"
+  ],
+  "det_dir": "case_26_person",
+  "subject_class": "person",
+  "subject_height": 1.7,
+  "det_score": 1.1883643865585327,
+  "score_2d": 0.82462078332901,
+  "score_3d": 0.7274871468544006,
+  "z_cam": 6.32,
+  "dims_cam": [
+   0.87,
+   0.98,
+   2.18
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_26.jpg"
+ },
+ {
+  "case_id": "17",
+  "nav_cate": "repeat",
+  "actions": [
+   "W"
+  ],
+  "det_dir": "case_17_jeep",
+  "subject_class": "jeep",
+  "subject_height": 1.8,
+  "det_score": 1.280310034751892,
+  "score_2d": 0.8617698550224304,
+  "score_3d": 0.8370804190635681,
+  "z_cam": 13.2,
+  "dims_cam": [
+   2.26,
+   5.23,
+   2.03
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_17.jpg"
+ },
+ {
+  "case_id": "68",
+  "nav_cate": "repeat",
+  "actions": [
+   "A"
+  ],
+  "det_dir": "case_68_dog",
+  "subject_class": "dog",
+  "subject_height": 0.35,
+  "det_score": 1.2439610958099365,
+  "score_2d": 0.9052172303199768,
+  "score_3d": 0.6774877905845642,
+  "z_cam": 8.75,
+  "dims_cam": [
+   0.5,
+   1.54,
+   0.88
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_68.jpg"
+ },
+ {
+  "case_id": "46",
+  "nav_cate": "roundtrip",
+  "actions": [
+   "left"
+  ],
+  "det_dir": "case_46_car",
+  "subject_class": "car",
+  "subject_height": 1.5,
+  "det_score": 1.3191275596618652,
+  "score_2d": 0.8780282139778137,
+  "score_3d": 0.8821988105773926,
+  "z_cam": 11.23,
+  "dims_cam": [
+   2.17,
+   4.84,
+   1.63
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_46.jpg"
+ },
+ {
+  "case_id": "24",
+  "nav_cate": "zigzag",
+  "actions": [
+   "right"
+  ],
+  "det_dir": "case_24_person",
+  "subject_class": "person",
+  "subject_height": 1.7,
+  "det_score": 1.2623226642608643,
+  "score_2d": 0.8769119381904602,
+  "score_3d": 0.7708213329315186,
+  "z_cam": 5.29,
+  "dims_cam": [
+   0.87,
+   0.93,
+   2.15
+  ],
+  "image": "/data/chenrenqi/code/WBench/data/images/case_24.jpg"
+ }
+]

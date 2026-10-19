@@ -1,0 +1,632 @@
+{
+  "category": "machine",
+  "game_id": "duel_abyssal_leviathan_machine_v2",
+  "title": "深渊猎手 VS 星渊巨鲸（状态机：深海远程决斗）",
+  "frame": "assets/duel/duel_abyssal_leviathan.png",
+  "player_name": "深渊猎手·凯拉",
+  "player_label": "the armored abyss hunter",
+  "player_appearance": "a disciplined female abyss hunter in a fitted black gunmetal pressure-combat suit with segmented silver armor, a dark high ponytail, angular fin-like thruster vanes mounted across her back, and a long heavy electromagnetic rifle held at her right side",
+  "scene_description": "a vast submerged cyberpunk arcology seen from a dark observation deck behind a colossal transparent pressure-field viewport, neon violet and cyan towers glowing far below in the abyss while schools of sharks cross the blue water; a city-sized biomechanical leviathan hangs outside the viewport, its ribbed armor, luminous cyan eye-core, vented jaw, blade-like fins and trailing tendrils dwarfing the lone armored hunter inside",
+  "style": "Cinematic abyssal cyberpunk science fiction; premium AAA 3D game VFX; photoreal PBR materials; deep-ocean blue volumetrics; black gunmetal armor and wet reflective flooring; cyan bioluminescence and distant violet neon; colossal biomechanical creature scale; suspended marine particles; physically coherent bubbles, cavitation, sparks and refracted energy; realistic caustics and glasslike pressure-field reflections; extreme mechanical-organic surface detail; high-contrast silhouette composition; ominous underwater stillness; high temporal consistency",
+  "camera": "Completely locked ultra-wide cinematic camera from the observation deck; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the armored abyss hunter remains anchored in the right foreground while the biomechanical leviathan remains fixed across the left and center distance beyond the transparent pressure-field viewport, preserving the same scale, skyline, floor reflections and spatial composition throughout every action",
+  "first_frame_anchor": "The armored abyss hunter shown in <Picture 1> stands at the exact fixed right-foreground anchor on the glossy dark observation-deck floor, both feet firmly planted, body turned three-quarters away from camera, dark ponytail tied high, segmented black-and-silver pressure armor unchanged, long electromagnetic rifle lowered beside her right leg and angular back-mounted thruster vanes spread behind her as she faces the leviathan; her appearance, scale and position remain unchanged. The colossal biomechanical leviathan remains at the exact fixed left-center anchor outside the transparent pressure-field viewport, its enormous armored head facing right toward the hunter, one cyan eye-core glowing steadily, ribbed flank vents and vented jaw clearly visible, blade-like fins and long trailing tendrils suspended in the water; distant sharks, cyan-blue abyss and violet-cyan city towers remain in their original positions and scale",
+  "stability": [
+    "the armored abyss hunter and the biomechanical leviathan keep the same appearance, equipment, scale and position; the panoramic pressure-field viewport, submerged city and shark silhouettes remain spatially consistent; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "holds the exact right-foreground anchor with both feet fixed on the reflective deck, electromagnetic rifle lowered beside the right leg and back-mounted thruster vanes returning to their original spread as fading cyan sparks and suspended particles settle; steadies at the identical left-center water anchor beyond the pressure-field viewport, jaw vents dimming and tendrils relaxing around the immense ribbed body while the distant neon city and sharks remain unchanged under the absolutely locked camera",
+  "soundscape": "a deep oceanic pressure-hum resonates through the observation deck, distant arcology machinery pulses beneath the floor, filtered whale-like groans roll through the pressure-field, and the hunter’s armor answers with restrained servo clicks and electrical charge whine.",
+  "music": "Low synthetic drones, submerged metallic percussion and distant choral textures move at a slow predatory tempo, surging into heavy bass pulses during major attacks before receding into abyssal tension.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "深渊对峙",
+        "end_state": "holds the rifle low at the fixed right-foreground anchor facing the leviathan",
+        "effects": [
+          "cyan suit indicators pulsing softly across the armor seams"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "arcane",
+        "label": "磁轨·穿鳞点射",
+        "description": "无消耗的稳定电磁输出，不受任何护盾克制",
+        "phrase": "raises the long electromagnetic rifle from her right side while both boots remain locked to the glossy deck, silver armor seams kindling with cold cyan current as the weapon’s exposed rails accumulate a chain of miniature magnetic rings; three compressed lances erupt in one measured burst, each projectile wrapped in concentric shock halos and needle-fine ion filaments, crossing the blue water beyond the viewport as ruler-straight streaks while suspended particles peel outward from their paths; the three lances converge across the leviathan’s eye-side armor in a triangular sequence of brilliant impacts, scattering luminous fragments and expanding pressure rings before the rifle vents a crown of pale electrical vapor and settles back to guard",
+        "outcomes": {
+          "hit": "erupts across the leviathan’s cheek armor in three sequential white-cyan starbursts, each impact punching out a circular pressure halo and a fountain of dark armor fragments, electric filaments and glowing cyan fluid while the colossal head remains fully readable behind the expanding rings"
+        }
+      },
+      {
+        "id": "fireball",
+        "label": "脊翼·猎鲨齐射",
+        "description": "高伤害导弹群；会被共振鳞幕挡下",
+        "phrase": "flares the angular back-mounted thruster vanes without leaving the fixed stance, six armored hunter drones unfolding from recessed housings in a radiant mechanical fan as their cyan guidance cores ignite one after another; the drones separate into six distinct hooked trajectories across the abyss, drawing enormous luminous ribbons around the leviathan’s silhouette before curving inward from high, low and lateral angles; synchronized targeting lines snap together over the ribbed flank and the entire formation converges in a six-point star, erupting into layered underwater fireballs, expanding bubble crowns and incandescent fragments that illuminate the distant city towers while the hunter remains sharply visible behind the fading constellation of blast rings",
+        "outcomes": {
+          "hit": "detonates the six hunter drones around the ribbed flank in a vast six-point constellation of underwater fire, overlapping bubble crowns and incandescent debris, the staggered blasts washing the leviathan and distant towers in cyan-white flashes without obscuring either silhouette",
+          "blocked": "catches all six converging drones against the resonant scale curtain, each impact blooming into a flattened luminous disk before bursting outward as enormous bubble rings, sparks and curling cyan vapor while the overlapping scales remain visible through the fading blast light"
+        }
+      },
+      {
+        "id": "frostbolt",
+        "label": "裂频·静默针",
+        "description": "穿透共振鳞幕的破盾攻击",
+        "phrase": "braces the long electromagnetic rifle against her shoulder with both feet planted, violet capacitors along the barrel collapsing their glow into a single black-centered point as nearby condensation crystallizes into suspended geometric needles; a razor-thin null-frequency lance tears forward from the muzzle, surrounded by rotating interference rings and a corridor of abruptly darkened water where cyan particles lose their light; the beam strikes the leviathan’s resonant flank lattice and branches through its luminous frequency nodes like violet lightning trapped beneath glass, sending a vast circular silence-wave across the surrounding water as overlapping scale harmonics fracture into glittering shards, cold vapor and fading ultraviolet arcs before the weapon’s rails return to a dim steady glow",
+        "outcomes": {
+          "hit": "pierces the glowing flank lattice with a needle-white violet flash, branching interference veins racing between cyan nodes as a perfectly circular darkness-wave expands through the water and leaves glittering ultraviolet particles suspended around the wound",
+          "shatter": "breaks the resonant scale curtain simultaneously at its frequency nodes, violet fractures linking every plate for an instant before the entire barrier explodes into a majestic spiral of metallic-organic shards, luminous bubbles and collapsing harmonic rings"
+        }
+      },
+      {
+        "id": "barrier",
+        "label": "相位偏折场",
+        "description": "完全格挡眼核重击；被深渊鸣潮烧穿半伤",
+        "phrase": "turns the left forearm outward while keeping her stance fixed, the wrist projector opening into six interlocking metallic petals as hundreds of cyan hexagons ignite from a pinpoint above her gauntlet and multiply into a towering phase screen; translucent plates stack in nested layers between the hunter and the leviathan, each layer carrying flowing circuit filaments and rotating calibration marks that remain purely diegetic light rather than readable text; incoming pressure ripples bend visibly around the shield’s edges, splitting into luminous arcs that race across the glossy deck and dissolve into mist, while the central hexagons brighten to near-white and shed a controlled storm of sparks, prismatic refractions and floating energy motes around her unchanged silhouette"
+      },
+      {
+        "id": "ice_shield",
+        "label": "静压锚盾",
+        "description": "完全格挡深渊鸣潮；被眼核重击穿透半伤",
+        "phrase": "locks the rifle stock firmly against her hip and spreads the angular back-mounted vanes into a rigid cross while remaining at the exact right-foreground anchor, four violet pressure emitters awakening at their tips with deep concentric pulses; dense energy sheets curve outward and join above, below and beside her into a compact spherical bulwark whose surface resembles transparent abyssal glass under impossible compression; rings of condensation race across the dome, freeze into branching crystalline veins and then pulse outward as broad violet shock bands, while droplets hovering near its boundary flatten into silver disks and the reflective deck mirrors the entire luminous shell; the shield stabilizes around her armor as a dark calm center inside the monumental pressure glow"
+      },
+      {
+        "id": "heal",
+        "label": "纳米·战损回织",
+        "description": "恢复 18 点生命",
+        "phrase": "presses the left palm against the center of her chest armor without shifting her planted stance, silver repair nanites pouring from narrow suit seams in thousands of luminous motes that orbit her body as a tightly controlled spiral; the swarm traces every scorched plate, cracked joint seal and torn pressure layer with hair-thin white filaments, weaving a radiant mesh over the black gunmetal suit before sinking beneath its segmented surfaces; damaged edges draw together under successive waves of pale light, tiny sparks reverse into sealed circuitry and a soft halo of metallic particles rises around her shoulders and back-mounted vanes, then collapses inward in one brilliant pulse as the restored armor returns to its original clean silhouette"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "arcane",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "fireball",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "earth"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "frostbolt",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "earth"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "barrier",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "barrier"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "ice_shield",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "ice"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "heal",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "星渊巨鲸·塔拉索斯",
+    "label": "the colossal biomechanical abyss leviathan",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "巡游戒备",
+        "phrase": "holds the colossal head at the fixed left-center water anchor while ribbed flank vents pulse slowly and trailing tendrils drift beneath the body",
+        "end_state": "settles at the same left-center water anchor with the cyan eye-core steady",
+        "effects": [
+          "ribbed flank vents pulsing cyan"
+        ]
+      },
+      "windup": {
+        "label": "深渊鸣潮蓄压",
+        "phrase": "seals the vented jaw and draws surrounding water through the ribbed flank vents, compressing a dense cyan pressure glow behind the mouth while nearby particles stream inward",
+        "end_state": "holds the jaw sealed around a white-cyan pressure core at the fixed water anchor",
+        "effects": [
+          "water particles streaming toward the jaw",
+          "cyan pressure light swelling behind the teeth"
+        ]
+      },
+      "enraged": {
+        "label": "星渊暴潮形态",
+        "phrase": "flares every blade-like fin and floods the ribbed armor seams with violent cyan-violet bioluminescence while the trailing tendrils stiffen around the fixed body",
+        "end_state": "holds the same water anchor wrapped in turbulent luminous currents",
+        "effects": [
+          "cyan-violet currents crawling across armor seams",
+          "tendrils rigid with charge"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "label": "深渊鸣潮·蓄压",
+        "description": "蓄力预告；下回合释放大范围压力波",
+        "weight": 28,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "seals the vented jaw and pulls surrounding water through the ribbed flank vents, condensing a star-bright cyan pressure core behind the teeth while the body remains fixed"
+      },
+      {
+        "id": "release",
+        "label": "深渊鸣潮",
+        "description": "蓄力大招；静压锚盾完全格挡，相位偏折场承受半伤",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "opens the vented jaw and releases a colossal cone of compressed blue-white water, the pressure front expanding across the viewport like a luminous underwater thunderhead toward the hunter"
+      },
+      {
+        "id": "fist",
+        "label": "眼核·裂海射线",
+        "description": "常规重击；相位偏折场完全格挡，静压锚盾承受半伤",
+        "weight": 20,
+        "pre": "not windup",
+        "phrase": "narrows the luminous cyan eye-core and fires one thick coherent beam across the water, the ray striking toward the hunter in a straight line while bubbles shear into twin spirals around its path"
+      },
+      {
+        "id": "tendril_arc",
+        "label": "触须·电弧围猎",
+        "description": "第二种常规攻击；以多段生物电弧从远处覆盖玩家站位",
+        "weight": 16,
+        "pre": "not windup",
+        "phrase": "fans the trailing tendrils outward without advancing and snaps branching cyan bioelectric arcs between their tips, the linked arcs leaping across the water toward the hunter fixed position"
+      },
+      {
+        "id": "shield_raise",
+        "label": "共振鳞幕",
+        "description": "自盾；挡下脊翼猎鲨齐射，可被裂频静默针击碎",
+        "weight": 18,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "raises overlapping ribbed flank plates into a vibrating crescent, the layered scales locking into a luminous cyan resonant curtain across the leviathan exposed side"
+      },
+      {
+        "id": "mend",
+        "label": "深海共生修复",
+        "description": "自愈；吸收周围发光微生物修复 10 点生命",
+        "weight": 9,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "opens the ribbed flank vents and draws a cloud of cyan symbiotic motes into damaged armor seams, the living light knitting fractured plates closed along the fixed body"
+      },
+      {
+        "id": "enrage",
+        "label": "星渊暴潮形态",
+        "description": "狂暴；低生命时进入强化形态并提高后续攻击伤害",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "flares every blade-like fin and ignites the eye-core, ribbed vents and trailing tendrils in simultaneous cyan-violet radiance, surrounding water twisting into a tight luminous storm"
+      },
+      {
+        "id": "idle",
+        "label": "深海凝视",
+        "description": "保持站位并观察玩家",
+        "weight": 8,
+        "pre": "not windup",
+        "phrase": "holds the colossal head motionless at the fixed water anchor while the cyan eye-core tracks the hunter and distant sharks pass beneath the ribbed body"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "深渊鸣潮蓄压——下回合将释放！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "星渊暴潮仍在蓄压——下回合将释放！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(18, 6)",
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "深渊鸣潮命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(21, 5)",
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "深渊鸣潮命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "眼核裂海射线命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5 + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "眼核裂海射线命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "tendril_arc",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(9, 4) + ifelse(boss_enraged, 4, 0)"
+        },
+        "events": [
+          {
+            "type": "arc_hit",
+            "message": "触须电弧围猎命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "tendril_arc",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(11, 4) + ifelse(boss_enraged, 4, 0)"
+        },
+        "events": [
+          {
+            "type": "arc_hit",
+            "message": "触须电弧围猎命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "共振鳞幕展开——猎鲨齐射将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "earth"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "深海共生修复——恢复 10 点生命"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "深海共生修复——恢复 10 点生命"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "星渊巨鲸进入暴潮形态，攻击提升！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "星渊巨鲸保持距离并凝视猎手"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "星渊巨鲸保持距离并凝视猎手"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "holds the rifle steady as the leviathan eye-core fractures into fading cyan rings and the immense ribbed body goes still beyond the pressure-field, luminous particles drifting upward around its darkening armor",
+      "effects": [
+        "cyan eye-core fading into rings",
+        "bioluminescent particles rising through still water"
+      ],
+      "end_state": "holds the exact right-foreground stance with the rifle lowered while the defeated leviathan remains suspended at the left-center anchor, its eye-core dark against the distant violet-cyan city",
+      "caption": "◆ 战斗胜利 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "drops to one knee at the fixed right-foreground anchor as the electromagnetic rifle lowers against the reflective deck, suit lights fading while the leviathan eye-core burns steadily beyond the pressure-field",
+      "effects": [
+        "armor indicators dimming",
+        "leviathan eye-core burning steadily"
+      ],
+      "end_state": "remains kneeling at the right-foreground anchor with the rifle lowered while the colossal leviathan holds its unchanged left-center position above the submerged neon city",
+      "caption": "◆ 战斗失败 ◆"
+    }
+  },
+  "mp_name": "渊息",
+  "mp_max": 15
+}

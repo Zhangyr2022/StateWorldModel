@@ -1,0 +1,21 @@
+# torch must come from the PyTorch CUDA-13 index:
+#   pip install --index-url https://download.pytorch.org/whl/cu130 torch==2.10.0+cu130
+accelerate>=1.9
+av>=14
+diffusers @ git+https://github.com/huggingface/diffusers.git@abc5e9bf71fd38f53cd471bc3acaa84bc5ecbfdc
+huggingface-hub>=1.23,<2
+numpy
+nvidia-cudnn-frontend[cutedsl] @ git+https://github.com/NVIDIA/cudnn-frontend.git@29106622617bfd9031a53099a6fbbc5e74a474e9
+nvidia-cutlass-dsl==4.7.1
+Pillow
+protobuf
+safetensors>=0.8
+sentencepiece
+triton==3.6.0
+transformers==5.8.1
+# Note: nvidia-cudnn-frontend is always pinned to the git commit above (PyPI
+# 1.28.0 was the local build used for the sol_bsa exclusion test only; that
+# path is rejected by an architecture guard — it requires SM90-SM120 — so it
+# is not a dependency source). Keeping it installed makes
+# --attention-backend sol_bsa fail with an explicit architecture message
+# instead of ModuleNotFoundError.

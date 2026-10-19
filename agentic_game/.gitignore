@@ -1,0 +1,11 @@
+# 运行产物不入库(engine/.gitignore 只覆盖 engine/ 子树)
+generated/
+evaluation/output/
+*.log
+
+# 本地配置(可能含环境相关内容;模板见 config.example.toml)
+config.toml
+
+__pycache__/
+*.pyc
+.pytest_cache/

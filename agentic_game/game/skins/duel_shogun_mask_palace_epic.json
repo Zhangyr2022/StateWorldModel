@@ -1,0 +1,644 @@
+{
+  "category": "machine",
+  "game_id": "duel_shogun_mask_palace_epic",
+  "title": "狐巫姬 VS 百面魔将军",
+  "frame": "assets/duel/duel_shogun_mask_palace_epic.png",
+  "player_name": "绯樱狐巫姬·凛",
+  "player_label": "the fox-masked shrine maiden",
+  "player_appearance": "a slender shrine maiden in a white kimono with crimson hakama and pink cherry-blossom embroidery, long black hair bound with deep-red ribbons, a white fox mask covering her face, holding a narrow paper ofuda in her right hand while standing in composed ritual stillness",
+  "scene_description": "a rain-polished crimson palace courtyard beneath a blood-red moon, lined by burning red lanterns and blooming cherry trees; at the far end a colossal seated armored demon shogun dominates a black-red fortress throne, surrounded by gigantic suspended Noh masks and serried dark pagoda roofs",
+  "style": "Cinematic Japanese dark mythic fantasy; premium AAA 3D game VFX; photoreal PBR lacquer, wet stone, silk, iron and paper; monumental oni-shogun scale; crimson lantern fire; blood-red moonlight; drifting sakura petals; dense ritual mist; physically coherent sparks, ink, paper talismans and spectral flame; spectacular onmyoji energy interactions; mirror-bright rain reflections; extreme armor engraving detail; majestic symmetrical palace composition; overwhelming yokai scale; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the fox-masked shrine maiden remains anchored in the right foreground while the colossal demon shogun remains seated at the exact center distance, preserving the original palace axis, scale contrast and spatial composition throughout every action",
+  "first_frame_anchor": "The fox-masked shrine maiden shown in <Picture 1> stands at the exact fixed right-foreground anchor on the rain-blackened courtyard, body turned three-quarters toward the colossal shogun, long black hair falling behind her with red ribbons, white kimono sleeves and crimson hakama hanging naturally, white fox mask unchanged, a narrow paper ofuda held near her right side; her appearance, scale and position remain unchanged. The colossal armored demon shogun remains seated at the exact fixed center-distance anchor above the broad palace stairs, horned kabuto and layered black-red-gold armor unchanged, left hand gripping the immense upright polearm while the right hand rests forward; gigantic suspended Noh masks remain arranged behind him, red lanterns line both sides, cherry blossoms frame the courtyard and the blood-red moon remains at upper right",
+  "stability": [
+    "the fox-masked shrine maiden and the colossal demon shogun keep the same appearance, outfit, mask, weapons, scale and position; the giant suspended Noh masks, palace architecture, lantern rows, cherry trees and blood-red moon remain spatially consistent; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "the fox-masked shrine maiden remains at the exact right-foreground anchor with both feet fixed on the wet stones, ofuda lowered as fading vermilion seals, white foxfire and sakura motes dissolve around her; the colossal demon shogun remains at the identical seated center anchor with polearm upright, armor cooling to dark lacquer while the suspended Noh masks settle into stillness, lantern reflections trembling across the courtyard beneath the unchanged blood-red moon",
+  "soundscape": "rainwater whispers between polished courtyard stones, red lanterns crackle beneath the eaves, distant temple wood groans under the night wind, and enormous armor plates answer with low iron creaks beneath the hanging masks.",
+  "music": "Massive taiko pulses, low shakuhachi breaths and ritual biwa strokes under a cavernous male choir, swelling into thunderous festival-scale crescendos during major techniques before dropping into tense ceremonial silence.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "对峙",
+        "end_state": "holds her fixed ritual stance, fox mask facing the seated shogun",
+        "effects": [
+          "sakura petals sliding across rain-bright stones",
+          "lantern reflections trembling beneath her sleeves"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "arcane",
+        "label": "狐火·千灯巡夜",
+        "description": "无消耗稳定输出;白狐火追踪命中,不受护盾克制",
+        "phrase": "raises the ofuda beside her fox mask and turns her wrist; dozens of thumb-sized white foxfires bloom among the falling sakura, spiral into a luminous torii-shaped formation, then stream across the courtyard in braided serpentine trails, skimming wet stones and multiplying in every reflection before converging on the shogun in a grand chrysanthemum burst; she lowers the talisman without leaving her fixed stance",
+        "outcomes": {
+          "hit": "erupts across the shogun’s breastplate as a vast white-violet chrysanthemum of foxfire, hundreds of spectral flame petals racing over engraved armor while lantern reflections flare across the entire wet courtyard"
+        }
+      },
+      {
+        "id": "fireball",
+        "label": "绯樱·八重天葬",
+        "description": "高伤害樱雷仪式;会被百面铁幕挡下",
+        "phrase": "fans three crimson ofuda above her palm; the papers ignite without burning and summon eight immense rings of scarlet sakura high over the palace axis, each ring rotating in the opposite direction until they align into a colossal blossom mandala, then release a roaring column of petal-shaped red lightning toward the seated shogun while the courtyard reflections blaze like liquid ruby",
+        "outcomes": {
+          "hit": "detonates around the shogun in eight concentric crowns of scarlet lightning and incandescent sakura, each expanding ring illuminating the suspended masks and fortress roofs before collapsing into a storm of glowing petals",
+          "blocked": "crashes into the descending iron-mask curtain; every giant face flashes with molten sutras as the scarlet blossom column splits into branching lightning, flooding the courtyard with sparks before the intact masks swallow the remaining radiance"
+        }
+      },
+      {
+        "id": "frostbolt",
+        "label": "白面·破军封魔矢",
+        "description": "穿透式封魔攻击;击碎百面铁幕",
+        "phrase": "pinches a long white sealing strip between two fingers and snaps it straight; black calligraphy races across the paper, extending it into a brilliant arrow-shaped exorcism seal surrounded by six rotating miniature fox masks, then the seal launches horizontally across the courtyard as a needle-thin white beam, the six masks corkscrewing around its path and cutting a luminous tunnel through drifting petals",
+        "outcomes": {
+          "hit": "pierces the shogun’s torso guard in a razor-bright cross of white sealing light, six spectral masks striking a heartbeat later and exploding outward as enormous calligraphic strokes suspended above the armor",
+          "shatter": "drills through the iron-mask curtain as six spectral masks bite into separate plates; luminous cracks race face to face until the entire bulwark bursts apart in a cathedral-wide cyclone of black fragments, white sutra ribbons and ringing sparks"
+        }
+      },
+      {
+        "id": "barrier",
+        "label": "千本鸟居·不动结界",
+        "description": "完全格挡鬼枪轰击;被百鬼月蚀烧穿半伤",
+        "phrase": "presses the ofuda vertically before her fox mask; vermilion lines race outward over the wet stones and rise into hundreds of translucent torii gates nested one behind another, forming a monumental crimson corridor of protection between her fixed position and the shogun, every crossbeam blazing with gold sutras while sakura petals freeze briefly in the layered ward-light"
+      },
+      {
+        "id": "ice_shield",
+        "label": "镜月·白狐神域",
+        "description": "完全格挡百鬼月蚀;被鬼枪轰击砸穿半伤",
+        "phrase": "turns the ofuda face-down over a rain puddle; the reflection of the blood-red moon bleaches to silver and expands into a towering circular mirror of pale foxfire before her, nine spectral fox tails unfurling around its rim like a radiant iris as thin rings of frost-white light ripple across the courtyard without moving her from the anchor"
+      },
+      {
+        "id": "heal",
+        "label": "神乐·樱魂还生",
+        "description": "恢复 18 点生命",
+        "phrase": "holds the ofuda against her chest and opens her free hand; a vast double helix of pink sakura petals and tiny white foxfires rises around her without obscuring her silhouette, each orbit tracing luminous healing sutras through the air before streaming inward as warm gold threads that seal torn cloth and wounds, leaving a brief halo shaped like nine delicate fox tails"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "arcane",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "fireball",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "iron_mask"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "frostbolt",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "iron_mask"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "barrier",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "barrier"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "ice_shield",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "ice"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "heal",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "百面魔将军·胧正",
+    "label": "the colossal hundred-mask demon shogun",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "魔座镇守",
+        "phrase": "remains seated at the fixed throne anchor with monumental stillness, one gauntlet tightening around the upright polearm while the suspended Noh masks behind him tilt by a few degrees in silent unison and red lantern fire crawls across his engraved armor",
+        "end_state": "settles into the same colossal seated guard beneath the suspended masks",
+        "effects": [
+          "iron armor resonating beneath the palace eaves"
+        ]
+      },
+      "windup": {
+        "label": "百鬼月蚀·蓄势",
+        "phrase": "raises his free gauntlet from the throne arm without standing; every suspended Noh mask opens its dark mouth at once as streams of crimson lantern flame and black mist spiral toward the horned kabuto, forming an immense eclipsed halo while the blood-red moon seems to burn through its center",
+        "end_state": "holds the seated ritual pose beneath a colossal black-crimson eclipse halo, every hanging mask glowing from within as the courtyard darkens around the shrine maiden",
+        "effects": [
+          "black mist coiling between the masks",
+          "crimson eclipse light flooding the wet stones"
+        ]
+      },
+      "enraged": {
+        "label": "修罗百面",
+        "phrase": "throws his horned head back while remaining seated; the suspended Noh masks rotate into a gigantic circular crown and each face changes to a different wrathful expression, armor seams igniting furnace-red as spectral banners of black fire rise behind the throne",
+        "end_state": "looms from the same seated anchor beneath a rotating crown of wrathful masks, furnace-red seams and black fire making the palace façade pulse like a living war shrine",
+        "effects": [
+          "wrathful masks rotating overhead",
+          "black fire banners climbing behind the throne"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "label": "百鬼月蚀·蓄势",
+        "weight": 30,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "lifts his right gauntlet from the throne arm; the giant suspended masks inhale lantern flame through their open mouths, drawing red fire into a vast black sun above his kabuto while concentric rings of ink-dark sutras spread behind his shoulders and the wet courtyard reflects a growing eclipse",
+        "description": "蓄力预告;下回合释放覆盖庭院的百鬼月蚀"
+      },
+      {
+        "id": "release",
+        "label": "百鬼月蚀",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "opens his raised gauntlet; the black sun fractures into a colossal fan of screaming mask-shaped comets, each trailing black flame and crimson calligraphy as they rain diagonally across the palace axis, then merge into a wall of red-black eclipse fire that races over the wet stones toward the shrine maiden",
+        "description": "终极远程大招;镜月神域完全格挡,千本鸟居承受半伤"
+      },
+      {
+        "id": "fist",
+        "label": "鬼枪·雷门崩",
+        "weight": 18,
+        "pre": "not windup",
+        "phrase": "tightens both hands around the immense upright polearm without leaving the throne and snaps its butt against the dais; a gold-red shock ring races down the palace stairs and becomes three towering crescent blades of compressed rainwater, sparks and stone dust, the crescents crossing the courtyard in staggered formation toward the shrine maiden",
+        "description": "常规重击;远程震波;千本鸟居完全格挡,镜月神域承受半伤"
+      },
+      {
+        "id": "mask_volley",
+        "label": "能面·哭岚千刃",
+        "description": "常规模击;悬空能面发射扇形远程风刃,基础护盾无法完全克制",
+        "weight": 20,
+        "pre": "not windup",
+        "phrase": "tilts two fingers toward the shrine maiden while remaining seated; five suspended Noh masks slide into a shallow arc above his shoulders and exhale pale spectral breath, compressing it into hundreds of translucent crescent blades that sweep across the courtyard in layered fans, shredding falling petals and kicking silver rain from the stones"
+      },
+      {
+        "id": "shield_raise",
+        "label": "百面铁幕",
+        "weight": 22,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "turns his free palm outward; nine of the suspended Noh masks descend only far enough to interlock before the throne, expanding into a monumental layered wall of black lacquered faces as molten-gold sutras connect eye to eye and form a dense defensive lattice",
+        "description": "自盾;阻挡绯樱天葬,会被白面破军封魔矢击碎"
+      },
+      {
+        "id": "mend",
+        "label": "鬼铠·百匠返魂",
+        "weight": 11,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "closes his free fist; thin streams of red spirit-fire pour from the eyes of the suspended masks and stitch across cracked armor like incandescent thread, pulling lacquered plates together while showers of gold sparks cascade down the throne steps",
+        "description": "自愈;以面具中的赤色灵火修复 10 点生命"
+      },
+      {
+        "id": "enrage",
+        "label": "修罗百面",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "raises the polearm a fraction higher while remaining seated and releases a cavernous roar; every hanging mask spins into a circular war-crown, their mouths vomiting vertical banners of black flame as furnace-red light races through every engraved seam of his armor",
+        "description": "狂暴;低生命时进入强化形态"
+      },
+      {
+        "id": "idle",
+        "label": "魔座凝视",
+        "weight": 8,
+        "pre": "not windup",
+        "phrase": "remains absolutely seated beneath the fortress gate, polearm vertical and right gauntlet resting forward while the suspended masks make tiny synchronized turns toward the shrine maiden and lantern flames bend inward as though drawn by his breath",
+        "description": "按兵不动;维持压迫并观察玩家"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "百鬼月蚀蓄势——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "百鬼月蚀蓄势——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            18,
+            6
+          ],
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "百鬼月蚀轰落"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            21,
+            5
+          ],
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "百鬼月蚀轰落"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "鬼枪·雷门崩命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5 + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "鬼枪·雷门崩命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "百面铁幕展开——绯樱天葬将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "iron_mask"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "鬼铠·百匠返魂——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "鬼铠·百匠返魂——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "百面魔将军进入修罗百面，攻击提升!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "百面魔将军端坐魔座，悬面凝视庭院"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "百面魔将军端坐魔座，悬面凝视庭院"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mask_volley",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            10,
+            5
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "mask_volley_hit",
+            "message": "能面·哭岚千刃命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mask_volley",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(10, 5) + 5",
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "mask_volley_hit",
+            "message": "修罗百面强化的哭岚千刃命中"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "remains planted at the right-foreground anchor as white foxfire races through the shogun’s armor seams; the suspended Noh masks fracture one after another into luminous porcelain shards, and a gigantic nine-tailed fox silhouette blossoms behind the shrine maiden in the blood-red moonlight while the demon general’s polearm dims",
+      "effects": [
+        "nine-tailed foxfire filling the palace axis",
+        "shattered mask fragments reflecting crimson lanterns"
+      ],
+      "end_state": "the colossal shogun remains slumped upon the dark throne with armor extinguished and broken masks hanging motionless behind him, while the fox-masked shrine maiden lowers her ofuda at the unchanged right-foreground anchor beneath a radiant nine-tailed foxfire halo",
+      "caption": "◆ 调伏成功 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "sinks to one knee at the same right-foreground anchor as the ofuda chars from its edges; every suspended Noh mask turns toward her and opens in silent triumph while the shogun’s armor burns furnace-red, black spirit fire spreading across the palace stairs without moving either combatant from the original axis",
+      "effects": [
+        "charred ofuda scattering into ash",
+        "a crown of wrathful masks burning above the throne"
+      ],
+      "end_state": "the shrine maiden remains kneeling at the right-foreground anchor with her white fox mask dim beneath falling ash, while the colossal shogun remains seated above the stairs under the blood-red moon, surrounded by a victorious ring of glowing Noh masks",
+      "caption": "◆ 调伏失败 ◆"
+    }
+  },
+  "mp_name": "灵符",
+  "mp_max": 15
+}

@@ -1,0 +1,10 @@
+# 生成产物不入库(ENGINE_REQUIREMENTS §19)
+generated/
+*.log
+
+# 本地配置(可能含环境相关内容)
+config.toml
+
+__pycache__/
+*.pyc
+.pytest_cache/

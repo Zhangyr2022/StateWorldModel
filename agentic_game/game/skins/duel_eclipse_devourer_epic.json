@@ -1,0 +1,657 @@
+{
+  "category": "machine",
+  "game_id": "duel_eclipse_devourer_epic",
+  "title": "星蚀秘仪师 VS 万眼噬界者",
+  "frame": "assets/duel/duel_eclipse_devourer_epic.png",
+  "player_name": "星蚀秘仪师·阿斯特拉",
+  "player_label": "the star-robed eclipse thaumaturge",
+  "player_appearance": "a lone eclipse thaumaturge in a deep indigo hooded robe embroidered with intricate antique-gold constellations and orbital sigils, standing on a desert dune with a tall black-gold staff crowned by concentric astrolabe rings around a violet star, the robe hem and long mantle torn by the astral wind",
+  "scene_description": "an endless amber desert of colossal dunes surrounding half-buried cyclopean ruins, shattered obelisks, pyramids and suspended temple fragments, while a gigantic serpentine cosmic devourer coils through the violet nebula sky around a black eclipse, its circular maw packed with crystalline fangs and its armored body studded with luminous violet eyes",
+  "style": "Cinematic cosmic desert dark fantasy fused with occult astral horror; premium AAA 3D game VFX; photoreal PBR sandstone, black-gold metal and crystalline teeth; monumental ancient desert ruins; amber dunes beneath a violet nebula; apocalyptic black eclipse rimmed in solar fire; razor-edged god rays; dense volumetric dust; physically coherent sand, sparks, stardust, gravitational distortion and debris; spectacular celestial energy interactions; extreme material detail; majestic high-contrast composition; overwhelming cosmic scale; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the thaumaturge remains anchored in the lower-center foreground while the cosmic devourer remains fixed across the upper-center sky, its maw framed against the eclipse throughout every action, preserving the same colossal scale, desert horizon and spatial composition",
+  "first_frame_anchor": "The star-robed eclipse thaumaturge shown in <Picture 1> stands at the exact fixed lower-center foreground anchor on the crest of an amber dune, back turned three-quarters toward camera, both feet planted, deep indigo hood and constellation-embroidered mantle streaming leftward in the astral wind, holding the tall black-gold astrolabe staff upright in the right hand as its violet star faces the sky; appearance, scale and position remain unchanged. The gigantic serpentine cosmic devourer occupies the exact fixed upper-center sky anchor, its ring-shaped maw open toward the thaumaturge, concentric rows of crystalline fangs surrounding a violet stellar void, multiple luminous violet eyes embedded along its armored coils, with its body curving around the black eclipse above the half-buried obelisks and pyramids",
+  "stability": [
+    "the star-robed eclipse thaumaturge and the gigantic cosmic devourer keep the same appearance, outfit, anatomy, scale and anchored positions; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "the star-robed eclipse thaumaturge remains at the exact lower-center foreground anchor with both feet fixed on the dune, astrolabe staff lowered beside the right shoulder as dying violet motes, golden zodiac sparks and suspended sand settle around the robe; the cosmic devourer remains at the identical upper-sky anchor, its vast coils easing back into the canonical arc around the eclipse, all embedded eyes returning to a steady violet glow and the circular maw holding its original orientation while drifting ruins and dust stabilize beneath the absolutely locked camera",
+  "soundscape": "a deep gravitational drone rolls beneath the desert while sand hisses across buried stone. distant obelisks groan as floating ruins grind against invisible tides. the devourer answers with layered crystalline clicks, subsonic throat thunder and the wet resonance of an impossible cavern.",
+  "music": "Massive low brass, ritual frame drums and wordless astral choir move in slow processional pulses. Glass harmonics and distorted strings flare around each spell, swelling into eclipse-scale crescendos before falling back to a single ominous drone.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "对峙",
+        "end_state": "holds the astrolabe staff steady beneath the eclipse",
+        "effects": [
+          "violet starlight pulsing through the staff rings"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "arcane",
+        "label": "星轨·十二宫穿刺",
+        "description": "无消耗稳定输出;以黄道星矛贯穿虚空,不受任何克制",
+        "phrase": "raises the astrolabe staff without leaving the dune crest as its nested rings accelerate around the violet star; twelve antique-gold zodiac seals ignite one after another in a vast arc overhead, each casting a narrow beam into the staff head until the gathered geometry collapses into a single needle-bright astral spear. the spear launches across the desert in a perfectly straight trajectory, dragging rotating constellation lines and glittering star fragments behind it, then pierces the devourer’s forward armor in a sharp violet-gold burst that throws luminous reflections across nearby obelisks before the rings decelerate and the staff returns to guard",
+        "outcomes": {
+          "hit": "the zodiac spear punctures the devourer’s armored hide and blossoms into a twelve-point violet-gold star, scattering crystalline sparks, tiny orbiting sigils and brief constellations across the surrounding dust"
+        }
+      },
+      {
+        "id": "fireball",
+        "label": "日冕·焚星坠仪",
+        "description": "高伤害日冕攻击;会被虚空眼幕完全吞没",
+        "phrase": "tilts the staff toward the black eclipse while the free hand traces a slow solar circle above the sand; a thin ring of orange-white fire peels away from the eclipse rim and descends behind the thaumaturge, expanding into a miniature corona filled with boiling prominences and molten geometric scripture. with a sharp downward turn of the wrist, the corona compresses into a blazing sun-disc and races upward toward the devourer along a curving orbital path, shedding cathedral-sized ribbons of flame, incandescent sand and burning star fragments before erupting against the target in a broad circular wave of solar fire",
+        "outcomes": {
+          "hit": "the sun-disc crashes across the devourer’s maw-side armor and unfolds into a colossal corona, molten arcs and burning zodiac fragments washing over several violet eyes while the eclipse briefly glows like a second dawn",
+          "blocked": "the blazing sun-disc reaches the devourer only to meet a wall of synchronized violet eyes; overlapping gravitational lenses fold the corona inward, swallowing flame, sparks and reflected light until the barrier collapses into dim violet motes"
+        }
+      },
+      {
+        "id": "frostbolt",
+        "label": "逆星·绝对静默",
+        "description": "寒寂攻击;可击碎虚空眼幕并冻结其引力结构",
+        "phrase": "turns the staff rings counter to one another until their engraved constellations visibly reverse, drawing heat, drifting dust and violet light inward from the surrounding desert; a transparent blue-black crystal forms between the rings, containing a motionless miniature night sky where every star appears frozen. the thaumaturge thrusts the staff tip forward only a handspan and the crystal unfolds into a wide silent ribbon of absolute stillness, crossing the battlefield without wind or flame. sand grains stop in midair along its path, nearby ruins frost over, and the ribbon strikes the devourer as branching geometric ice spreads across its armored scales",
+        "outcomes": {
+          "hit": "the silent ribbon strikes the devourer and erupts into black-blue stellar frost, locking sparks and dust motionless while branching ice constellations crawl over the armored coils",
+          "shatter": "the reversed-star ribbon intersects the eye-woven barrier, freezing its gravitational lenses into brittle crystal; every violet aperture fractures simultaneously and bursts into a vast halo of glassy shards, frozen light and suspended sand"
+        }
+      },
+      {
+        "id": "barrier",
+        "label": "天球·黄金经纬",
+        "description": "完全格挡星骸轰击;会被噬界吐息烧穿并承受半伤",
+        "phrase": "plants the staff butt into the dune without changing position as a golden longitude line races outward through the sand, circles the thaumaturge, and rises into a colossal transparent celestial sphere. luminous latitude bands, zodiac houses and antique astronomical numerals rotate on separate axes around the fixed figure, intersecting to form dense layers of geometric authority. incoming dust and debris bend harmlessly around the sphere while each intersection flashes like a tiny star. the outer shell remains transparent enough to preserve the thaumaturge’s silhouette, the distant devourer and the eclipse, then steadies into a resonant black-gold hum awaiting impact"
+      },
+      {
+        "id": "ice_shield",
+        "label": "黑月·无光界面",
+        "description": "完全格挡噬界吐息;会被星骸轰击砸穿并承受半伤",
+        "phrase": "lifts the staff vertically until its violet star aligns exactly with the black eclipse; the surrounding nebula light dims as a perfectly circular disc of lightless space condenses several meters before the thaumaturge, edged by a razor-thin silver-violet event horizon. concentric gravitational ripples spread across the sand beneath it, flattening dune ridges into delicate rings while loose stones hover at knee height. the disc remains fixed like a portable eclipse, swallowing glare and heat but leaving the caster’s outline readable around its rim, as faint constellations crawl backward across the surface and the astrolabe rings lock into a silent defensive alignment"
+      },
+      {
+        "id": "heal",
+        "label": "命宫·群星归位",
+        "description": "恢复 18 点生命;以本命星图回溯伤势",
+        "phrase": "draws the staff close to the chest while the free hand presses over the robe’s central constellation sigil; the embroidered gold lines detach from the fabric as threads of living starlight and expand into a human-sized natal chart around the thaumaturge. one by one, displaced stars slide backward along luminous orbital tracks and click into their ordained positions, each alignment sending a warm pulse through the body. torn cloth reseals beneath crawling gold embroidery, bruised light fades from the hands, and a shower of tiny violet-white meteors rises rather than falls, dissolving above the hood as the restored star map settles back into the robe"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "arcane",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "fireball",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "void_eye"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "frostbolt",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "void_eye"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "barrier",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "celestial"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "ice_shield",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "eclipse"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "heal",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "万眼噬界者·阿波菲斯",
+    "label": "the many-eyed cosmic devourer",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "环蚀巡游",
+        "phrase": "holds its immense coil around the eclipse while the ring-maw remains open and dozens of violet eyes blink in asynchronous patterns across the armored hide",
+        "end_state": "settles its coils back around the eclipse with the circular maw fixed toward the thaumaturge",
+        "effects": [
+          "violet eyes blinking across the armored coils"
+        ]
+      },
+      "windup": {
+        "label": "噬界蓄鸣",
+        "phrase": "draws every visible violet eye toward the circular maw as the inner stellar void contracts and the crystalline fangs begin resonating in concentric waves",
+        "end_state": "holds a compressed violet singularity behind the innermost fangs while the surrounding nebula bends toward the waiting maw",
+        "effects": [
+          "starlight curving toward the maw",
+          "crystalline fangs resonating"
+        ]
+      },
+      "enraged": {
+        "label": "群星饥渴",
+        "phrase": "flares every embedded eye open at once as violet fractures race along the armored coils and the eclipse corona twists into a burning spiral behind the maw",
+        "end_state": "holds the same sky anchor wreathed in violet gravitational lightning, every eye burning brighter around the eclipse",
+        "effects": [
+          "violet gravity lightning branching across the coils",
+          "sand lifting in distant spirals"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "label": "终极星噬·蓄鸣",
+        "description": "大招预告;下一回合必定释放噬界吐息",
+        "weight": 30,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "draws violet radiance from every embedded eye into the circular maw while the innermost fangs vibrate like a colossal tuning fork; the stellar void at the throat contracts from a broad galaxy-like vortex into a dense point of impossible darkness, bending the eclipse corona, floating ruins and drifting sand toward it without moving the creature from its sky anchor"
+      },
+      {
+        "id": "release",
+        "label": "终极星噬·噬界吐息",
+        "description": "毁灭级持续吐息;黑月·无光界面可完全格挡,天球·黄金经纬仅减半",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "opens the ring-maw to its full fixed diameter as the compressed throat singularity erupts into a cathedral-wide torrent of violet-black stellar plasma; concentric shock rings race down the beam like collapsing halos, vaporizing airborne sand into luminous glass mist while gravitational ripples carve parallel trenches across the dunes toward the thaumaturge and make the half-buried obelisks blaze with reflected ultraviolet fire"
+      },
+      {
+        "id": "fist",
+        "label": "星骸雨·天坠",
+        "description": "常规重击;召引漂浮神殿残骸远程轰击,黄金经纬完全格挡,黑月仅减半",
+        "weight": 18,
+        "pre": "not windup",
+        "phrase": "focuses three upper eyes on the floating temple fragments as violet tethers snap into existence between pupil and stone; several colossal blocks rotate above the desert, acquire burning orbital trails, then plunge one after another toward the thaumaturge’s fixed dune in a steep celestial bombardment, each impact throwing towering fans of sand, broken masonry and violet sparks without changing the devourer’s anchored coil"
+      },
+      {
+        "id": "eye_lance",
+        "label": "万眼·视差裁决",
+        "description": "常规精准攻击;多眼形成交叉视差光束,可绕开两类护盾的完全克制",
+        "weight": 18,
+        "pre": "not windup",
+        "phrase": "aligns six lateral eyes along separate sections of the armored coil as each pupil narrows into a radiant violet slit; thin beams lance outward at different angles, skim past pyramids and obelisks, then intersect above the thaumaturge to form a rotating geometric cage whose final convergence drops as a vertical column of starfire, blasting a circular pattern into the sand while leaving the monster fixed around the eclipse"
+      },
+      {
+        "id": "shield_raise",
+        "label": "万眼·虚空眼幕",
+        "description": "自盾;同步睁眼编织引力透镜,吞没日冕攻击,会被绝对静默击碎",
+        "weight": 18,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "opens a broad chain of violet eyes along the forward coil as each iris projects a transparent gravitational lens; the overlapping lenses tessellate into a vast curved eye-shaped membrane before the devourer, bending stars, eclipse light and distant ruins into concentric distortions while the barrier remains translucent enough to preserve the circular maw and armored silhouette behind it"
+      },
+      {
+        "id": "mend",
+        "label": "蜕星·噬光再生",
+        "description": "自愈;吞食周围星尘与遗迹能量,修复 10 点生命",
+        "weight": 10,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "closes the outer ring of fangs while several lower eyes turn toward the ruined horizon; violet filaments pull luminous dust, tiny meteor fragments and golden residue from shattered monuments into the armored body, where damaged plates lift and reseal like overlapping cosmic scales as cracks fill with molten starlight and the repaired eye sockets rekindle one after another"
+      },
+      {
+        "id": "enrage",
+        "label": "群星饥渴",
+        "description": "狂暴形态;低生命时所有眼睛与蚀环共振,强化后续攻击",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "flares every visible eye open in the same instant as the armored coils tense around the eclipse; violet fractures race between the pupils like a living constellation, the solar corona twists into a violent spiral, and a pulse of gravitational thunder sweeps over the desert, lifting curtains of sand and rotating suspended ruins while the devourer remains locked to its original celestial arc"
+      },
+      {
+        "id": "idle",
+        "label": "吞星凝视",
+        "description": "短暂观望;维持压迫并重置视觉节奏",
+        "weight": 5,
+        "pre": "not windup",
+        "phrase": "holds the ring-maw motionless against the eclipse while waves of violet eyes blink from front to back along the colossal coil; faint gravitational ripples pass over the dunes, suspended stones rotate slowly above the ruins, and the inner stellar void pulses once like a distant heartbeat before returning to its predatory stillness"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "终极星噬蓄鸣——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "群星饥渴仍在蓄鸣——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            18,
+            6
+          ],
+          "block": [
+            "eclipse"
+          ],
+          "half": [
+            "celestial"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "噬界吐息命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            21,
+            5
+          ],
+          "block": [
+            "eclipse"
+          ],
+          "half": [
+            "celestial"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "噬界吐息命中(群星饥渴加蚀!)"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "celestial"
+          ],
+          "half": [
+            "eclipse"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "星骸雨轰击命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5 + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "celestial"
+          ],
+          "half": [
+            "eclipse"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "星骸雨轰击命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "eye_lance",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(10, 4) + ifelse(boss_enraged, 4, 0)",
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "eye_hit",
+            "message": "视差裁决命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "eye_lance",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(12, 4) + 4",
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "eye_hit",
+            "message": "视差裁决命中(群星饥渴强化!)"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "虚空眼幕展开——日冕攻击将被吞没"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "void_eye"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "虚空眼幕展开——日冕攻击将被吞没"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "void_eye"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "噬光再生——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "噬光再生——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "万眼噬界者进入群星饥渴,攻击提升!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "万眼噬界者维持吞星凝视"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "万眼噬界者环绕蚀日凝视战场"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "holds the astrolabe staff aloft as the devourer’s violet eyes extinguish in a wave from tail to maw; the colossal coils fracture into drifting constellations, revealing the black eclipse unobstructed while twelve golden zodiac seals rise from the desert ruins and assemble into a radiant celestial crown around the staff’s violet star",
+      "effects": [
+        "twelve zodiac seals forming a radiant crown",
+        "the devourer dissolving into constellations"
+      ],
+      "end_state": "the thaumaturge remains alone on the dune beneath a clearing violet sky, staff crowned by a complete golden zodiac wheel as the last fragments of the cosmic devourer fade into harmless stardust around the dark eclipse",
+      "caption": "◆ 战斗胜利 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "sinks to one knee on the dune as the astrolabe rings lose their violet light; above, the devourer opens its circular maw wider against the eclipse and every embedded eye fixes on the fallen figure while gravitational darkness rolls across the ruins and swallows the golden constellations embroidered on the robe",
+      "effects": [
+        "the astrolabe star fading to black",
+        "hundreds of violet eyes fixing on the dune"
+      ],
+      "end_state": "the thaumaturge remains kneeling with the darkened staff lowered into the sand while the cosmic devourer dominates the eclipse overhead, its luminous eyes forming a final violet constellation across the ruined desert",
+      "caption": "◆ 战斗失败 ◆"
+    }
+  },
+  "mp_name": "星蚀",
+  "mp_max": 15
+}

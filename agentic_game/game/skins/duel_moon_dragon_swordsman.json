@@ -1,0 +1,655 @@
+{
+  "category": "machine",
+  "game_id": "duel_moon_dragon_swordsman",
+  "title": "月下孤剑 VS 苍鳞天龙",
+  "frame": "assets/duel/duel_moon_dragon_swordsman.png",
+  "player_name": "月下孤剑·凌霄",
+  "player_label": "the moonlit white-robed swordsman",
+  "player_appearance": "a lone swordsman in layered white and charcoal robes with weathered hems, black leather bracers, a dark waist sash threaded with restrained crimson cords, long black hair bound high yet streaming in the wind, holding a straight single-edged sword low in his right hand with the blade angled toward the reflective water",
+  "scene_description": "a vast shallow mirror lake beneath an enormous full moon, bordered by mist-wrapped dark mountain islets and wind-bent pines; scarlet maple branches frame the upper-left sky and fallen red leaves scatter across the silver water while a colossal white-maned, blue-gray scaled eastern dragon coils through moonlit cloud at center-right, facing the lone swordsman across the open distance",
+  "style": "Cinematic moonlit eastern high fantasy; premium AAA 3D game VFX; photoreal PBR scales, silk, wet stone and reflective water; monumental mythic scale; cold silver-blue moonlight contrasted with restrained scarlet maple leaves and crimson costume cords; dense volumetric cloud and lake mist; razor-bright sword energy; physically coherent spray, frost, sparks, vapor and leaf turbulence; intricate dragon scale detail and flowing white mane; luminous amber eyes; majestic high-contrast composition; clear silhouettes through spectacular effects; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the swordsman remains anchored in the left foreground while the colossal dragon remains fixed at center-right distance before the full moon, preserving the original scale difference, facing direction, waterline and spatial composition throughout every action",
+  "first_frame_anchor": "The moonlit white-robed swordsman shown in <Picture 1> stands at the exact fixed left-foreground anchor in ankle-deep mirror water, body turned three-quarters away from camera toward the dragon, both feet planted, straight sword lowered in his right hand and angled down toward the water; long black hair, white outer robe, charcoal lower layers and crimson cords stream toward screen-left in the wind, with his appearance, scale and position unchanged. The colossal eastern dragon remains at the exact fixed center-right anchor before the enormous full moon, blue-gray scaled coils suspended through low cloud, horned head lowered toward the swordsman, white mane billowing, amber eyes glowing, long whiskers arcing outward, with its immense body scale and position unchanged.",
+  "stability": [
+    "the moonlit white-robed swordsman and the colossal eastern dragon keep the same appearance, outfit, weapon, body structure, scale relationship and fixed positions; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "holds the exact left-foreground anchor with both feet fixed beneath the mirror water, sword lowered at the right side as fading silver motes, red leaves and ripples settle around the white-and-charcoal robes; the colossal eastern dragon remains at the identical center-right aerial anchor before the full moon, coils returning to their canonical curve, white mane and whiskers easing in the wind, both figures preserving their original silhouettes and distance as the camera remains absolutely locked-off",
+  "soundscape": "wind combs through maple leaves and the dragon’s white mane, shallow water whispers around the swordsman’s boots, distant mountain echoes answer each draconic roar, and sword-energy impacts crack across the lake with rolling thunder.",
+  "music": "Low guqin harmonics, deep war drums and breathy xiao phrases build beneath sustained orchestral strings. Massive taiko and bronze-gong impacts mark dragon attacks, then recede into tense moonlit resonance.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "月下对峙",
+        "end_state": "holds the low sword guard toward the dragon",
+        "effects": [
+          "moonlight trembling across shallow ripples"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "moon_arc",
+        "label": "月痕·横断天河",
+        "description": "无消耗稳定剑气；不受龙鳞云障克制。",
+        "phrase": "raises the lowered sword only to shoulder height while both feet stay planted; gathers a thin crescent of moonlight along the steel until the blade shines like a white horizon; sweeps one controlled horizontal cut and releases a vast silver sword arc across the lake, skimming inches above the water and peeling twin curtains of spray from its path; scatters fallen maple leaves into a widening spiral without obscuring either combatant; strikes the dragon’s forward scales with a moon-bright fracture of sparks; lowers the blade to the original guard as the severed wake closes into concentric ripples.",
+        "outcomes": {
+          "hit": "a silver crescent tears across the dragon’s forward scales and erupts into a broad fan of white sparks, scale dust and moonlit vapor while the surrounding cloud rolls outward in a clean circular shockwave"
+        }
+      },
+      {
+        "id": "scarlet_rain",
+        "label": "枫烬·万叶穿云",
+        "description": "高伤害群射剑术；会被龙鳞云障完全挡下。",
+        "phrase": "turns the sword edge upward while remaining rooted in the mirror water; draws nearby scarlet maple leaves into six hovering rings with a rising silver current; flicks the blade through compact tracing cuts that stamp each leaf with a razor-thin moon rune; launches the rings forward as converging streams of red leaves and white sword filaments, each stream curving through the mist from a different height before meeting on the dragon’s chest and jawline; bursts the convergence into a grand chrysanthemum of silver cuts, red leaf embers and waterborne reflections; lets the surviving leaves drift down while the sword returns to a low diagonal guard.",
+        "outcomes": {
+          "hit": "converging scarlet leaves and silver filaments blossom across the dragon’s chest into layered cutting rings, scattering red embers, bright scale sparks and reflected streaks across the lake",
+          "blocked": "a rotating wall of blue-gray scale-shaped cloud plates catches every leaf stream; silver cuts flare harmlessly across its surface before the red leaves char to dim embers and fall into the lake"
+        }
+      },
+      {
+        "id": "star_piercer",
+        "label": "天隙·一星贯月",
+        "description": "破盾穿刺剑气；击碎龙鳞云障。",
+        "phrase": "levels the straight sword toward the dragon without advancing; compresses moonlight from the lake reflection into a needle-bright point at the blade tip while a narrow circular pressure ring forms behind the hilt; tightens the stance and releases the stored light as a single piercing sword beam no wider than the blade, wrapped in rotating translucent rings that drill a clean corridor through cloud and mist; drives the beam into the dragon’s defensive scale-current with a crystalline thunderclap, splitting the barrier from its center into geometric shards of pale blue light; holds the extended guard for one heartbeat before lowering the sword as the pierced mist collapses inward.",
+        "outcomes": {
+          "hit": "a needle-bright beam punches into the dragon’s armored chest with a focused burst of silver light, sending narrow fractures and glittering scale fragments outward without hiding its silhouette",
+          "shatter": "rotating sword rings bore through the blue-gray scale-cloud barrier; luminous seams race across the entire shell before it bursts into thousands of translucent scale fragments and torn ribbons of mist"
+        }
+      },
+      {
+        "id": "mirror_guard",
+        "label": "镜湖·无波界",
+        "description": "完全格挡龙尾雷潮；会被月蚀龙息烧穿并承受半伤。",
+        "phrase": "plants the sword tip lightly against the water beside the right boot without changing position; sends a perfectly circular ripple across the mirror lake until the surface within several body lengths becomes unnaturally still; lifts that reflection upward into three immense transparent panes shaped like overlapping moon discs, each pane carrying inverted mountains, red leaves and the dragon’s silhouette; braces the sword horizontally as incoming force bends the reflected images into deep concentric waves; redirects heavy shock energy sideways into towering symmetrical fans of spray while preserving a clear view of both figures; releases the tension and lets the moon-discs pour back into the lake as glasslike rain."
+      },
+      {
+        "id": "frost_ward",
+        "label": "霜轮·寒月结界",
+        "description": "完全格挡月蚀龙息；会被龙尾雷潮砸穿并承受半伤。",
+        "phrase": "draws a slow circle with the sword tip while both feet remain fixed; freezes airborne mist into a luminous ring of interlocked ice petals centered before the torso; expands the ring into a tall crescent-shaped frost ward whose translucent surface reveals the swordsman and dragon clearly through layered crystalline veins; pulls cold vapor from the lake into rotating bands around the ward as each band locks into another hexagonal ice lattice; receives searing breath by turning its heat into rolling clouds of white steam and glowing meltwater channels; lowers the sword after the impact and allows the ward to break apart into harmless moonlit snow that settles across the rippling surface."
+      },
+      {
+        "id": "moon_recovery",
+        "label": "归月·清辉返照",
+        "description": "消耗剑意恢复 18 点生命。",
+        "phrase": "reverses the sword and rests the flat of the blade against the left forearm while remaining in the exact stance; draws a column of soft moonlight from the full moon into the polished steel, then divides it into hundreds of fine silver threads that wrap the sleeves, sash and visible wounds without changing the costume design; closes cuts beneath translucent bands of light as pale mist rises from the water and red leaves orbit slowly at knee height; pulses one restrained halo outward across the lake, leaving every droplet briefly star-bright; turns the sword back into the right hand and lets the healing threads dissolve into drifting sparks before resuming the low guard."
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "moon_arc",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "scarlet_rain",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "scale_cloud"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "star_piercer",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "scale_cloud"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "mirror_guard",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "mirror"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "frost_ward",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "frost"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "moon_recovery",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "苍鳞天龙·朔渊",
+    "label": "the colossal white-maned eastern dragon",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "盘云戒备",
+        "phrase": "holds the immense horned head low before the moon while white mane, whiskers and suspended coils move through the wind without leaving the fixed aerial anchor",
+        "end_state": "settles into the same moon-backed coil with amber eyes fixed on the swordsman",
+        "effects": [
+          "white mane streaming through cold mist"
+        ]
+      },
+      "windup": {
+        "label": "月蚀蓄息",
+        "phrase": "draws cloud and moonlit vapor inward between the fangs as amber eyes brighten and pale light contracts deep behind the throat scales",
+        "end_state": "holds a dense black-silver sphere behind parted fangs while surrounding cloud spirals toward the mouth",
+        "effects": [
+          "cloud spiraling toward the jaws",
+          "amber eyes burning brighter"
+        ]
+      },
+      "enraged": {
+        "label": "逆鳞天威",
+        "phrase": "flares every ridge scale and whips the white mane outward as amber light floods the horn roots and long whiskers with stormlike radiance",
+        "end_state": "holds the same immense coil inside a crown of turbulent cloud, glowing scale seams and drifting sparks",
+        "effects": [
+          "scale seams glowing amber",
+          "cloud boiling around the fixed coils"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "label": "月蚀龙息·蓄势",
+        "description": "蓄力预告招；下一次行动必定释放月蚀龙息。",
+        "weight": 30,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "lowers the horned head at the fixed aerial anchor and opens the jaws toward the swordsman; pulls silver moonlight, lake mist and loose cloud into a tightening spiral between the fangs; darkens the gathered radiance from white to black-silver as amber eyes flare brighter; compresses the vortex until a dense eclipse sphere pulses behind the tongue and throws alternating bands of light and shadow across the scales; makes the long whiskers bow outward under the pressure while the white mane streams backward; holds the charged sphere without releasing it as concentric ripples race across the lake below."
+      },
+      {
+        "id": "release",
+        "label": "月蚀龙息",
+        "description": "蓄力大招；霜轮完全格挡，镜湖结界只能减半。",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "opens the jaws wider at the fixed aerial anchor and ruptures the compressed eclipse sphere; pours a colossal black-silver breath torrent across the lake in a straight descending cone, its bright outer shell wrapped around a dark core filled with star-like sparks; boils a luminous trench through the mirror water while twin walls of steam rise along the beam edges without hiding either silhouette; drives red leaves upward into a vast rotating halo and lights the mountains with alternating moon-white and ink-black flashes; tapers the torrent into a narrow final lance before closing the jaws as glowing vapor rolls low across the water."
+      },
+      {
+        "id": "tail_thunder",
+        "label": "天尾·雷潮",
+        "description": "常规重击；镜湖结界完全格挡，霜轮只能减半。",
+        "weight": 22,
+        "pre": "not windup",
+        "phrase": "tightens one distant body coil without changing the dragon’s anchor and raises the visible tail arc above the cloud bank; snaps the tail downward through the suspended mist while keeping the head trained on the swordsman; sends the impact force into the lake as a broad crescent pressure wave rather than closing the distance; races a silver-blue wall of water and branching surface lightning toward the left foreground, scattering maple leaves ahead of its rim; crowns the wave with translucent dragon-scale patterns that break into spray near the target zone; lets the tail settle back into the original coil as thunder echoes between the mountains."
+      },
+      {
+        "id": "horn_storm",
+        "label": "龙角·碎星雨",
+        "description": "第二常规远程攻击；多段星屑雷矢，无视护盾克制但伤害较低。",
+        "weight": 18,
+        "pre": "not windup",
+        "phrase": "tilts the horned crown a few degrees while remaining suspended before the moon; channels amber light along both antler-like horns until dozens of pearl-bright sparks gather at their branching tips; releases the sparks upward in a tight fan that pauses beneath the full moon and fractures into a field of needle-shaped thunder stars; bends every star toward the swordsman along distinct arcing trajectories, filling the open sky with readable luminous lines while leaving the combatants unobscured; peppers the surrounding water with small vertical bursts, sharp rings and steam puffs before the final stars converge around the target area; dims the horn glow back to its steady moonlit sheen."
+      },
+      {
+        "id": "shield_raise",
+        "label": "苍鳞·云甲",
+        "description": "自盾；完全挡下枫烬·万叶穿云，可被天隙·一星贯月击碎。",
+        "weight": 20,
+        "pre": "not windup and not boss_shield and boss_hp <= 100",
+        "phrase": "arches the neck slightly at the fixed center-right anchor and lifts several outer ridge scales along the shoulders; exhales a broad sheet of cold mist around the forward body coils; shapes the mist into hundreds of overlapping translucent blue-gray scale plates that rotate into a vast curved cloud armor before the chest and jaw; leaves deliberate gaps around the glowing amber eyes and white mane so the dragon remains clearly readable; locks the plates together with thin silver seams that reflect the full moon across the lake; holds the layered barrier steady as stray red leaves strike it and freeze along the edges."
+      },
+      {
+        "id": "mend",
+        "label": "龙脉·月髓回生",
+        "description": "自愈；生命较低时恢复 10 点生命。",
+        "weight": 11,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "draws the white mane close around the neck while keeping every coil at the same aerial anchor; gathers soft moonlight across damaged blue-gray scales until each fracture fills with liquid silver; pulls fine streams of luminous vapor upward from the lake and threads them through the wounded plates like glowing veins; seals chipped scale edges one after another with brief pearl-bright flashes as loose fragments dissolve into mist and reform against the body; releases a slow circular pulse through the surrounding cloud that brightens the dragon’s reflection below; lets the silver seams cool back to natural scale tones while the mane spreads into the wind again."
+      },
+      {
+        "id": "enrage",
+        "label": "逆鳞·天威尽显",
+        "description": "狂暴；低生命触发，后续攻击提升。",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "raises the horned head without leaving the moon-backed anchor and releases a vast roar across the lake; lifts every ridge scale from crown to visible coils as molten amber light ignites beneath their edges; whips the white mane and long whiskers outward into a radiant storm pattern while the surrounding cloud ring expands in a single violent pulse; drives concentric pressure ripples across the water and launches fallen maple leaves into the air as a scarlet crown around the distant body; brightens both eyes from amber to near-white gold and leaves thin luminous seams burning between the blue-gray scales as the roar decays into mountain thunder."
+      },
+      {
+        "id": "idle",
+        "label": "云中凝视",
+        "description": "保持压迫感的待机动作，不造成伤害。",
+        "weight": 10,
+        "pre": "not windup",
+        "phrase": "holds the immense body in the original center-right coil before the full moon; lowers the muzzle by a fraction and keeps both amber eyes fixed on the swordsman; lets the white mane stream in layered ribbons while the long whiskers trace slow arcs through the mist; flexes a few forward scales with quiet metallic-stone clicks and sends one restrained breath plume across the cloud bank; stirs the lake reflection with distant downdrafts that push scattered red leaves into widening circles; returns the head to the exact initial angle and remains motionless except for wind moving through mane, whiskers and cloud."
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "月蚀龙息正在蓄势——下回合将释放！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "逆鳞天威仍在聚息——下回合将释放！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            18,
+            6
+          ],
+          "block": [
+            "frost"
+          ],
+          "half": [
+            "mirror"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "月蚀龙息命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            21,
+            5
+          ],
+          "block": [
+            "frost"
+          ],
+          "half": [
+            "mirror"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "月蚀龙息命中（逆鳞强化）"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "tail_thunder",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "mirror"
+          ],
+          "half": [
+            "frost"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天尾雷潮命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "tail_thunder",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5",
+          "block": [
+            "mirror"
+          ],
+          "half": [
+            "frost"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天尾雷潮命中（逆鳞强化）"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "horn_storm",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(9, 4) + ifelse(boss_enraged, 3, 0)"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "碎星雨命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "horn_storm",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(11, 4)"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "碎星雨命中（逆鳞强化）"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "苍鳞云甲展开——万叶穿云将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "scale_cloud"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "苍鳞云甲展开——万叶穿云将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "scale_cloud"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "月髓回生——恢复 10 点生命"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "月髓回生——恢复 10 点生命"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "苍鳞天龙进入逆鳞天威，攻击提升！"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "苍鳞天龙在云中凝视"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "逆鳞天龙压住怒潮，等待破绽"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "holds the sword steady at the left-foreground anchor as the dragon’s amber eyes dim and the glowing seams between its scales extinguish one by one; lets the colossal coils loosen into the moonlit cloud while the white mane dissolves into pale mist; raises the blade only enough to catch the full moon along its edge as scarlet leaves descend across the quieting lake",
+      "effects": [
+        "dragon-light fading into moonlit mist",
+        "scarlet leaves settling across silver water"
+      ],
+      "end_state": "the swordsman remains standing in the mirror lake with the sword lowered while the immense dragon rests motionless within thinning cloud before the full moon, its former amber radiance reduced to a faint peaceful glow",
+      "caption": "◆ 战斗胜利 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "drops to one knee at the same left-foreground anchor as the sword tip touches the water and its moonlit edge fades; lets the white outer robe and crimson cords settle around the lowered posture while the colossal dragon lifts its horned head before the full moon and fills the cloud bank with steady amber radiance",
+      "effects": [
+        "sword-light fading beneath the moon",
+        "amber dragon-light spreading through cloud"
+      ],
+      "end_state": "the swordsman remains kneeling in the shallow mirror water with the sword lowered while the colossal dragon holds its immense moon-backed coil above the mist, white mane streaming and amber eyes burning across the silent distance",
+      "caption": "◆ 战斗失败 ◆"
+    }
+  },
+  "mp_name": "剑气",
+  "mp_max": 15
+}

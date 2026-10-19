@@ -1,0 +1,48 @@
+# ===== Python 运行产物 =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# ===== 模型权重 / 大型二进制（均可重新下载）=====
+*.safetensors
+*.pth
+*.pt
+*.onnx
+*.ckpt
+*.whl
+*.bin
+*.so
+
+# ===== 数据集 / 生成产物 / 中间结果 =====
+agentic_game/generated/
+agentic_game/assets/
+worldstate_bench/data/
+spatial_proxy/WildDet3D/
+agentic_game/evaluation/output/
+worldstate_bench/out/
+worldstate_bench/runs/
+worldstate_bench/baseline/manifests/
+worldstate_bench/baseline/logs/
+worldstate_bench/baseline/done_*
+worldstate_bench/generation/ops/envs/wheels/
+spatial_proxy/*/ckpt/
+spatial_proxy/*/checkpoints/
+spatial_proxy/*/demo_outputs/
+
+# ===== 本机配置 / 内部文件 =====
+agentic_game/config.toml
+.claude/
+
+# ===== 日志与系统文件 =====
+*.log
+nohup.out
+.DS_Store
+
+# ===== 第三方代码(按需拉取,不入库)=====
+h3-a800/h3_runtime/third_party/sol_attn/

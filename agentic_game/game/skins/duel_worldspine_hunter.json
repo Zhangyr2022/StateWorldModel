@@ -1,0 +1,640 @@
+{
+  "category": "machine",
+  "game_id": "duel_worldspine_hunter",
+  "title": "天脊猎神者 VS 沉眠山龙",
+  "frame": "assets/duel/duel_worldspine_hunter.png",
+  "player_name": "天脊猎神者·卡恩",
+  "player_label": "the worldspine hunter",
+  "player_appearance": "a lone weathered hunter in layered dark leather, bone plates and ragged fur mantles, standing wide-legged atop a colossal bleached skull, carrying a towering recurved bone bow reinforced with horn segments, cords and carved trophies, with loose cloak strips and dark hair lifted by the highland wind",
+  "scene_description": "a vast flooded primordial basin under a storm-broken golden sky, scattered acacia-like trees and reflective shallows surrounding enormous fossil ribs and skulls, while an impossible mountain-sized dragon lies fused with the distant range, its ridged stone hide carrying forests, waterfalls and cloud banks around one immense molten-gold eye",
+  "style": "Cinematic primordial mythic fantasy; premium AAA 3D game VFX; photoreal PBR stone, bone, leather, water and vegetation; monumental creature-landscape scale; storm-broken amber sky; volumetric sun shafts; dense mountain mist; physically coherent spray, dust, splinters, leaves, sparks and debris; spectacular arrow and geological energy interactions; realistic reflections; extreme terrain detail; majestic high-contrast composition; overwhelming ancient scale; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the hunter remains anchored on the colossal skull in the center foreground while the mountain dragon remains fixed across the distant basin, preserving the same epic scale, horizon, eye-line and spatial composition throughout every action",
+  "first_frame_anchor": "The worldspine hunter shown in <Picture 1> stands at the exact fixed center-foreground anchor on the crown of a colossal bleached skull, feet planted wide, back turned three-quarters toward camera, ragged fur and leather strips moving in the wind, the towering recurved bone bow held upright at his right side as he faces the distant creature; his appearance, scale and position remain unchanged. The mountain dragon remains fused with the exact distant mountain anchor, its immense molten-gold eye open beneath a ridged stone brow, forests covering the crown and waterfalls descending from the cheek while jagged dorsal peaks recede across the right horizon through cloud and mist",
+  "stability": [
+    "the worldspine hunter and the mountain dragon keep the same appearance, equipment, scale and position; the hunter stays on the skull and the dragon stays fused with the mountain range; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "holds the exact center-foreground skull anchor with the recurved bone bow lowered at his right side as drifting feathers, stone dust and golden motes settle over the reflective basin; keeps the mountain dragon fused to the identical distant range while its ridges, forests and waterfalls return to stillness beneath thinning cloud, preserving both silhouettes and the locked composition",
+  "soundscape": "a deep mountain resonance rolls beneath the flooded basin. wind combs through high grass, fur and distant forest crowns. waterfalls thunder from the dragon’s stone face while shallow water answers with long reflective ripples. bowstrings, bone limbs and falling rock crack sharply through the vast open air.",
+  "music": "Massive low horns, frame drums and throat-choir drones move at a deliberate hunting pulse. Taut strings and bone percussion surge around each shot, then open into enormous choral swells for the dragon’s geological attacks.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "远猎对峙",
+        "end_state": "holds the fixed skull-top hunting stance with the bone bow ready",
+        "effects": [
+          "golden mist drifting across the flooded basin"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "spine_arrow",
+        "label": "脊骨·贯岳箭",
+        "description": "无消耗的稳定穿刺射击；命中后回复 3 点猎息。",
+        "phrase": "draws the colossal bone bow without leaving the skull crown, locking one boot against a weathered ridge while the horn limbs bend into a brutal crescent; threads a pale spine-arrow onto the taut cord as wind, loose feathers and bone dust spiral toward the arrowhead; releases a single thunderous shot that crosses the flooded basin as a white pressure tunnel, skimming mirrored water into twin walls of spray before striking the mountain dragon’s brow in a concentrated burst of stone splinters, amber sparks and expanding circular shock rings, then lowers the bow back to the fixed guard",
+        "outcomes": {
+          "hit": "bursts the spine-arrow against the stone brow below the golden eye, driving a tight cone of pale fragments and amber sparks outward while concentric pressure rings race across the surrounding cloud without obscuring the dragon’s silhouette"
+        }
+      },
+      {
+        "id": "sunpiercer",
+        "label": "猎日·金穹坠矢",
+        "description": "高伤害猎息箭；会被玄岩甲完全挡下。",
+        "phrase": "raises the bone bow toward the broken sun while keeping both feet fixed, drawing a barbed black arrow until the cord hums like a siege cable; gathers the descending god rays into a vast molten-gold ring above the arrowhead, where rotating feather-shaped flares compress around a white-hot core; releases upward and lets the projectile arc across the sky before descending onto the mountain dragon like a miniature sunset, trailing a cathedral-wide ribbon of luminous feathers, ember fragments and vapor; drives the final impact into the distant ridge as a towering golden crown of fire reflected across every sheet of water",
+        "outcomes": {
+          "hit": "detonates the descending sun-arrow across the dragon’s ridge in a vast golden corona, sending molten-looking stone sparks, feather-shaped light and rolling vapor outward while the eye remains visible through the luminous ring",
+          "blocked": "crashes the sun-arrow into the raised玄岩甲, spreading a blazing golden disk across the stone plates before the light fractures into thousands of harmless feather-shaped embers and the shield remains standing"
+        }
+      },
+      {
+        "id": "riftshot",
+        "label": "裂谷·回声穿心",
+        "description": "破盾重箭；专门击碎玄岩甲，伤害略低于猎日箭。",
+        "phrase": "turns the bow a few degrees sideways and braces the lower limb against the skull ridge, nocking a thick drill-headed arrow wrapped in braided sinew and fossil teeth; pulls until the carved bow groans, causing hairline cracks in the skull beneath his boots to glow with reflected amber light; releases a low, perfectly level shot that spins into a corkscrew of compressed air and gravel, carving a straight wake through mist and shallow water; punches the rotating projectile toward the dragon’s armored cheek, where nested rings of sonic force hammer the same point in rapid succession and erupt into a disciplined cone of shattered rock",
+        "outcomes": {
+          "hit": "drives the drill-arrow into the dragon’s cheek with nested sonic rings, blasting a narrow crater of shattered stone and dust while the surrounding waterfalls bend outward under the pressure wave",
+          "shatter": "bores through the玄岩甲 at one concentrated point, multiplying bright fracture lines across every slab until the entire barrier bursts outward as a monumental fan of rock plates, dust and golden-lit gravel"
+        }
+      },
+      {
+        "id": "ribward",
+        "label": "巨骸·肋骨天垒",
+        "description": "完全格挡山崩重击；会被熔瞳天火烧穿并承受半伤。",
+        "phrase": "plants the lower bow tip into a hollow of the skull and hooks the cord around a carved bone notch, using the weapon as a resonant anchor while the free hand closes into a fist; awakens the colossal fossil ribs scattered along the left basin, making pale segments rise only enough to align their ancient curvature with the hunter’s fixed position; forms a layered semicircular bulwark of translucent ivory rib echoes around the skull, each arc etched by warm amber seams and shedding chalk-white dust; locks the final ribs together overhead as falling debris and reflected sunlight ripple across the barrier’s polished fossil surface"
+      },
+      {
+        "id": "mistward",
+        "label": "瀑幕·千层水镜",
+        "description": "完全格挡熔瞳天火；会被山崩重击砸穿并承受半伤。",
+        "phrase": "tilts the recurved bow forward and draws an empty cord once, plucking a deep resonant note across the basin while remaining planted on the skull; pulls ribbons of spray from the dragon’s distant waterfalls and silver mist from the flooded flats into the air before him, arranging them as dozens of thin vertical water veils; overlaps the veils into a broad translucent lens that keeps both combatants visible, with concentric ripples and suspended droplets refracting the golden sky; seals the water mirror with a final bowstring pulse as cool vapor curls around the skull and bright caustic patterns race across the hunter’s armor"
+      },
+      {
+        "id": "ancestral_mend",
+        "label": "祖猎·兽魂归息",
+        "description": "消耗猎息恢复 18 点生命，并保持原位继续狩猎。",
+        "phrase": "rests the bow horizontally across both forearms and presses a carved tooth charm against the sternum without changing footing; releases a low breath that stirs dust from the skull and calls pale silhouettes of ancient herd beasts from the reflective water around the foreground, their forms made from mist, sunlight and drifting feathers; circles the spectral herd once around the skull as thin amber threads peel from each apparition and stitch torn leather, bruised skin and cracked bone plates; gathers the remaining light into the hunter’s chest in a warm pulse, then lets the animal shapes dissolve into harmless motes while the bow returns to the same ready angle"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "spine_arrow",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "sunpiercer",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "stone"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "riftshot",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "stone"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "ribward",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "rib"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "mistward",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "mist"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "ancestral_mend",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "沉眠山龙·奥罗冈",
+    "label": "the mountain dragon",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "山脉静息",
+        "phrase": "holds the mountain range in immense stillness as the golden eye narrows beneath the stone brow and waterfalls continue pouring from the forested face",
+        "end_state": "settles into the same mountain-bound stillness with the golden eye watching the skull",
+        "effects": [
+          "waterfalls streaming through cloud"
+        ]
+      },
+      "windup": {
+        "label": "熔瞳蓄火",
+        "phrase": "widens the molten-gold eye as concentric furnace rings kindle inside the iris and every waterfall flashes with reflected amber heat",
+        "end_state": "holds the eye white-hot beneath the stone brow while vapor boils from the nearest waterfalls",
+        "effects": [
+          "amber heat shimmer above the basin",
+          "steam lifting from distant falls"
+        ]
+      },
+      "enraged": {
+        "label": "天脊震怒",
+        "phrase": "flares the golden eye and lights glowing fault lines across the ridged face as forests bow under a pressure wave of ancient rage",
+        "end_state": "holds the mountain body rigid beneath glowing fault lines and storm-lit cloud",
+        "effects": [
+          "forest crowns bending in hot wind",
+          "golden fault lines glowing"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "label": "熔瞳天火·蓄势",
+        "description": "大招预告；下一次行动释放熔瞳天火。",
+        "weight": 30,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "widens the colossal golden eye at the fixed mountain anchor as nested rings inside the iris rotate into alignment, drawing sunbeams, mist and reflected water-light toward the pupil until the surrounding stone brow glows like a furnace rim"
+      },
+      {
+        "id": "release",
+        "label": "熔瞳天火",
+        "description": "蓄力大招；瀑幕水镜完全格挡，巨骸肋骨天垒只能减半。",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "opens the incandescent pupil into a star-bright aperture and projects a broad amber-white beam across the basin, boiling a straight corridor of shallow water into towering steam while molten light, refracted rainbows and glowing spray roll toward the hunter without shifting the mountain body"
+      },
+      {
+        "id": "rockfall",
+        "label": "天脊·万岳崩落",
+        "description": "常规重击；巨骸肋骨天垒完全格挡，瀑幕水镜只能减半。",
+        "weight": 20,
+        "pre": "not windup",
+        "phrase": "contracts the stone brow above the golden eye and sends a visible fault pulse through the dorsal peaks, breaking loose a fan of colossal boulders that arc from the distant ridgeline toward the skull as dusty contrails, shattered trees and sunlit gravel spread behind them"
+      },
+      {
+        "id": "rib_spear",
+        "label": "古骸·肋枪雨",
+        "description": "第二种常规远程攻击；伤害中等，不受玩家护盾完全克制。",
+        "weight": 18,
+        "pre": "not windup",
+        "phrase": "flexes buried fossil ridges along the lower mountain face and ejects a disciplined volley of pale stone spines into the sky, sending the long projectiles over the basin in staggered parabolic rows before they descend around the skull in sharp bursts of bone-colored dust and water spray"
+      },
+      {
+        "id": "shield_raise",
+        "label": "玄岩甲",
+        "description": "自盾；完全挡下猎日·金穹坠矢，但会被裂谷·回声穿心击碎。",
+        "weight": 20,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "raises overlapping slabs from the cheek and brow without changing the mountain silhouette, sliding dark basalt plates across the vulnerable golden eye line until a layered crescent of rock locks into place with glowing seams, falling moss and curtains of dust"
+      },
+      {
+        "id": "mend",
+        "label": "山脉回生",
+        "description": "自愈；在低生命时恢复 10 点生命。",
+        "weight": 10,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "draws mineral-rich water upward through the waterfalls as luminous amber veins spread beneath cracked stone, pulling loose gravel, roots and broken slabs back into damaged ridges until the mountain hide seals with fresh dark seams and drifting clouds settle against the repaired contours"
+      },
+      {
+        "id": "enrage",
+        "label": "天脊震怒",
+        "description": "狂暴；低生命触发，使后续攻击显著增强。",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "flares the golden eye to a sunlike disk as bright fault lines race across every visible ridge, throwing forest canopies sideways in a vast pressure gust while waterfalls scatter into luminous mist and the storm ceiling answers with branching amber lightning"
+      },
+      {
+        "id": "idle",
+        "label": "山眠凝视",
+        "description": "短暂静息；保持站位并观察猎人。",
+        "weight": 10,
+        "pre": "not windup",
+        "phrase": "holds perfectly still beneath the moving cloud banks as the immense golden eye tracks the hunter from across the basin, waterfalls continuing to fall in silver ribbons while small birds wheel through the sun shafts between both fixed silhouettes"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "熔瞳天火蓄力——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "天脊震怒仍在蓄力——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            18,
+            6
+          ],
+          "block": [
+            "mist"
+          ],
+          "half": [
+            "rib"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "熔瞳天火命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            21,
+            5
+          ],
+          "block": [
+            "mist"
+          ],
+          "half": [
+            "rib"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "熔瞳天火命中(天脊震怒加蚀!)"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "rockfall",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "rib"
+          ],
+          "half": [
+            "mist"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天脊万岳崩落重击命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "rockfall",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5 + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "rib"
+          ],
+          "half": [
+            "mist"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "天脊万岳崩落重击命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "玄岩甲展开——火系攻击将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "stone"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "山脉回生——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "山脉回生——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "沉眠山龙进入天脊震怒,攻击提升!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "天脊震怒的山龙巡视战场"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "山龙按兵不动,观察着神谕者"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "rib_spear",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(10, 4) + ifelse(boss_enraged, 4, 0)",
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "古骸肋枪雨命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "rib_spear",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(12, 4) + 4",
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "古骸肋枪雨命中"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "holds the bow steady as the mountain dragon’s golden eye fractures into dim amber facets, waterfalls returning to silver while glowing fault lines fade one by one across the colossal ridges and a final ring of warm light expands silently through the cloud bank",
+      "effects": [
+        "the golden eye dimming into amber stone",
+        "sunlit mist settling over the basin"
+      ],
+      "end_state": "holds the fixed skull-top stance beneath clearing god rays while the mountain dragon remains fused with the distant range, its eye dark and peaceful as waterfalls and forests settle into the restored landscape",
+      "caption": "◆ 狩猎胜利 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "drops to one knee on the skull while the bone bow remains in hand, surrounded by settling stone fragments and steaming water as the mountain dragon’s golden eye burns steadily through the thinning dust",
+      "effects": [
+        "steam rolling across the skull",
+        "the golden eye burning through dust"
+      ],
+      "end_state": "remains kneeling at the fixed foreground anchor with the bow lowered while the mountain dragon dominates the unchanged horizon, its molten-gold eye shining above waterfalls and storm-lit forest",
+      "caption": "◆ 狩猎失败 ◆"
+    }
+  },
+  "mp_name": "猎灵",
+  "mp_max": 15
+}

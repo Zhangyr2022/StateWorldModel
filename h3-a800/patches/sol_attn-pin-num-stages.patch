@@ -1,0 +1,19 @@
+--- a/sol_attn/triton_ref/fwd.py
++++ b/sol_attn/triton_ref/fwd.py
+@@ -32,7 +32,7 @@
+     configs=[
+         triton.Config({}, num_warps=warps, num_stages=stages)
+         for warps in (4, 8)
+-        for stages in (1, 2, 3, 4)
++        for stages in (1,)
+     ],
+     key=["T"],
+ )
+@@ -178,7 +178,6 @@
+     configs=[
+         triton.Config({"BV": 128}, num_warps=4, num_stages=1),
+         triton.Config({"BV": 128}, num_warps=8, num_stages=1),
+-        triton.Config({"BV": 128}, num_warps=4, num_stages=2),
+         triton.Config({"BV": 64}, num_warps=4, num_stages=1),
+     ],
+     key=["T"],

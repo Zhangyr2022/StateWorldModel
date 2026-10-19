@@ -1,0 +1,19 @@
+# Dependencies for the main process (engine/ + game/ + run_demo.py / run_ui.py).
+# The rendering / LLM resident workers run in separate subprocesses; their
+# (GPU-side) dependencies are listed separately — the main process never
+# imports torch. See AGENTS.md and README.md.
+
+# Main process
+pillow>=10.0
+# <6: gradio 6 moved css/theme out of gr.Blocks() into launch() (the launch
+# call in run_ui.py is a frozen contract); installing 6.x silently loses the
+# UI theme. The interface is written and verified against 5.x.
+gradio>=4.0,<6
+
+# Rendering worker (engine.renderer.minimax_h3 / h3_worker; only needed when
+# deploying the rendering service):
+#   torch / diffusers / transformers — matching the h3-a800 backend
+#   environment; see the backend repository's requirements.txt
+# Evaluation (evaluation/): same dependencies as above, plus ffmpeg on PATH
+#   (video assembly, engine.montage)
+huggingface_hub>=0.30        # one-time asset download (download_assets.py)

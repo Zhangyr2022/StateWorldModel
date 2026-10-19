@@ -1,0 +1,48 @@
+# Task A 流水线集中配置 —— 所有路径与协议参数唯一来源
+# CLI 参数可覆盖本文件；改这里即全局生效。
+
+paths:
+  root: .                       # 项目根（相对本文件）
+  specs_dir: generation/specs   # Part 1 的 spec 目录（specs_*.py，导出 SPECS 列表）
+  out_yaml: out/yaml            # 构建产物：每 twin 一份 YAML
+  out_frames: out/frames        # 渲染产物：每 case 一张共享首帧
+  out_cases: out/cases          # 打包产物：每 case 一夹
+  data_cases: data/cases        # 随仓库分发的数据集快照（package 后自动刷新；评测/baseline 默认读这里）
+  out_work: out/work            # 工作区：render.csv / 审计 / 日志 / 状态
+
+envs:
+  build_python: /usr/bin/python3            # 仅需 pyyaml
+  # ↓ 换成本机 conda/venv 解释器（env 清单见 generation/ops/envs/）
+  render_python: /path/to/conda_envs/flux2/bin/python
+  review_python: /path/to/conda_envs/kairos/bin/python
+
+render:
+  # ↓ 换成本机 FLUX.2-dev 权重目录（下载见 CHECKPOINTS.md）
+  model: /path/to/models/FLUX.2-dev
+  width: 1280
+  height: 720
+  steps: 30
+  guidance: 4.0
+  seeds: [42, 43, 44, 45, 46, 47]   # seed 阶梯：逐个尝试至过门控
+  gpu_pairs: ["0,1", "2,3", "4,5", "6,7"]  # 每对卡一个分片进程
+  # 结构门控（FasterRCNN person）：person0→0人 person1→恰1人全身
+  gate_pass_score: 0.55
+  gate_min_score: 0.5
+  gate_min_area: 0.02
+  gate_min_bottom: 0.70
+  # 注意：Flux2Pipeline 不支持 negative_prompt（实测 TypeError），勿加
+
+review:                     # VLM 六维审查 + prompt 修订（替代旧 audit）
+  judge: qwen38                          # 判定器标签（输出文件名用）
+  # ↓ 换成本机 Qwen3.8-27B 权重目录（下载见 ops/dl_qwen38.sh 与 CHECKPOINTS.md）
+  model: /path/to/models/Qwen3.8-27     # 原生多模态；--model 可覆盖
+  thinking: false           # 思考模式（关：快；开：慢但可再试）
+  thinking_max_new_tokens: 1024
+  nothinking_max_new_tokens: 768         # 审查/修订两次 JSON 调用的输出预算
+  gpus: [0, 1, 2, 3, 4, 5, 6, 7]       # 审查分片卡（每卡一进程加载一份模型，8 卡并行）
+  person_check: true        # 人数核对（gate=personN）；_soft 门控降级为警告
+  json_retry: 1             # JSON 解析失败重试次数
+
+cycle:                      # run.py cycle：渲→审→改prompt同seed重渲→复审
+  max_rounds: 4
+  keep_seed: true           # 修复重渲沿用失败帧原 seed（改措辞不改运气）

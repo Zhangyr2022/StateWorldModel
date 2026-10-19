@@ -1,0 +1,13 @@
+# model weights (200GB+) — provision per CHECKPOINTS.md
+# (no trailing slash: the local deployment keeps a `checkpoints` symlink here)
+checkpoints
+
+# generated media, logs and benchmark artifacts
+output/
+results/
+
+# editor / agent local settings
+.claude/
+
+__pycache__/
+*.pyc

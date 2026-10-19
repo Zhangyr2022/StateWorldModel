@@ -1,0 +1,602 @@
+{
+  "category": "machine",
+  "game_id": "duel_nine_heavens_artificer",
+  "title": "浪客机关师 VS 九天镇狱神像",
+  "frame": "assets/duel/duel_nine_heavens_artificer.png",
+  "player_name": "浪客机关师·墨弦",
+  "player_label": "the wandering crossbow artificer",
+  "player_appearance": "a lone wandering artificer in rain-soaked, wind-torn dark crimson robes and layered leather armor, long black hair streaming beneath a broad weathered conical hat, bracing an ornate brass-and-black repeating crossbow fitted with exposed gears, pressure cylinders and talisman seals",
+  "scene_description": "a colossal mountain prison-temple drowned in a violent thunderstorm, tiered black-and-red pagodas clinging to sheer cliffs around roaring waterfalls and abyssal bridges, while an immeasurable many-armed stone jailer deity rises from the central precipice, roots, chains and ancient machinery fused across its weathered body",
+  "style": "Cinematic mythic Chinese dark fantasy fused with baroque clockwork wuxia; premium AAA 3D game VFX; photoreal PBR wet stone, lacquered wood, aged brass and soaked cloth; colossal cliff-temple scale; storm-black clouds; silver lightning; ember-red lanterns; violent rain sheets; dense waterfall mist; physically coherent sparks, steam, splinters, talisman ash and debris; spectacular mechanical and ritual energy interactions; realistic wet reflections; extreme material detail; majestic high-contrast composition; overwhelming divine scale; high temporal consistency",
+  "camera": "Completely locked low-angle ultra-wide cinematic camera; absolutely no pan, tilt, zoom, dolly, orbit, tracking, reframing, cuts or camera shake; the wandering artificer remains anchored in the lower-center foreground while the colossal jailer deity remains fixed at the central mountain anchor, preserving the original bridge axis, immense scale contrast and stormbound composition throughout every action",
+  "first_frame_anchor": "The wandering crossbow artificer shown in <Picture 1> stands at the exact lower-center foreground anchor on the rain-flooded black stone causeway, both feet firmly planted, body turned three-quarters toward the colossal deity, long black hair and torn crimson robe tails streaming beneath a broad conical hat as he shoulders the ornate brass-and-black repeating crossbow toward the mountain; his appearance, scale and position remain unchanged. The colossal many-armed stone jailer deity remains fused to the exact central mountain anchor above the waterfalls, its immense weathered torso, crown, glowing eyes, layered arms, ritual implements, roots and surrounding cliff pagodas retaining the original silhouette and proportions beneath continuous lightning and rain",
+  "stability": [
+    "the wandering crossbow artificer and the colossal many-armed stone jailer deity keep the same appearance, outfit, weapon, scale and position; no on-screen text or subtitle appears"
+  ],
+  "closing_state": "the wandering artificer remains at the exact lower-center causeway anchor with both feet fixed on the flooded stone, repeating crossbow lowered across his chest as spinning brass chambers slow, talisman embers die and rain washes glowing residue into the paving seams; the colossal jailer deity remains fused to the identical mountain anchor while its many arms settle into their canonical ritual arrangement, waterfalls resume their uninterrupted descent and storm mist drifts between the pagodas as the camera remains absolutely locked-off",
+  "soundscape": "torrential rain hammers lacquered roofs and black stone while waterfalls thunder through the abyss. Brass gears chatter inside the repeating crossbow, chains groan across the mountain and enormous stone joints answer with subterranean cracks. Lightning detonates above the pagodas as spent bolts, fragments and talisman ash hiss in standing water.",
+  "music": "Massive taiko-like war drums, low bowed strings and bronze temple bells drive a severe ritual pulse. Breathless bamboo textures and metallic percussion accelerate beneath major attacks before collapsing into thunder and waterfall roar.",
+  "turn_flow": [
+    "player",
+    "boss"
+  ],
+  "phase_split": [
+    0.25,
+    0.35,
+    0.2,
+    0.2
+  ],
+  "vars": {
+    "player_hp": 90,
+    "player_mp": 10,
+    "boss_hp": 160,
+    "boss_shield": "",
+    "boss_enraged": false,
+    "windup": false,
+    "player_shield": ""
+  },
+  "var_display": [
+    "player_hp",
+    "player_mp",
+    "boss_hp",
+    "boss_shield"
+  ],
+  "initial_state": "standoff",
+  "player": {
+    "initial_state": "standoff",
+    "states": {
+      "standoff": {
+        "label": "对峙",
+        "end_state": "holds his firing stance, crossbow trained on the mountain deity",
+        "effects": [
+          "rain hissing across the crossbow's heated brass mechanisms"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "arcane",
+        "label": "机簧·千机连星",
+        "description": "无消耗稳定输出;连续机关矢不受克制",
+        "phrase": "keeps both boots locked to the flooded causeway and rolls the crossbow’s brass selector with his thumb; six nested gear-rings blossom around the stock, each tooth catching a spark of lightning as the weapon unfolds into a fan of synchronized bow-limbs, then discharges a procession of needle-bright gearhead bolts that braid around one another in a vast helical constellation, skimming the rain into luminous vapor furrows before converging upon the deity’s chest; every impact stamps a rotating cog-sigil into stone, and the overlapping seals erupt sequentially into gold-white mechanical starbursts while spent casings rain around him, hiss in the water, and the bow-limbs ratchet back into their original silhouette",
+        "outcomes": {
+          "hit": "the converging gearhead bolts hammer the deity’s chest in a spiraling sequence, each impact engraving a blazing cog-sigil before the entire cluster erupts into a grand gold-white clockwork corona, scattering sparks, stone dust and incandescent brass fragments through the rain"
+        }
+      },
+      {
+        "id": "fireball",
+        "label": "火器·赤霄龙铳",
+        "description": "高伤害爆燃攻击;会被玄岩法壁挡下",
+        "phrase": "locks a vermilion talisman cartridge beneath the crossbow without shifting his stance; exposed cylinders inhale rain-mist, compress it with furnace-red sparks, and drive the bow’s central rail open like the jaws of a bronze dragon, revealing a white-hot chamber packed with rotating seal-script; he squeezes the trigger and a colossal dragon-shaped incendiary bolt tears across the causeway, its segmented body formed from chained explosions, molten brass scales and streaming red talisman ribbons, boiling a glowing trench through the rainfall before striking the distant god; on contact the dragon coils into a blazing circular mandala and collapses inward, then detonates outward as a cathedral-sized crown of fire, sparks and vapor",
+        "outcomes": {
+          "hit": "the dragon-shaped incendiary bolt coils across the deity’s torso and collapses into a crimson-gold mandala before exploding outward, flooding its many arms with rolling fire, molten fragments and towering curtains of steam",
+          "blocked": "the incendiary dragon crashes into the玄岩法壁 and spreads across its layered stone faces as a vast burning mandala; incandescent cracks race over the barrier, yet the slabs swallow the core blast before collapsing into smoking rubble and red talisman ash"
+        }
+      },
+      {
+        "id": "frostbolt",
+        "label": "雷契·九霄破阵钉",
+        "description": "雷霆穿甲攻击;专门击碎玄岩法壁",
+        "phrase": "tilts the crossbow only a fraction upward as nine brass induction rings rise from its spine and rotate at conflicting speeds; nearby lightning forks toward them, is caught, folded and compressed into a blue-white thunder nail longer than the weapon itself, while hair, robe edges and hanging talismans lift in the violent electrostatic field; he snaps the trigger and the nail launches without recoil, dragging nine concentric shock-rings through the storm and parting the rainfall into a perfectly hollow corridor; the projectile reaches the mountain in a single blinding pulse, punches through stone with a geometric lattice of branching electricity, and leaves every wet surface flashing with reflected celestial blue",
+        "outcomes": {
+          "hit": "the thunder nail pierces the deity’s armor-like stone hide and unfolds into nine concentric lightning seals, branching electricity racing across roots, chains and ritual ornaments before bursting into a blue-white thunder crown",
+          "shatter": "the thunder nail drills through the玄岩法壁 and releases nine nested shock-rings; every slab lights from within with geometric fractures before the entire defense explodes into electrified stone shards, white vapor and spinning fragments"
+        }
+      },
+      {
+        "id": "barrier",
+        "label": "机关·万轮天幕",
+        "description": "完全格挡镇岳神掌;被天狱雷诏烧穿半伤",
+        "phrase": "plants the crossbow butt against his shoulder and twists its rear locking wheel; dozens of palm-sized brass discs spring from hidden compartments along his belt and weapon stock, but remain orbiting tightly around his fixed position, unfolding into intermeshed toothed rings whose rotations accelerate until they resemble a monumental mechanical astrolabe; crimson talisman strips snap between the rings, each character igniting in sequence as a translucent amber dome grows from the flooded paving and seals overhead; incoming rain freezes momentarily against the rotating surface, then is flung outward as luminous spray while thousands of tiny gear-teeth align into a single radiant ward-pattern that hums with crushing mechanical authority"
+      },
+      {
+        "id": "ice_shield",
+        "label": "秘械·避雷天门",
+        "description": "完全格挡天狱雷诏;被镇岳神掌砸穿半伤",
+        "phrase": "pulls a black iron grounding lever beneath the crossbow and drives its hooked tip into a seam between the causeway stones without moving his feet; four articulated conductor vanes unfold from the weapon like narrow pagoda eaves, projecting towering columns of pale geometric light around him as linked copper talismans stretch between them and assemble the outline of a monumental gate; rain streams sideways toward the energized frame, every droplet flashing silver as charge is siphoned downward, while a dense curtain of blue-black magnetic haze fills the doorway and branching lightning crawls harmlessly across its lintel before plunging into the flooded stone in spectacular fountains of white steam and violet sparks"
+      },
+      {
+        "id": "heal",
+        "label": "匠心·回天续命匣",
+        "description": "消耗机关储能;恢复 18 点生命",
+        "phrase": "thumbs open a lacquered medicine cassette built into the crossbow’s foregrip; three tiny brass automata unfold on articulated arms and circle close to his torso, projecting fine golden threads through torn cloth while a jade ampoule shatters inside the mechanism and releases luminous green vapor mixed with powdered talisman ash; the threads stitch wounds in precise crossing patterns, each completed knot becoming a miniature rotating seal before dissolving into warm light, and a translucent clockwork lotus briefly opens behind his shoulders with hundreds of delicate mechanical petals; the lotus contracts into his chest, the automata snap back into their compartments, and rain immediately darkens the repaired crimson fabric"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "*",
+        "action": "arcane",
+        "outcome": "hit",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            9,
+            4
+          ]
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "expr": "ifelse(player_mp <= 12, 3, 15 - player_mp)"
+          }
+        ]
+      },
+      {
+        "from": "*",
+        "action": "fireball",
+        "outcome_expr": "ifelse(boss_shield != '', 'blocked', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            16,
+            6
+          ],
+          "block": [
+            "earth"
+          ],
+          "chip": 2,
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          }
+        ],
+        "pre": "player_mp >= 5"
+      },
+      {
+        "from": "*",
+        "action": "frostbolt",
+        "outcome_expr": "ifelse(boss_shield != '', 'shatter', 'hit')",
+        "damage": {
+          "target": "boss_hp",
+          "roll": [
+            12,
+            4
+          ],
+          "shatter": [
+            "earth"
+          ],
+          "shield_var": "boss_shield"
+        },
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -4
+          }
+        ],
+        "pre": "player_mp >= 4"
+      },
+      {
+        "from": "*",
+        "action": "barrier",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "barrier"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "ice_shield",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -3
+          },
+          {
+            "var": "player_shield",
+            "op": "set",
+            "value": "ice"
+          }
+        ],
+        "pre": "player_mp >= 3"
+      },
+      {
+        "from": "*",
+        "action": "heal",
+        "effects": [
+          {
+            "var": "player_mp",
+            "op": "add",
+            "value": -5
+          },
+          {
+            "var": "player_hp",
+            "op": "expr",
+            "expr": "player_hp + ifelse(player_hp <= 72, 18, 90 - player_hp)"
+          }
+        ],
+        "pre": "player_mp >= 5"
+      }
+    ]
+  },
+  "boss": {
+    "name": "九天镇狱神像",
+    "label": "the colossal many-armed stone jailer deity",
+    "initial_state": "guard",
+    "states": {
+      "guard": {
+        "label": "镇狱",
+        "phrase": "holds its mountain-bound posture with terrifying stillness as rain streams down the immense crowned face, many stone arms suspended around the torso with ritual implements poised above waterfalls and pagodas",
+        "end_state": "settles into its ancient mountain-bound guarding posture",
+        "effects": [
+          "chains groaning across the cliff face"
+        ]
+      },
+      "windup": {
+        "label": "天狱敕雷",
+        "phrase": "raises the uppermost ritual wheel while every visible eye kindles from dull amber to furnace-white; the surrounding pagoda finials answer one after another, drawing branching lightning into a colossal seal suspended above its crown",
+        "end_state": "holds the completed thunder seal above its crown as the entire mountain flickers beneath captive lightning",
+        "effects": [
+          "lightning webbing between pagoda roofs",
+          "waterfalls flashing white beneath the charge"
+        ]
+      },
+      "enraged": {
+        "label": "神魔共生",
+        "phrase": "opens every glowing eye as root-bound stone plates split along ancient seams, exposing furnace-red scripture beneath while all ritual arms spread into a vast symmetrical execution mandala",
+        "end_state": "remains fused to the mountain inside a storm of red scripture, lightning and falling stone dust",
+        "effects": [
+          "red scripture burning through cracked stone",
+          "ritual arms forming an execution mandala"
+        ]
+      }
+    },
+    "actions": [
+      {
+        "id": "windup",
+        "label": "天狱雷诏·聚敕",
+        "weight": 30,
+        "pre": "not windup and boss_state != 'windup' and not boss_enraged",
+        "phrase": "raises its upper ritual wheel by a measured arc; black clouds twist directly above the crown as lightning threads descend into the wheel’s spokes, then spread between surrounding pagoda finials to sketch an enormous circular thunder edict in the sky",
+        "description": "蓄力预告;下回合释放覆盖战场的天雷诏令"
+      },
+      {
+        "id": "release",
+        "label": "天狱雷诏",
+        "weight": 1,
+        "pre": "windup",
+        "phrase": "closes one enormous stone hand around the completed thunder edict; the sky-seal fractures into hundreds of white-blue lightning pillars that descend in ordered concentric rings across the flooded causeway, turning waterfalls into luminous curtains and every wet roof into a mirror of celestial fire",
+        "description": "蓄力大招;避雷天门完全格挡,万轮天幕仅减半"
+      },
+      {
+        "id": "fist",
+        "label": "镇岳神掌",
+        "weight": 24,
+        "pre": "not windup",
+        "phrase": "lifts one colossal lower palm only slightly from its mountain rest and rotates the wrist toward the causeway; a gigantic translucent stone handprint separates from the palm, crosses the abyss as a pressure wall packed with tumbling gravel and rain, then crashes downward upon the artificer’s fixed position with mountain-breaking force",
+        "description": "常规重击;万轮天幕完全格挡,避雷天门仅减半"
+      },
+      {
+        "id": "shield_raise",
+        "label": "玄岩法壁",
+        "weight": 22,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "turns two ritual palms toward one another; cliff rock, broken balustrades and ancient carved tablets tear free around its torso and lock into three immense concentric slabs before the chest, each layer engraved by molten-gold prison scripture as waterfalls split around the newly raised bulwark",
+        "description": "展开岩盾;阻挡赤霄龙铳,可被九霄破阵钉击碎"
+      },
+      {
+        "id": "mend",
+        "label": "万壑归骸",
+        "weight": 11,
+        "pre": "not windup and not boss_shield and boss_hp <= 92",
+        "phrase": "opens four lower hands toward the surrounding cliffs; shattered masonry, root-wrapped stone and fragments from ruined pagodas rise through the rain in slow spirals, grind into glowing dust at its palms and press themselves into fractures across the immense torso, where gold-red seams cool back into weathered rock",
+        "description": "自愈;回收山体碎岩修复神像"
+      },
+      {
+        "id": "enrage",
+        "label": "神魔共生",
+        "weight": 1,
+        "pre": "not boss_enraged and boss_hp <= 64",
+        "phrase": "opens the central brow eye to a sunlike blaze as every dormant face-mark and buried scripture ignites crimson-gold; its many arms spread into a monumental execution mandala, roots pull taut across the mountain and a circular shockwave of rain, bells, cinders and stone dust expands from the crown",
+        "description": "低生命狂暴;攻击强化并改变神像发光结构"
+      },
+      {
+        "id": "idle",
+        "label": "九天巡狱",
+        "weight": 13,
+        "pre": "not windup",
+        "phrase": "remains fused to the mountain while different stone eyes illuminate in sequence and the many arms make minute ritual adjustments, chains swaying between cliffs as lightning reveals the pagodas nested around its shoulders",
+        "description": "观察战场;维持山体锚定姿态"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "guard",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "天狱雷诏聚敕——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "windup",
+        "to": "windup",
+        "events": [
+          {
+            "type": "telegraph",
+            "message": "神魔共生仍在聚敕——下回合将释放!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "windup",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            18,
+            6
+          ],
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "guard",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "天狱雷诏命中"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "release",
+        "damage": {
+          "target": "player_hp",
+          "roll": [
+            21,
+            5
+          ],
+          "block": [
+            "ice"
+          ],
+          "half": [
+            "barrier"
+          ],
+          "shield_var": "player_shield"
+        },
+        "to": "enraged",
+        "events": [
+          {
+            "type": "breath_hit",
+            "message": "天狱雷诏命中(神魔共生强化!)"
+          }
+        ],
+        "effects": [
+          {
+            "var": "windup",
+            "op": "set",
+            "value": false
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "镇岳神掌重击命中"
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "fist",
+        "damage": {
+          "target": "player_hp",
+          "expr": "roll(13, 5) + 5 + ifelse(boss_enraged, 5, 0)",
+          "block": [
+            "barrier"
+          ],
+          "half": [
+            "ice"
+          ],
+          "shield_var": "player_shield"
+        },
+        "events": [
+          {
+            "type": "fist_hit",
+            "message": "镇岳神掌重击命中"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "shield_raise",
+        "events": [
+          {
+            "type": "shield_raise",
+            "message": "玄岩法壁展开——爆燃攻击将被挡下"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_shield",
+            "op": "set",
+            "value": "earth"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "万壑归骸——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "mend",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 92"
+          }
+        ],
+        "events": [
+          {
+            "type": "mend",
+            "message": "万壑归骸——修复了 10 点伤势"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_hp",
+            "op": "add",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "enrage",
+        "conditions": [
+          {
+            "expr": "boss_hp <= 64"
+          }
+        ],
+        "to": "enraged",
+        "events": [
+          {
+            "type": "enrage",
+            "message": "九天镇狱神像进入神魔共生形态,攻击提升!"
+          }
+        ],
+        "effects": [
+          {
+            "var": "boss_enraged",
+            "op": "set",
+            "value": true
+          }
+        ]
+      },
+      {
+        "from": "enraged",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "神魔共生形态的镇狱神像巡视战场"
+          }
+        ]
+      },
+      {
+        "from": "guard",
+        "action": "idle",
+        "events": [
+          {
+            "type": "idle",
+            "message": "镇狱神像按兵不动,观察着机关师"
+          }
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "won": {
+      "condition": [
+        {
+          "var": "boss_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "holds his ground as the deity’s blazing eyes extinguish one by one; the final thunder seal above its crown fractures into countless golden characters, and the immense many-armed silhouette petrifies into silent mountain stone while every waterfall catches a sudden dawnlike radiance",
+      "effects": [
+        "golden prison scripture dissolving into rain",
+        "the colossal deity returning to silent stone"
+      ],
+      "end_state": "the artificer remains on the flooded causeway with his crossbow lowered as the九天镇狱神像 stands dark and motionless among the cliffs, rain washing the last glowing seals from its stone body while lanterns burn steadily beneath the receding thunder",
+      "caption": "◆ 战斗胜利 ◆"
+    },
+    "lost": {
+      "condition": [
+        {
+          "var": "player_hp",
+          "op": "<=",
+          "value": 0
+        }
+      ],
+      "action": "drops to one knee without leaving the causeway anchor as the crossbow’s brass chambers crack and fall silent; above him every eye of the deity ignites, its many arms completing a vast prison mandala while a final thunder seal closes over the mountain like the gate of heaven",
+      "effects": [
+        "a shattered crossbow mechanism steaming in rain",
+        "a colossal prison mandala sealing the storm"
+      ],
+      "end_state": "the artificer remains kneeling on the flooded causeway beneath the extinguished mechanism while the many-armed jailer deity dominates the mountain, red-gold scripture burning across its stone body and lightning sealing the sky above the pagodas",
+      "caption": "◆ 战斗失败 ◆"
+    }
+  },
+  "mp_name": "机关",
+  "mp_max": 15
+}
