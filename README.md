@@ -33,17 +33,22 @@
 **WorldState-Bench** tests this with 50 counterfactual twin pairs that share a first frame and an action but differ in one hidden value.
 With the same frozen MiniMax-H3 weights, PairFollow rises from 32% (Rule-only prompt) to **92%**, and PairStrict from 4% to **90%**.
 
-<p align="center">
-  <a href="https://ivg-yanranzhang.github.io/StateWorldModel/static/videos/state-world-models-v7.mp4">
-    <img src="assets/demo_video.jpg" width="100%" alt="Play the State World Models project film (2:59)">
-  </a>
-  <br>
-  <em>Project film (2:59, with sound): demo episodes, how one turn is made, and WorldState-Bench. Click to play, or watch it on the <a href="https://ivg-yanranzhang.github.io/StateWorldModel/">project page</a>.</em>
-</p>
+<!-- project film: replace the link below with the GitHub user-attachments URL to get an inline player -->
+<p align="center"><b><a href="assets/StateWorldModels_demo_v7_github_10MB.mp4">▶ Watch the project film (2:59, with sound)</a></b></p>
 
 ## Contents
 
-[Overview](#overview) · [Installation](#installation) · [Models and data](#models-and-data) · [Quick start](#quick-start) · [Building games](#building-games) · [WorldState-Bench](#worldstate-bench) · [MiniMax-H3 runtime](#minimax-h3-runtime-and-spatial-preview) · [Reproducing the paper](#reproducing-the-paper) · [Repository structure](#repository-structure) · [Results](#results) · [Citation](#citation)
+- [Overview](#overview)
+- [Installation](#installation)
+- [Models and data](#models-and-data)
+- [Quick start](#quick-start)
+- [Building games](#building-games)
+- [WorldState-Bench](#worldstate-bench)
+- [MiniMax-H3 runtime and spatial preview](#minimax-h3-runtime-and-spatial-preview)
+- [Reproducing the paper](#reproducing-the-paper)
+- [Repository structure](#repository-structure)
+- [Results](#results)
+- [Citation](#citation) · [Acknowledgements](#acknowledgements) · [License](#license)
 
 ## News
 
