@@ -17,7 +17,7 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-2e5c4a?logo=googlechrome&logoColor=white)](https://ivg-yanranzhang.github.io/StateWorldModel/)
 [![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b?logo=adobeacrobatreader&logoColor=white)](https://ivg-yanranzhang.github.io/StateWorldModel/static/pdfs/state-world-models.pdf)
-![arXiv](https://img.shields.io/badge/arXiv-coming_soon-lightgrey?logo=arxiv)
+[![arXiv](https://img.shields.io/badge/arXiv-coming_soon-lightgrey?logo=arxiv)](http://arxiv.org/abs/2610.26811)
 [![Video](https://img.shields.io/badge/Video-2%3A59-ff4f00?logo=youtube&logoColor=white)](https://ivg-yanranzhang.github.io/StateWorldModel/static/videos/state-world-models-v7.mp4)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-WorldState--Bench-ffcc4d)](https://huggingface.co/datasets/Louis0411/StateWorldModel)
 [![ModelScope](https://img.shields.io/badge/ModelScope-WorldState--Bench-624aff)](https://modelscope.cn/datasets/Louis0411/StateWorldModel/)
