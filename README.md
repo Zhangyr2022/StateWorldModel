@@ -328,12 +328,11 @@ Stateful Harness is also preferred in 98% of blind pairwise human comparisons ag
 ## Citation
 
 ```bibtex
-@misc{stateworldmodels2026,
-  title        = {State World Models: Execute the Rules, Generate the Pixels},
-  author       = {{Chan Yan Ki} and Yanran Zhang and Wenzhao Zheng and Xiaofeng Wang and
-                  Zheng Zhu and Lei Chen and Jie Zhou and Jiwen Lu},
-  year         = {2026},
-  howpublished = {\url{https://ivg-yanranzhang.github.io/StateWorldModel/}}
+@article{ki2026state,
+  title={State World Models: Execute the Rules, Generate the Pixels},
+  author={Ki, Chan Yan and Zhang, Yanran and Zheng, Wenzhao and Wang, Xiaofeng and Zhu, Zheng and Chen, Lei and Zhou, Jie and Lu, Jiwen},
+  journal={arXiv preprint arXiv:2610.26811},
+  year={2026}
 }
 ```
 
